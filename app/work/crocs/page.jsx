@@ -14,6 +14,13 @@ import Responsive from "@/app/components/Responsive";
 import ImageZoom from "@/app/components/ImageZoom";
 import Personas from "@/app/components/Personas";
 
+
+export const metadata = {
+    title: "The Object",
+  };
+
+
+
  function Crocs () {
     const intialwireArray = infoData.initialCroc;
     const middlewireArray = infoData.middleCroc;

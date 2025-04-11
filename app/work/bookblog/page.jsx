@@ -17,6 +17,12 @@ import Responsive from "@/app/components/Responsive";
 import ImageZoom from "@/app/components/ImageZoom";
 import booknote from "../../../public/Group 3.svg";
 
+
+export const metadata = {
+    title: "Book Blog Project",
+  };
+
+
 const BookBlog = () => {
  
     const intialwireArray = infoData.bookInitial;

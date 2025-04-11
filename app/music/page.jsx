@@ -35,6 +35,12 @@ import overview from '../../public/Screenshot 2025-04-10 at 2.43.58 PM.png';
 import stripepayment from '../../public/stripepayment.png'
 import flow from '../../public/subscriptionflow.png'
 
+
+export const metadata = {
+    title: "Music Funnel",
+  };
+
+
  function Music () {
  
     const intialwireArray = infoData.initialFunnel;

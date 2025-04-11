@@ -12,6 +12,12 @@ import anotherme from '../public/Mask group.png'
 import yellowlines from '../public/Group 33.svg'
 import ImageZoom from "@/app/components/ImageZoom";
 
+
+export const metadata = {
+  title: "Home",
+ 
+};
+
 export default function Home() {
     return (
         <main>

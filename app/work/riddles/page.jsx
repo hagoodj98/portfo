@@ -13,6 +13,13 @@ import repsonsive from '../../../public/public api.png';
 import ImageZoom from "@/app/components/ImageZoom";
 import Responsive from "@/app/components/Responsive";
 
+
+export const metadata = {
+    title: "Riddles, Riddles, Riddles",
+  };
+
+
+
  function Riddles () {
     const intialwireArray = infoData.initialRiddle;
     const finalwireArray = infoData.finalRiddle;

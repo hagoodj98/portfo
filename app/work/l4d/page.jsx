@@ -21,6 +21,13 @@ import postgresproof from '../../../public/Screenshot 2025-04-03 at 10.41.27 P
 import postgresrelation from '../../../public/Group 7.png'
 import diagram from '../../../public/l4ddiagram.svg';
 
+
+export const metadata = {
+    title: "Gaming Site",
+   
+  };
+
+
  function Left4Dead () {
     const intialwireArray = infoData.initialLeft4Dead;
     const middlewireArray = infoData.middleLeft4Dead;

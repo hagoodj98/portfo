@@ -11,6 +11,14 @@ import lightbulb from '../../../public/HUZwDRn.png'
 import ProjectIntro from '../../components/ProjectIntro'
 import ImageZoom from "@/app/components/ImageZoom";
 
+
+export const metadata = {
+    title: "Flippo the Character", 
+  };
+
+
+
+
  function Flippo () {
     const storyBoarding = infoData.storyBoarding;
     return (
