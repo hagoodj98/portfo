@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import persona from '../../../public/persona4.svg'
 import personatwo from '../../../public/persona5.svg'
 import personathree from '../../../public/persona6.svg'
@@ -18,7 +17,7 @@ import ImageZoom from "@/app/components/ImageZoom";
 import passport from '../../../public/Screenshot 2025-04-03 at 10.07.37 PM.png'
 import passporttwo from '../../../public/Screenshot 2025-04-03 at 10.07.06 PM.png';
 import postgresproof from '../../../public/Screenshot 2025-04-03 at 10.41.27 PM.png'
-import postgresrelation from '../../../public/Group 7.png'
+import postgresrelation from '../../../public/Group7.svg'
 import diagram from '../../../public/l4ddiagram.svg';
 
 
@@ -74,7 +73,7 @@ export const metadata = {
             <div className="tw-container tw-mx-auto tw-flex tw-flex-col lg:tw-flex-row tw-gap-2">
                 <div className=" lg:tw-w-4/12 tw-flex tw-flex-col tw-justify-center tw-p-5">
                     <div className="tw-py-10">
-                        <h3 className="tw-text-3xl md:tw-text-5xl tw-text-bluegreen tw-font-boldonse">Sessions and cookies</h3>
+                        <h3 className=" tw-leading-10 tw-text-3xl md:tw-text-5xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]">Sessions and cookies</h3>
                         <div className="tw-w-28"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
                         <div>
                             <p className="md:tw-text-base  tw-text-black ">In the L4D project, session management is implemented using express-session. This middleware creates and manages session data on the server, while a signed cookie (secured with a secret key) is sent to the client. This cookie allows the application to maintain persistent sessions across HTTP requests, so authenticated users remain logged in as they navigate through the site. By leveraging sessions, the project ensures that user-specific information—like login status—is securely stored and transmitted without exposing sensitive data.
@@ -85,7 +84,7 @@ export const metadata = {
                 <div className="tw-relative  lg:tw-w-8/12  tw-flex tw-justify-center md:tw-items-center md:tw-justify-normal ">
                     <div className="tw-w-full tw-flex tw-flex-col tw-gap-3  tw-mx-auto ">
                         <div className=" tw-flex tw-items-center">
-                            <Video srclink='../video/cookie_session.webm' />
+                            <Video srclink='../video/cookie_session.mp4' />
                         </div>
                     </div>
                 </div>
@@ -123,10 +122,10 @@ export const metadata = {
                 <div className="tw-relative    tw-flex tw-justify-center md:tw-items-center md:tw-justify-normal ">
                     <div className="tw-w-full tw-flex tw-flex-col tw-gap-3  tw-mx-auto ">
                         <div >
-                            <ImageZoom src={postgresproof} />
+                            <ImageZoom src={postgresproof} alt="data stored in postgres"/>
                         </div>
                         <div>
-                            <ImageZoom src={postgresrelation} />
+                            <ImageZoom src={postgresrelation} alt="table relationship" />
                         </div>
                     </div>
                 </div>
@@ -135,13 +134,13 @@ export const metadata = {
                 <h3 className="tw-text-3xl md:tw-text-5xl tw-text-bluegreen tw-font-boldonse">Overview of the process</h3>
                 <div className="tw-w-48"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
                 <div className="tw-w-full tw-p-4">
-                    <ImageZoom src={diagram} />
+                    <ImageZoom src={diagram} alt="diagram of endpoints"/>
                 </div>
             </div>
             <div className="tw-container tw-mx-auto ">
-                <div className=" tw-flex tw-flex-col  lg:tw-flex-row  md:tw-mt-0">
+                <div className=" tw-border-bluegreen tw-border-2 tw-flex tw-flex-col  lg:tw-flex-row  md:tw-mt-0">
                     <div className="tw-flex tw-flex-col tw-justify-center lg:tw-w-4/12 tw-p-6 tw-py-14 md:tw-p-3">
-                        <h3 className="tw-leading-10 tw-text-3xl md:tw-text-4xl  tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]  lg:tw-leading-[1.5]">Initial Wireframing </h3>
+                        <h3 className="tw-leading-10 tw-text-3xl md:tw-text-4xl  tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]  lg:tw-leading-[1.5] tw-mb-5">Initial Wireframing </h3>
                         <p>During the initial wireframing phase, I focused on conceptualizing the core structure and layout of the site.</p>
                         <p>Concept Exploration: I began by sketching out basic ideas for navigation, content distribution, and interactive elements.</p>
                         <p>Layout and Flow: Early wireframes helped establish how different sections of the site could be organized to capture user attention and guide them seamlessly through the content.</p>
@@ -151,9 +150,9 @@ export const metadata = {
                         <Carousel wireframeslides = {intialwireArray}/>
                     </div>
                 </div>
-                <div className="tw-flex tw-flex-col lg:tw-flex-row-reverse   md:tw-mt-0">
+                <div className="tw-border-bluegreen tw-border-2 tw-flex tw-flex-col lg:tw-flex-row-reverse  tw-my-5 ">
                     <div className="tw-flex tw-flex-col tw-justify-center lg:tw-w-4/12 tw-p-6  md:tw-p-3">
-                        <h3 className="tw-leading-10 tw-text-3xl md:tw-text-4xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]  lg:tw-leading-[1.5]">Refined Wireframing</h3>
+                        <h3 className="tw-leading-10 tw-text-3xl md:tw-text-4xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]  lg:tw-leading-[1.5] tw-mb-5">Refined Wireframing</h3>
                         <p>In the refined wireframing stage, I iterated on the initial sketches based on usability feedback and design principles.</p>
                         <p>Modern Aesthetics: This phase incorporated modern design trends while retaining the essence of Left 4 Dead’s distinctive look, striking a balance between functionality and visual appeal.</p>
                     </div>
@@ -161,9 +160,9 @@ export const metadata = {
                         <Carousel wireframeslides = {middlewireArray}/>
                     </div>
                 </div>
-                <div className="tw-flex tw-flex-col lg:tw-flex-row md:tw-mt-0">
+                <div className="tw-border-bluegreen tw-border-2 tw-flex tw-flex-col lg:tw-flex-row md:tw-mt-0">
                     <div className="tw-flex tw-flex-col tw-justify-center  lg:tw-w-4/12   tw-p-6 tw-py-14 md:tw-p-3">
-                        <h3 className="tw-leading-10 tw-text-3xl md:tw-text-4xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]  lg:tw-leading-[1.5]">Final Wireframing</h3>
+                        <h3 className="tw-leading-10 tw-text-3xl md:tw-text-4xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]  lg:tw-leading-[1.5] tw-mb-5">Final Wireframing</h3>
                         <p>The final wireframing phase brought all the ideas and revisions together into a polished, high-fidelity blueprint.</p>
                         <p>Cohesive Structure: The final wireframes reflect a well-organized structure that seamlessly blends aesthetics with functionality.</p>
                     </div>
@@ -172,8 +171,8 @@ export const metadata = {
                     </div>
                 </div>
             </div>
-            <div className="tw-container tw-p-6 md:tw-p-3 tw-mx-auto">
-                <h3 className="tw-text-2xl md:tw-text-3xl tw-text-bluegreen tw-font-boldonse">Lessons Learned & Improvements:</h3>
+            <div className="tw-container tw-p-6 md:tw-p-3 tw-my-5 tw-mx-auto">
+                <h3 className="tw-text-2xl md:tw-text-3xl tw-text-bluegreen tw-font-boldonse tw-mb-5">Lessons Learned & Improvements:</h3>
                 <div className="md:tw-w-2/3">
                     <li>Future Enhancements: The project serves as a solid foundation for further iterations, with room for incorporating additional interactive features or integrating social components that engage the gaming community even more. </li>
                     <li>One challenged faced was learning when to call an asynchronous function. Its important because it helps clean up redundant code on the backend.</li>
@@ -183,7 +182,7 @@ export const metadata = {
             </div>
             <Responsive repsonsive={responsive} />
             <div className="tw-container tw-mx-auto tw-h-auto">
-                <div className="tw-m-auto tw-h-full ">
+                <div className="tw-mx-auto tw-w-2/3  tw-h-full ">
                     <Video srclink='../video/L4Dfinalvid.mp4' />
                 </div>
             </div>

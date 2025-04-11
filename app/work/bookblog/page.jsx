@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Flippo from "../../../public/perndatabaserelationship.png";
+import Flippo from "../../../public/perndatabaserelationship.svg";
 import Database from "../../../public/perndatabase.png";
 import NodeExpress from "../../../public/nodeexpress1.png";
 import NodeExpress2 from "../../../public/nodeexpress2.png";
@@ -74,8 +74,9 @@ const BookBlog = () => {
                         <div>
                             <ImageZoom src={Flippo}   alt="database relationship"/>
                         </div>
-                        <br />
-                        <ImageZoom src={Database}  alt="data being sent to the database "/>
+                        <div>
+                            <ImageZoom src={Database}  alt="data being sent to postgres via express "/>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -91,8 +92,8 @@ const BookBlog = () => {
                 </div>
                 <div className="tw-relative  lg:tw-w-8/12  tw-flex tw-justify-center md:tw-items-center md:tw-justify-normal ">
                     <div className=" tw-flex tw-flex-col tw-gap-3 tw-mx-auto ">
-                        <ImageZoom src={NodeExpress}/>
-                        <ImageZoom src={NodeExpress2}/>
+                        <ImageZoom src={NodeExpress} alt="photo showing NodeJs"/>
+                        <ImageZoom src={NodeExpress2} alt="an API request is being made to open libray" />
                     </div>
                 </div>
             </div>
@@ -108,8 +109,8 @@ const BookBlog = () => {
                 </div>
                 <div className="tw-relative md:tw-w-1/2 lg:tw-w-4/12   tw-flex tw-justify-center md:tw-items-center md:tw-justify-normal ">
                     <div className=" tw-flex tw-flex-col tw-gap-3 tw-mx-auto tw-z-40">
-                        <ImageZoom src={Restful} className="tw-z-50 tw--mt-10 md:tw-mt-0 tw-mx-auto" alt="Project name" />
-                        <ImageZoom src={Restful2} className="tw-z-50 tw--mt-10 md:tw-mt-0 tw-mx-auto" alt="Project name" />
+                        <ImageZoom src={Restful} className="tw-z-50 tw--mt-10 md:tw-mt-0 tw-mx-auto" alt="restFul endpoints" />
+                        <ImageZoom src={Restful2} className="tw-z-50 tw--mt-10 md:tw-mt-0 tw-mx-auto" alt="the index is in the url" />
                     </div>
                 </div>
             </div>
@@ -117,31 +118,31 @@ const BookBlog = () => {
                 <h3 className="tw-text-3xl md:tw-text-5xl tw-text-bluegreen tw-font-boldonse">Overview of the process</h3>
                 <div className="tw-w-48"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
                 <div className="tw-w-full tw-p-4">
-                    <ImageZoom src={booknote} />
+                    <ImageZoom src={booknote} alt="map of endpoints and integration" />
                 </div>
             </div>
             <div className="tw-container  tw-mx-auto">
-                <div className="tw-flex tw-flex-col lg:tw-flex-row">
+                <div className="tw-flex tw-border-bluegreen tw-border-2 tw-flex-col lg:tw-flex-row">
                     <div className="tw-flex tw-flex-col tw-justify-center  lg:tw-w-4/12 tw-p-6 tw-py-14 md:tw-p-5">
-                        <h3 className="tw-text-3xl md:tw-text-4xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]  lg:tw-leading-[1.5]">Initial Wireframing</h3>
+                        <h3 className="tw-text-3xl md:tw-text-4xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5] tw-mb-5  lg:tw-leading-[1.5]">Initial Wireframing</h3>
                         <p >This early stage focused on outlining the basic structure and user flows of the application. Early sketches and low-fidelity prototypes were created to visualize the core functionalities and to establish a solid foundation for further design iterations.</p>
                     </div>
                     <div className='lg:tw-w-8/12 tw-my-auto '>
                         <Carousel wireframeslides = {intialwireArray}/>
                     </div>
                 </div>
-                <div className="tw-flex tw-flex-col lg:tw-flex-row-reverse  md:tw-mt-0">
+                <div className="tw-flex tw-border-bluegreen tw-border-2  tw-flex-col lg:tw-flex-row-reverse tw-my-5  ">
                     <div className="tw-flex tw-flex-col tw-justify-center   lg:tw-w-4/12   tw-p-6 tw-py-14 md:tw-p-3">
-                        <h3 className="tw-leading-10 tw-text-3xl md:tw-text-4xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5] lg:tw-leading-[1.5]">Refined Wireframing</h3>
+                        <h3 className="tw-leading-10 tw-text-3xl md:tw-text-4xl tw-text-bluegreen tw-font-boldonse tw-mb-5 md:tw-leading-[1.5] lg:tw-leading-[1.5]">Refined Wireframing</h3>
                         <p>This early stage focused on outlining the basic structure and user flows of the application. Early sketches and low-fidelity prototypes were created to visualize the core functionalities and to establish a solid foundation for further design iterations.</p>
                     </div>
                     <div className='lg:tw-w-8/12 tw-my-auto  '>
                         <Carousel wireframeslides = {middlewireArray}/>
                     </div>
                 </div>
-                <div className="tw-flex tw-flex-col lg:tw-flex-row md:tw-mt-0">
+                <div className="tw-flex tw-border-bluegreen tw-border-2  tw-flex-col lg:tw-flex-row md:tw-mt-0">
                     <div className="tw-flex tw-flex-col tw-justify-center  lg:tw-w-4/12 tw-p-6  md:tw-p-3">
-                        <h3 className="tw-leading-10 tw-text-3xl md:tw-text-4xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]  lg:tw-leading-[1.5]">Final Wireframing</h3>
+                        <h3 className="tw-leading-10 tw-text-3xl md:tw-text-4xl tw-text-bluegreen tw-font-boldonse tw-mb-5 md:tw-leading-[1.5]  lg:tw-leading-[1.5]">Final Wireframing</h3>
                         <p>In the final phase, all feedback and insights were incorporated to create a cohesive, high-fidelity design blueprint. The final wireframes reflect a polished interface where functionality and aesthetics merge, setting the stage for a seamless transition to the final development phase.</p>
                     </div>
                     <div className='lg:tw-w-8/12 tw-my-auto '>
@@ -149,8 +150,8 @@ const BookBlog = () => {
                     </div>
                 </div>
             </div>
-            <div className="tw-container  md:tw-py-0 tw-p-6  md:tw-p-3 tw-mx-auto">
-                <h3 className="tw-text-2xl md:tw-text-3xl tw-text-bluegreen tw-font-boldonse">Lessons Learned & Improvements:</h3>
+            <div className="tw-container tw-my-5 md:tw-py-0 tw-p-6  md:tw-p-3 tw-mx-auto">
+                <h3 className="tw-text-2xl md:tw-text-3xl md:tw-mt-0 tw-text-bluegreen tw-font-boldonse">Lessons Learned & Improvements:</h3>
                 <div className="md:tw-w-2/3">
                 <br />
                     <li>I can write each endpoint inside of an api folder instead of creating a separate server folder. That way I can write the same backend logic within that endpoint. I thought I needed a separate server to run the endpoints but I learned you can do the same thing in Express using Nextjs. Thus simplifying the architecture. This was my first rodeo, using Nextjs on an project.</li>
@@ -160,7 +161,7 @@ const BookBlog = () => {
             </div>
             <Responsive repsonsive={repsonsive} />
             <div className="tw-container tw-mx-auto tw-h-auto ">
-                <div className="tw-m-auto tw-h-full ">
+                <div className="tw-mx-auto lg:tw-w-2/3  tw-h-full ">
                    <Video srclink='../video/booknotesfinalVID.mp4' /> 
                 </div>
             </div>

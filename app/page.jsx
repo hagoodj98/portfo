@@ -30,7 +30,7 @@ export default function Home() {
                   </div>
                   <div className="tw-p-6 ">
                     <div className="tw-mx-auto md:tw-w-2/3 tw-flex tw-flex-col tw-items-center">
-                      <h1 className=" tw-text-6xl  lg:tw-text-7xl tw-text-bluegreen"> <span className="tw-font-boldonse">My Portfilio</span></h1>
+                      <h1 className=" tw-text-4xl lg:tw-text-6xl tw-text-center tw-text-bluegreen"> <span className="tw-font-boldonse">My Portfilio</span></h1>
                       <p className=" tw-text-center md:tw-text-base">Hello! I’m a full-stack developer with a passion for creating modern, user-friendly web applications. Whether I’m working with front-end frameworks or back-end services, I’m always eager to learn, experiment, and refine my craft. Thanks for stopping by—take a look around, and I hope you enjoy exploring my work as much as I enjoyed building it!</p>
                     </div>
                   </div>
@@ -45,7 +45,7 @@ export default function Home() {
                 <div className=" tw-relative tw-w-64  lg:tw-w-fit tw-mx-auto">
                   <ImageZoom src={anotherme} alt="another photo of me"/>
                 </div>
-                <Image className="tw-absolute -tw-bottom-40 tw-left-9 md:tw-left-36 tw-w-14 lg:tw-w-16" src={yellowlines} />
+                <Image className="tw-absolute -tw-bottom-40 tw-left-9 md:tw-left-36 tw-w-14 lg:tw-w-16" src={yellowlines} alt="yellows lines"/>
               </div>
             </div>
             <div className="tw-container tw-mx-auto tw-mt-32">

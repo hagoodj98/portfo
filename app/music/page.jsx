@@ -344,7 +344,7 @@ export const metadata = {
             </div>
             <Responsive repsonsive={repsonsive} />
             <div className="tw-container tw-mx-auto tw-h-auto ">
-                <div className="tw-m-auto tw-h-full ">
+                <div className="tw-mx-auto lg:tw-w-2/3  tw-h-full ">
                    <Video srclink='../video/funnelvid.mp4' />
                    <h3 className=" tw-text-bluegreen tw-p-10 tw-font-boldonse">Like my music? You can  <span><Link href="https://jaiquezmusic.com" className="tw-no-underline tw-text-orange">JOIN the family</Link></span></h3> 
                 </div>

@@ -30,9 +30,9 @@ export const metadata = {
 
             <div className="tw-container tw-mx-auto md:tw-mt-44">
                 <div className="  md:tw-my-5 ">
-                    <div className=" tw-flex tw-flex-col lg:tw-flex-row   tw-mt-40 md:tw-mt-0">
+                    <div className=" tw-border-bluegreen tw-border-2 tw-flex tw-flex-col lg:tw-flex-row   tw-mt-40 md:tw-mt-0">
                         <div className="tw-flex tw-flex-col tw-justify-center lg:tw-w-4/12  tw-p-6 tw-py-14 md:tw-p-3">
-                            <h3 className="tw-leading-10 tw-text-3xl md:tw-text-4xl  tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]  lg:tw-leading-[1.5]">Initial Wireframing</h3>
+                            <h3 className="tw-leading-10 tw-text-3xl md:tw-text-4xl  tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]  tw-mb-5">Initial Wireframing</h3>
                             <p>In the initial phase, low-fidelity sketches were created to establish the basic layout and functionality. The focus was on mapping out the central riddle display area, the “Reveal Me!” button, and the option to fetch a new riddle. These early wireframes helped define the user flow—from arriving on the page to interacting with the buttons—ensuring that the core experience was intuitive.</p>
                         </div>
                         <div className='lg:tw-w-8/12 tw-my-auto '>
@@ -40,9 +40,9 @@ export const metadata = {
                         </div>
                     </div>
                 </div>
-                <div className="tw-flex tw-flex-col lg:tw-flex-row-reverse md:tw-mt-0">
-                        <div className="tw-flex tw-flex-col tw-justify-center lg:tw-w-4/12 tw-p-6 tw-py-14 md:tw-p-3">
-                            <h3 className="tw-leading-10 tw-text-3xl md:tw-text-4xl  tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]  lg:tw-leading-[1.5]">Final Wireframing</h3>
+                <div className="tw-border-bluegreen tw-border-2 tw-flex tw-flex-col lg:tw-flex-row-reverse md:tw-mt-0">
+                        <div className=" tw-flex tw-flex-col tw-justify-center lg:tw-w-4/12 tw-p-6 tw-py-14 md:tw-p-3">
+                            <h3 className="tw-leading-10 tw-text-3xl md:tw-text-4xl  tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]  tw-mb-5">Final Wireframing</h3>
                             <p>The final phase produced high-fidelity wireframes that served as a detailed blueprint for the development stage. Every component—from the typography and color schemes to the interactive elements—was meticulously planned. The final wireframes ensured a cohesive and responsive design that not only meets the project’s functional requirements but also delivers a visually pleasing user experience across all devices.</p>
                         </div>
                         <div className='lg:tw-w-8/12 tw-my-auto '>
@@ -54,7 +54,7 @@ export const metadata = {
                 <Responsive repsonsive={repsonsive} />
             </div>
             <div className="tw-container tw-mx-auto tw-h-full ">
-                <div className="tw-m-auto  md:tw-w-[800px] tw-border-2 tw-h-full ">
+                <div className="tw-mx-auto  lg:tw-w-2/3  tw-h-full ">
                     <Video srclink='../video/RiddlesVID.mp4'/>
                 </div>
             </div>
