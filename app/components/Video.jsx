@@ -1,8 +1,6 @@
 "use client";
 
 import React from 'react'
-import { CldVideoPlayer } from 'next-cloudinary';
-import 'next-cloudinary/dist/cld-video-player.css';
  
 const Video = (props) => {
   
