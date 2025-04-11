@@ -19,7 +19,7 @@ import ImageZoom from "@/app/components/ImageZoom";
                 <div className="tw-container tw-mx-auto tw-flex tw-flex-col md:tw-flex-row-reverse tw-gap-2 md:tw-h-[800px]">
                     <div className="tw-border-2 md:tw-w-1/2 tw-flex tw-flex-col tw-justify-center tw-p-5">
                         <div className="">
-                            <h1 className="tw-text-5xl lg:tw-text-7xl tw-text-bluegreen">Meet Flippo, The Body Builder</h1>
+                            <h1 className="tw-leading-10 tw-text-4xl lg:tw-text-5xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]  lg:tw-leading-[1.5]">Meet Flippo, The Body Builder</h1>
                             <div className="tw-w-28"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
                             <div>
                                 <p className="md:tw-text-base lg:tw-text-xl xl:tw-text-3xl tw-text-black ">Storytelling is important, especially sticking with a concept. I got the opportunity to create a character. I create storyboards to tell a joke. A joke I mention below.</p>
@@ -37,17 +37,17 @@ import ImageZoom from "@/app/components/ImageZoom";
             </div>
             <div className="tw-container tw-mx-auto">
                 <div className=" tw-my-10">
-                    <h2 className="tw-text-end tw-text-3xl md:tw-text-5xl tw-text-bluegreen">.....A character in the making</h2>
+                    <h2 className="tw-text-end tw-text-3xl md:tw-text-5xl tw-text-bluegreen tw-font-boldonse">.....A character in the making</h2>
                     <ImageZoom src={Character} alt="Flippo from all angles"/>
                 </div>
                 <div className=" tw-mx-auto     ">
                     <div className=' tw-my-auto '>
-                        <h2 className="tw-text-2xl md:tw-text-4xl tw-text-bluegreen">StoryBoarding.....</h2>
+                        <h2 className="tw-text-2xl md:tw-text-4xl tw-text-bluegreen tw-font-boldonse">StoryBoarding.....</h2>
                         <ImageZoom src={Storyboards} alt="storyboards"/>
                     </div>
                 </div>
                 <div className=" tw-mx-auto tw-py-16 tw-w-1/2">
-                    <h3 className="tw-text-center tw-text-moreblue">"Hello World I am Flippo."</h3>
+                    <h3 className="tw-text-center tw-text-moreblue tw-font-boldonse">"Hello World I am Flippo."</h3>
                     <div className="tw-w-28 tw-mx-auto">
                         <Image src={lightbulb} />
                     </div>

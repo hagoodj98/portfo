@@ -16,6 +16,9 @@ module.exports = {
         'yellow': '#f2c53d',
         'sortwhite': '#F4F8F8'
       },
+      fontFamily: {
+        boldonse: ['boldonse', 'sans-serif'],
+      },
       animation: {
         'rightleft': 'righttoleft 10s linear infinite',
         'leftright':'lefttoright 10s linear infinite'

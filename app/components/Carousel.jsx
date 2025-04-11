@@ -14,11 +14,11 @@ const CarouselControlled = (props) => {
     <>
         <Carousel indicators={false} prevIcon=
         { <div className='tw-bg-white tw-rounded-full tw-p-2'>
-            <span className=' tw-text-moreblue'><ArrowBackIosRoundedIcon fontSize='medium' /></span>
+            <span className=' tw-text-moreblue'><ArrowBackIosRoundedIcon fontSize='large' /></span>
           </div>
         } nextIcon=
         { <div className='tw-bg-white tw-rounded-full tw-p-2'>
-            <span className='tw-text-moreblue'><ArrowForwardIosRoundedIcon fontSize='medium'/></span>
+            <span className='tw-text-moreblue'><ArrowForwardIosRoundedIcon fontSize='large'/></span>
           </div>
         } className='md:tw-h-[700px] ' >
             {

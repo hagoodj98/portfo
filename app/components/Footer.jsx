@@ -16,7 +16,7 @@ const footer = () => {
     <main>
       <div className="tw-container tw-mx-auto tw-flex tw-flex-col  tw-items-center">
         <div className='tw-flex tw-flex-col tw-items-center tw-p-4 sm:tw-p-16 tw-max-w-5xl'>
-          <h2 className='tw-text-4xl md:tw-text-4xl lg:tw-text-7xl tw-text-bluegreen'>Thanks for Visiting</h2>
+          <h2 className='tw-text-2xl md:tw-text-3xl lg:tw-text-5xl tw-text-bluegreen tw-font-boldonse tw-py-5'>Thanks for Visiting</h2>
           <p className='tw-text-base tw-text-center lg:tw-text-2xl '>If you want to contact me, please send me an email. Happy coding. Cheers!🥂</p>
           <div>
             <a href="mailto:west00brook@gmail.com"><Button text="Contact Me" /></a>

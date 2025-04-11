@@ -5,11 +5,11 @@ import ImageZoom from "@/app/components/ImageZoom";
 
 const ProjectIntro = (props) => {
   return (
-    <div className=" tw-relative">
+    <div className="tw-relative">
                 <div className="tw-relative tw-container tw-mx-auto tw-flex tw-flex-col md:tw-flex-row tw-gap-2 md:tw-h-[800px]">
                     <div className="tw-border-2 md:tw-w-1/2 tw-flex tw-flex-col tw-justify-center tw-p-5 ">
-                        <div className="">
-                            <h1 className="tw-text-5xl  lg:tw-text-7xl tw-text-bluegreen">{props.projectname}</h1>
+                        <div className="tw-p-5 md:tw-p-0">
+                            <h1 className="tw-leading-10 tw-text-4xl md:tw-leading-[1.5]  lg:tw-leading-[1.5] lg:tw-text-5xl tw-font-boldonse tw-text-bluegreen">{props.projectname}</h1>
                             <div className="tw-w-28"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
                             <div>
                                 <p className="md:tw-text-base lg:tw-text-xl  tw-text-black ">{props.description}</p>

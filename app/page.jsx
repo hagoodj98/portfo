@@ -24,9 +24,8 @@ export default function Home() {
                   </div>
                   <div className="tw-p-6 ">
                     <div className="tw-mx-auto md:tw-w-2/3 tw-flex tw-flex-col tw-items-center">
-                      <h1 className="tw-text-6xl  lg:tw-text-7xl tw-text-bluegreen btn-primary">My Portfilio</h1>
+                      <h1 className=" tw-text-6xl  lg:tw-text-7xl tw-text-bluegreen"> <span className="tw-font-boldonse">My Portfilio</span></h1>
                       <p className=" tw-text-center md:tw-text-base">Hello! I’m a full-stack developer with a passion for creating modern, user-friendly web applications. Whether I’m working with front-end frameworks or back-end services, I’m always eager to learn, experiment, and refine my craft. Thanks for stopping by—take a look around, and I hope you enjoy exploring my work as much as I enjoyed building it!</p>
-                      <Button text="Learn More"/>
                     </div>
                   </div>
                 </div>
@@ -34,7 +33,7 @@ export default function Home() {
             <div className="tw-relative tw-bg-gradient-to-t tw-from-moreblue tw-to-bluegreen  ">
               <div className="tw-container tw-mx-auto tw-relative tw-flex tw-flex-col-reverse lg:tw-flex-row  tw-p-10 md:tw-mt-[10px] md:tw-h-auto ">
                 <div className=" tw-flex tw-flex-col tw-py-8 tw-justify-center md:tw-col-span-2 tw-w-full md:tw-w-3/4 md:tw-ml-20">
-                  <h2 className="tw-text-center lg:tw-text-left tw-text-3xl md:tw-text-5xl tw-text-white">About Me  </h2>
+                  <h2 className="tw-text-center lg:tw-text-left tw-text-3xl md:tw-text-5xl tw-text-white tw-font-boldonse">About Me  </h2>
                   <p className="tw-text-center lg:tw-text-left tw-text-white ">I am from Greenville, South Carolina and I am a digital information design graduate from Winthrop University. I like to program and I am a self release music artist.</p>
                 </div>
                 <div className=" tw-relative tw-w-64  lg:tw-w-fit tw-mx-auto">
@@ -46,47 +45,47 @@ export default function Home() {
             <div className="tw-container tw-mx-auto tw-mt-32">
               <div className="tw-grid sm:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-3 tw-w-full ">
                 <div className="tw-order-first md:tw-order-none tw-flex tw-justify-center tw-items-center tw-my-auto">
-                    <h2 className="tw-text-3xl md:tw-text-5xl tw-mx-auto tw-py-10 tw-text-bluegreen">Works</h2>
+                    <h2 className="tw-text-3xl md:tw-text-5xl tw-mx-auto tw-py-10 tw-text-bluegreen tw-font-boldonse">Works</h2>
                 </div>
                 <div className="tw-h-[390px] tw-group tw-relative tw-overflow-hidden tw-bg-[url('../public/booknotesmockup.svg')] tw-bg-no-repeat tw-bg-center tw-bg-cover">
                   <a href="/work/bookblog">
                         <div className="tw-absolute tw-flex tw-justify-center tw-items-center tw-bg-yellow tw-w-full tw-h-full tw-opacity-0 group-hover:tw-opacity-100">
-                          <h3 className="tw-text-white">BookBlog Project</h3>
+                          <h5 className="tw-text-white tw-font-boldonse">BookBlog Project</h5>
                         </div>
                   </a>
                 </div>
                 <div className="tw-h-[390px] tw-group tw-relative tw-overflow-hidden  tw-bg-[url('../public/crocsmockuplap.svg')] tw-bg-no-repeat tw-bg-center  tw-bg-cover">
                   <a href="/work/crocs">
                       <div className="tw-absolute tw-flex tw-justify-center tw-items-center tw-bg-yellow tw-w-full tw-h-full tw-opacity-0 group-hover:tw-opacity-100">
-                        <h3 className="tw-text-white">The Object Project</h3>
+                        <h5 className="tw-text-white tw-font-boldonse">The Object Project</h5>
                       </div>
                   </a>
                 </div>
                 <div className="tw-relative tw-overflow-hidden tw-h-[390px] tw-group tw-bg-[url('../public/riddlemockup.svg')] tw-bg-no-repeat tw-bg-center tw-bg-cover ">
                   <a href="/work/riddles">
                     <div className="tw-absolute tw-flex tw-justify-center tw-items-center tw-bg-yellow tw-w-full tw-h-full tw-opacity-0 group-hover:tw-opacity-100">
-                      <h3 className="tw-text-white">Riddles Project</h3>
+                      <h5 className="tw-text-white tw-font-boldonse">Riddles Project</h5>
                     </div>
                   </a>
                 </div>
                 <div className=" tw-h-[390px] tw-group tw-relative tw-overflow-hidden tw-group tw-bg-[url('../public/l4dmockup.svg')] tw-bg-no-repeat tw-bg-center tw-bg-cover">
                   <a href="/work/l4d">
                       <div className="tw-absolute tw-flex tw-justify-center tw-items-center tw-bg-yellow tw-w-full tw-h-full tw-opacity-0 group-hover:tw-opacity-100">
-                        <h3 className="tw-text-white"> GameSite Project</h3>
+                        <h5 className="tw-text-white tw-font-boldonse"> GameSite Project</h5>
                       </div>
                   </a>
                 </div>
                 <div className="tw-h-[390px] tw-group tw-relative tw-overflow-hidden tw-group tw-bg-[url('../public/flippo.svg')] tw-bg-no-repeat tw-bg-center tw-bg-cover">
                   <a href="/work/flippo">
                       <div className="tw-absolute tw-flex tw-justify-center tw-items-center tw-bg-yellow tw-w-full tw-h-full tw-opacity-0 group-hover:tw-opacity-100">
-                        <h3 className="tw-text-white">Animate Project</h3>
+                        <h5 className="tw-text-white tw-font-boldonse">Animate Project</h5>
                       </div>
                   </a>
                 </div>
                 <div className=" tw-h-[390px] tw-group tw-relative tw-overflow-hidden tw-group tw-bg-[url('../public/VinylRecordMockup.jpg')] tw-bg-no-repeat tw-bg-center tw-bg-cover">
                   <a href="/music">
                       <div className="tw-absolute tw-flex tw-justify-center tw-items-center tw-bg-yellow tw-w-full tw-h-full tw-opacity-0 group-hover:tw-opacity-100">
-                        <h3 className="tw-text-white">Music Project</h3>
+                        <h5 className="tw-text-white tw-font-boldonse">Music Project</h5>
                       </div>
                   </a>
                 </div>

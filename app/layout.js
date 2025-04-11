@@ -3,6 +3,13 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import "bootstrap/dist/css/bootstrap.min.css";
 import './custom.scss';
+import localFont from 'next/font/local';
+
+
+const boldonse = localFont({
+  src: './fonts/Boldonse-Regular.ttf',
+  variable: '--font-boldonse',
+});
 
 
 export const metadata = {
@@ -12,7 +19,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={boldonse.className}>
       <body>
         <Header />
         {children}
