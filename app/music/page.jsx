@@ -90,7 +90,7 @@ export const metadata = {
                 <div className="tw-relative  lg:tw-w-8/12  tw-flex tw-justify-center md:tw-items-center md:tw-justify-normal ">
                     <div className="tw-w-full tw-flex tw-flex-col tw-gap-3  tw-mx-auto ">
                         <div>
-                            <ImageZoom src={overview}   alt="database relationship"/>
+                            <ImageZoom src={overview} alt="file architecture"/>
                         </div>
                         
                     </div>
@@ -113,7 +113,7 @@ export const metadata = {
                 <div className="tw-relative  lg:tw-w-8/12  tw-flex tw-justify-center md:tw-items-center md:tw-justify-normal ">
                     <div className="tw-w-full tw-flex tw-flex-col tw-gap-2  tw-mx-auto ">
                         <div>
-                            <ImageZoom src={subscriberphoto}   alt="database relationship"/>
+                            <ImageZoom src={subscriberphoto}   alt="/subscribe endpoint code"/>
                         </div>
                     </div>
                 </div>
@@ -131,10 +131,10 @@ export const metadata = {
                 <div className="tw-relative  lg:tw-w-8/12  tw-flex tw-justify-center md:tw-items-center md:tw-justify-normal ">
                     <div className="tw-w-full tw-flex  tw-gap-2  tw-mx-auto ">
                         <div className="tw-w-1/2">
-                            <ImageZoom src={NodeExpress}/>
+                            <ImageZoom src={NodeExpress} alt="/check-status code"/>
                         </div>
                         <div className="tw-w-1/2">
-                            <ImageZoom src={poller} />
+                            <ImageZoom src={poller} alt="email checker component" />
                         </div>
                     </div>
                 </div>
@@ -152,7 +152,7 @@ export const metadata = {
                 <div className="tw-relative  lg:tw-w-8/12  tw-flex tw-justify-center md:tw-items-center md:tw-justify-normal ">
                     <div className="tw-w-full tw-flex tw-flex-col tw-gap-2  tw-mx-auto ">
                         <div>
-                            <ImageZoom src={checkout}/>
+                            <ImageZoom src={checkout} alt="code that creates stripe session" />
                         </div>
                     </div>
                 </div>
@@ -169,16 +169,18 @@ export const metadata = {
                         </div>
                     </div>
                 </div>
+                
                 <div className="tw-relative  lg:tw-w-8/12  tw-flex tw-justify-center md:tw-items-center md:tw-justify-normal ">
+                    
                     <div className="tw-w-full tw-flex tw-flex-col  md:tw-flex-row md:tw-flex-wrap tw-gap-2  tw-mx-auto ">
                         <div className="md:tw-w-1/2">
-                            <ImageZoom src={NodeExpress2}/>
+                            <ImageZoom src={NodeExpress2} alt="mailchimp webhook code"/>
                         </div>
                         <div className="md:tw-w-1/3">
-                            <ImageZoom src={stripewebhook}/>
+                            <ImageZoom src={stripewebhook} alt="stripe events being listened by stripe webhook"/>
                         </div>
                         <div className="md:tw-w-1/3">
-                            <ImageZoom src={stripewebhook2}/>
+                            <ImageZoom src={stripewebhook2} alt="updating the tags via mailchimp"/>
                         </div>
                     </div>
                 </div>
@@ -200,14 +202,15 @@ export const metadata = {
                     </div>
                     <div className="tw-relative md:tw-w-1/2  tw-flex tw-justify-center md:tw-items-center md:tw-justify-normal ">
                         <div className=" tw-flex tw-flex-col md:tw-flex-row md:tw-flex-wrap tw-gap-3 tw-mx-auto tw-z-40">
+                            <p>(click each to zoom**)</p>
                             <div className="md:tw-w-1/2">
-                                <ImageZoom src={csrf} alt="Project name" />
+                                <ImageZoom src={csrf} alt="the csrf check code" />
                             </div>
                             <div className="md:tw-w-1/3">
-                                <ImageZoom src={salt} alt="Project name" />
+                                <ImageZoom src={salt} alt="the salt comparison" />
                             </div>
                             <div className="md:tw-w-1/3">
-                                <ImageZoom src={stripe}/>
+                                <ImageZoom src={stripe} alt="validating the stripe payload"/>
                             </div>
                         </div>
                     </div>
@@ -279,10 +282,10 @@ export const metadata = {
                 <div className="tw-relative lg:tw-w-8/12  tw-flex tw-justify-center md:tw-items-center md:tw-justify-normal ">
                     <div className="tw-w-full tw-flex tw-flex-col tw-gap-3  tw-mx-auto ">
                         <div>
-                            <ImageZoom src={Flippo}   alt="database relationship"/>
+                            <ImageZoom src={Flippo}   alt="the redis client"/>
                         </div>
                         <div>
-                            <ImageZoom src={Database}  alt="data being sent to the database "/>
+                            <ImageZoom src={Database}  alt="the ttl of redis data "/>
                         </div>
                     </div>
                 </div>
@@ -302,13 +305,13 @@ export const metadata = {
                 <div className="tw-relative lg:tw-w-8/12  tw-flex tw-justify-center md:tw-items-center md:tw-justify-normal ">
                     <div className="tw-w-full tw-flex tw-flex-col md:tw-flex-row md:tw-flex-wrap tw-gap-3  tw-mx-auto ">
                         <div className="md:tw-w-1/2">
-                            <ImageZoom src={stripepayment}/>
+                            <ImageZoom src={stripepayment} alt="the api call to create stripe checkout"/>
                         </div>
                         <div className="md:tw-w-1/3">
-                            <ImageZoom src={stripecheckout}/>
+                            <ImageZoom src={stripecheckout} alt="the front end getting the session id from endpoint"/>
                         </div>
                         <div className="md:tw-w-1/3">
-                            <ImageZoom src={paymentlink}/>
+                            <ImageZoom src={paymentlink} alt="payment link structure"/>
                         </div>
                     </div>
                 </div>
@@ -317,12 +320,12 @@ export const metadata = {
                 <h3 className="tw-text-3xl md:tw-text-5xl tw-text-bluegreen tw-font-boldonse">Overview of the process</h3>
                 <div className="tw-w-48"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
                 <div className="tw-w-full tw-p-4">
-                    <ImageZoom src={funneldiagram} />
+                    <ImageZoom src={funneldiagram} alt="diagram of how the funnel processes data"/>
                 </div>
             </div>
             <div className="tw-container tw-mx-auto">
                 <div className="tw-flex tw-flex-col lg:tw-flex-row">
-                    <div className="tw-flex tw-flex-col lg:tw-w-4/12 tw-p-6 tw-py-14 md:tw-p-3">
+                    <div className="tw-flex tw-flex-col tw-justify-center  lg:tw-w-4/12 tw-p-6 tw-py-14 md:tw-p-3">
                         <h3 className="tw-leading-10 tw-text-3xl md:tw-text-4xl tw-font-boldonse md:tw-leading-[1.5] tw-text-bluegreen">Initial Wireframing</h3>
                         <p>In the initial phase, the focus was on brainstorming and mapping out the fundamental layout and user flow for the Music Funnel application. This stage involved sections such as the subscription form, email confirmation process, session indicators, and checkout integration.</p>
                     </div>

@@ -2,8 +2,6 @@
 
 import React from 'react'
 import Button from '../components/Button'
-import background from '../../public/Vector 16.svg'
-import Link from 'next/link'
 
 const footer = () => {
   const date = new Date();
