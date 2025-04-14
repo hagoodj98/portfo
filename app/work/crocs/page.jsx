@@ -1,9 +1,7 @@
 import React from "react";
 import Carousel from "@/app/components/Carousel";
 import  infoData  from "../../components/datai";
-import Image from "next/image";
 import Mockup from "../../../public/crocsmockuplap.svg"
-import Flippo from "../../../public/Group 34.png";
 import repsonsive from '../../../public/crocsmockup.svg';
 import Video from '../../components/Video';
 import persona from '../../../public/persona.png'
@@ -11,7 +9,6 @@ import personatwo from '../../../public/persona2.png'
 import personathree from '../../../public/persona3.png'
 import ProjectIntro from '../../components/ProjectIntro'
 import Responsive from "@/app/components/Responsive";
-import ImageZoom from "@/app/components/ImageZoom";
 import Personas from "@/app/components/Personas";
 
 

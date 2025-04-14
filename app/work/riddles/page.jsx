@@ -1,16 +1,10 @@
 import React from "react";
-import Image from "next/image";
-import Flippo from "../../../public/Group 34.png";
-import background from '../../../public/Vector 12 (4).svg';
-import me from '../../../public/male-placeholder-image.jpeg'
-import Button from "../../components/Button";
 import Carousel from "@/app/components/Carousel";
 import Mockup from "../../../public/riddlemockup.svg"
 import  infoData  from "../../components/datai";
 import Video from '../../components/Video';
 import ProjectIntro from '../../components/ProjectIntro'
 import repsonsive from '../../../public/public api.png';
-import ImageZoom from "@/app/components/ImageZoom";
 import Responsive from "@/app/components/Responsive";
 
 

@@ -2,8 +2,6 @@
 
 import React from 'react'
 import Carousel from 'react-bootstrap/Carousel';
-import Image from 'next/image';
-import Flippo from "../../public/Group 34.png";
 import ArrowBackIosRoundedIcon from '@mui/icons-material/ArrowBackIosRounded';
 import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
 import styles from '../styles/home.module.css'

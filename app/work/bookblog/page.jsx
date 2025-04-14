@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import Flippo from "../../../public/perndatabaserelationship.svg";
 import Database from "../../../public/perndatabase.png";
 import NodeExpress from "../../../public/nodeexpress1.png";

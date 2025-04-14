@@ -1,6 +1,4 @@
 import React from "react";
-import Button from "../../components/Button";
-import Carousel from "@/app/components/Carousel";
 import  infoData  from "../../components/datai";
 import Video from '../../components/Video';
 import Character from '../../../public/character.png'
@@ -8,7 +6,6 @@ import Image from "next/image";
 import him from "../../../public/flippo.svg";
 import Storyboards from '../../../public/flippostoryboards.png'
 import lightbulb from '../../../public/HUZwDRn.png'
-import ProjectIntro from '../../components/ProjectIntro'
 import ImageZoom from "@/app/components/ImageZoom";
 
 

@@ -1,6 +1,5 @@
 import React from "react";
 import MusicCover from "../../public/GOOD.jpg";
-import Button from '@mui/material/Button';
 import persona from '../../public/Yellow-And-Light-Yellow-Modern-User-Persona-Graph-1.png'
 import personatwo from '../../public/Yellow-And-Light-Yellow-Modern-User-Persona-Graph.png'
 import personathree from '../../public/Yellow-And-Light-Yellow-Modern-User-Persona-Graph-2.png'

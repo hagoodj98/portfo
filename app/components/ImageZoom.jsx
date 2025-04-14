@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Zoom from 'next-image-zoom';
-import Image from 'next/image';
+
 const imageZoom = (props) => {
   return (
     <div className='tw-group tw-relative tw-flex '>

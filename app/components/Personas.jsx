@@ -1,5 +1,4 @@
 import React from 'react'
-import Image from 'next/image'
 import ImageZoom from "@/app/components/ImageZoom";
 
 const Personas = (props) => {

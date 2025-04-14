@@ -2,7 +2,6 @@ import React from "react";
 import persona from '../../../public/persona4.svg'
 import personatwo from '../../../public/persona5.svg'
 import personathree from '../../../public/persona6.svg'
-import SmallCard from '../../components/SmallCard';
 import Mockup from "../../../public/l4dmockup.svg" 
 import Carousel from "@/app/components/Carousel";
 import  infoData  from "../../components/datai";
