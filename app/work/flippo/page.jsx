@@ -62,7 +62,7 @@ export const metadata = {
                     <div className="tw-mx-auto lg:tw-w-2/3 tw-border-2 tw-h-full ">
                         <Video srclink='../video/fba1-376a-48c9-8b1a-c3ececf9d855.mp4' />
                         <div>
-                            <p className="tw-p-5">The Joke goes like this: You are sleep....And so you wake up because you hear a sound coming form your closet. You take your cat and tie it around using a rope and throw it in the closet. You pull the rope and the cat is missing. You come to conclude that "Yep, there's something in there. </p>
+                            <p className="tw-p-5">The Joke goes like this: You are sleep....And so you wake up because you hear a sound coming from your closet. You take your cat and tie it around using a rope and throw it in the closet. You pull the rope and the cat is missing. You come to conclude that "Yep, there's something in there. </p>
                         </div>
                     </div>
                 </div>

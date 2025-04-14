@@ -32,39 +32,39 @@ const BookBlog = () => {
     
     return (
         <div className="tw-py-20">
-            <ProjectIntro projectname='Book Blog' description='This is a full-stack application built with the PERN stack that empowers users to discover, review, and note their favorite books. Leveraging external data from the Open Library API, the application fetches dynamic book information—cover images, ratings, and more—to create a rich, interactive experience.' srcname={Mockup} />
+            <ProjectIntro projectname='Book Blog' description='This is a full-stack application built with the PERN stack that allows users to discover, review, and take notes on their favorite books. Getting the data from the Open Library API, the application fetches dynamic book information cover images, ratings, and more.' srcname={Mockup} />
             <div className="tw-bg-yellow tw-mt-28 tw-py-20">
                 <div className="tw-container tw-mx-auto tw-flex tw-flex-col tw-justify-center tw-p-5">
                     <div className="md:tw-w-1/2">
                         <h3 className="tw-leading-10 tw-text-3xl md:tw-text-5xl  tw-text-black tw-font-boldonse md:tw-leading-[1.5]">And Their was a Great PERN!</h3>
                         <div className="tw-w-28"><hr className="tw-h-2 tw-bg-black"/> </div>
                         <div>
-                            <p className="md:tw-text-base lg:tw-text-xl xl:tw-text-3xl tw-text-black ">Harnessing the power of the PERN stack, this project is a testament to modern web development. By integrating PostgreSQL, Express, React, and Node.js, the application not only manages robust data interactions but also delivers a seamless, user-friendly experience. This section celebrates the strength and synergy of these technologies in building a dynamic book discovery platform.</p>
+                            <p className="md:tw-text-base lg:tw-text-xl xl:tw-text-3xl tw-text-black ">While grasping the power of the PERN stack, this project is a testament to it. By using PostgreSQL, Express, React, and Node.js, the application not only manages data interactions but also in a user friendly UI. This section highlights the strengths of these technologies in building a dynamic book blog.</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div className="tw-container tw-mx-auto tw-grid md:tw-grid-cols-2 lg:tw-grid-cols-4 ">
                 <div className="tw-bg-bluegreen tw-text-white tw-text-base tw-p-5">
-                    <Card  title="P" text="PostgreSQL: A reliable and powerful relational database that securely stores book entries and user-generated notes, ensuring data integrity and smooth performance."/>
+                    <Card  title="P" text="PostgreSQL: A relational database that stores data securing managed by PG Admin"/>
                 </div>
                 <div className="tw-bg-moreblue tw-text-white tw-text-base tw-p-5">
-                    <Card  title="E" text="Express: A lightweight, flexible web framework that simplifies our routing and middleware management, making it easy to create scalable, RESTful endpoints."/>
+                    <Card  title="E" text="Express: A flexible web framework that simplifies the routing and middleware management, making it easy to create RESTful endpoints."/>
                 </div>
                 <div className="tw-bg-yellow tw-text-base tw-p-5">
-                    <Card  title="R" text="React: The heart of our interactive user interface, React provides dynamic rendering and state management, enabling a responsive and engaging browsing experience."/>
+                    <Card  title="R" text="React: The heart interactive user interfaces, React provides dynamic rendering and state management. I used Next.js for this! "/>
                 </div>
                 <div className="tw-bg-orange tw-text-white tw-text-base tw-p-5">
-                    <Card  title="N" text="Node.js: An efficient runtime environment that drives our server-side logic, ensuring that all asynchronous operations and API interactions are handled seamlessly."/>
+                    <Card  title="N" text="NodeJS: Every developer knwos the power of Node. To be able to run javascript on your own computer. Obviousl, it allows us to be able to make these request to different endpoints"/>
                 </div>
             </div>
             <div className="tw-container tw-mx-auto tw-flex tw-flex-col lg:tw-flex-row tw-gap-2 tw-my-5">
                 <div className=" lg:tw-w-4/12 tw-flex tw-flex-col tw-justify-center tw-p-5">
                     <div className="tw-py-10">
-                        <h3 className="tw-text-3xl md:tw-text-5xl tw-text-bluegreen tw-font-boldonse">Postgres</h3>
+                        <h3 className="tw-text-3xl md:tw-text-5xl tw-text-bluegreen tw-font-boldonse">PostgreSQL</h3>
                         <div className="tw-w-28"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
                         <div>
-                            <p>PostgreSQL serves as the backbone of our data storage. It efficiently manages the book entries and accompanying user notes, offering robust querying capabilities and scalability. Its reliability and performance are critical in supporting the dynamic nature of the application.
+                            <p>PostgreSQL is the database I use for this project. It manages the book entries and the users' notes. Its reliability and the tables relationships are what drives supporting the dynamic nature of the application. You see two tables, entry and note, which both hold certain data. I have to establish a One-to Many relationship in order for the notes to load belonging to the entry selected. In the second photo, the data collected from Open Library API is being into the entry table.
                             </p>
                         </div>
                     </div>
@@ -86,7 +86,7 @@ const BookBlog = () => {
                         <h1 className=" tw-leading-10 tw-text-3xl md:tw-text-5xl tw-text-white tw-font-boldonse md:tw-leading-[1.5]  lg:tw-leading-[1.5]">Express and NodeJS</h1>
                         <div className="tw-w-28"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
                         <div>
-                            <p className="md:tw-text-base  tw-text-white">Express and Node.js work in tandem to power the server-side operations of Book Blog. Express simplifies the creation of RESTful APIs and streamlines the handling of HTTP requests, while Node.js provides a non-blocking, event-driven architecture that handles multiple concurrent operations with ease, ensuring smooth and reliable performance.</p>
+                            <p className="md:tw-text-base  tw-text-white">Express and Node.js handles the server-side operations of the Book Blog project. Express simplifies the use of RESTful APIs and the handling of HTTP requests. In the examples, I get the ISBN data from the client and use the data to make a get request to the open library API. To fetch things such as image covers, publishers, ratings, and more. I used the open library url to make the request, according to the documentation.</p>
                         </div>
                     </div>
                 </div>
@@ -103,7 +103,7 @@ const BookBlog = () => {
                         <h3 className="tw-text-2xl md:tw-text-4xl tw-text-orange tw-font-boldonse">RestFul API</h3>
                         <div className="tw-w-28"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
                         <div>
-                            <p className="md:tw-text-base  tw-text-black ">The RESTful API is the connective tissue of the application, enabling seamless communication between the frontend and backend. It supports all CRUD operations—from fetching book data and user notes to updating or deleting entries. This API not only ensures efficient data handling but also integrates external data from the Open Library API, enriching the overall user experience.</p>
+                            <p className="md:tw-text-base  tw-text-black ">The RESTful API is the connective tissue of the application, enabling  communication between the frontend and backend. It supports all CRUD operations—from fetching book data and user notes to updating or deleting entries. In the last photo, you see the id in the url depending on the entry selected which aligns with one of the routes in the photo above. </p>
                         </div>
                     </div>
                 </div>
@@ -125,7 +125,7 @@ const BookBlog = () => {
                 <div className="tw-flex tw-border-bluegreen tw-border-2 tw-flex-col lg:tw-flex-row">
                     <div className="tw-flex tw-flex-col tw-justify-center  lg:tw-w-4/12 tw-p-6 tw-py-14 md:tw-p-5">
                         <h3 className="tw-text-3xl md:tw-text-4xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5] tw-mb-5  lg:tw-leading-[1.5]">Initial Wireframing</h3>
-                        <p >This early stage focused on outlining the basic structure and user flows of the application. Early sketches and low-fidelity prototypes were created to visualize the core functionalities and to establish a solid foundation for further design iterations.</p>
+                        <p >This early stage focused on outlining the basic structure and user flows of the application. These sketches and low-fidelity prototypes were created to make a roadmap on how this site should look.</p>
                     </div>
                     <div className='lg:tw-w-8/12 tw-my-auto '>
                         <Carousel wireframeslides = {intialwireArray}/>
@@ -134,7 +134,7 @@ const BookBlog = () => {
                 <div className="tw-flex tw-border-bluegreen tw-border-2  tw-flex-col lg:tw-flex-row-reverse tw-my-5  ">
                     <div className="tw-flex tw-flex-col tw-justify-center   lg:tw-w-4/12   tw-p-6 tw-py-14 md:tw-p-3">
                         <h3 className="tw-leading-10 tw-text-3xl md:tw-text-4xl tw-text-bluegreen tw-font-boldonse tw-mb-5 md:tw-leading-[1.5] lg:tw-leading-[1.5]">Refined Wireframing</h3>
-                        <p>This early stage focused on outlining the basic structure and user flows of the application. Early sketches and low-fidelity prototypes were created to visualize the core functionalities and to establish a solid foundation for further design iterations.</p>
+                        <p>Next up. I wanted to get an idea where the UI would align and what would make the most sense since its a personal book blog. To keep record with anything, its good to always know where everything should be.</p>
                     </div>
                     <div className='lg:tw-w-8/12 tw-my-auto  '>
                         <Carousel wireframeslides = {middlewireArray}/>
@@ -143,7 +143,7 @@ const BookBlog = () => {
                 <div className="tw-flex tw-border-bluegreen tw-border-2  tw-flex-col lg:tw-flex-row md:tw-mt-0">
                     <div className="tw-flex tw-flex-col tw-justify-center  lg:tw-w-4/12 tw-p-6  md:tw-p-3">
                         <h3 className="tw-leading-10 tw-text-3xl md:tw-text-4xl tw-text-bluegreen tw-font-boldonse tw-mb-5 md:tw-leading-[1.5]  lg:tw-leading-[1.5]">Final Wireframing</h3>
-                        <p>In the final phase, all feedback and insights were incorporated to create a cohesive, high-fidelity design blueprint. The final wireframes reflect a polished interface where functionality and aesthetics merge, setting the stage for a seamless transition to the final development phase.</p>
+                        <p>In the final phase, all feedback and insights were incorporated to create a unified blueprint. The final wireframes reflect a good interface where the functionality and design come together, setting the stage for a good transition to the final development phase.</p>
                     </div>
                     <div className='lg:tw-w-8/12 tw-my-auto '>
                         <Carousel wireframeslides={finalwireArray}/>
