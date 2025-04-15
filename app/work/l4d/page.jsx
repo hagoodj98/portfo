@@ -183,7 +183,7 @@ export const metadata = {
             </div>
             <Responsive repsonsive={responsive} />
             <div className="tw-container tw-mx-auto tw-h-auto">
-                <div className="tw-mx-auto tw-w-2/3  tw-h-full ">
+                <div className="tw-mx-auto lg:tw-w-2/3  tw-h-full ">
                     <Video srclink='../video/L4Dfinalvid.mp4' />
                 </div>
             </div>
