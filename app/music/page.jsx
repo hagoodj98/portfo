@@ -201,7 +201,6 @@ export const metadata = {
                     </div>
                     <div className="tw-relative md:tw-w-1/2  tw-flex tw-justify-center md:tw-items-center md:tw-justify-normal ">
                         <div className=" tw-flex tw-flex-col md:tw-flex-row md:tw-flex-wrap tw-gap-3 tw-mx-auto tw-z-40">
-                            <p>(click each to zoom**)</p>
                             <div className="md:tw-w-1/2">
                                 <ImageZoom src={csrf} alt="the csrf check code" />
                             </div>
