@@ -121,7 +121,7 @@ const BookBlog = () => {
                 </div>
             </div>
             <div className="tw-container  tw-mx-auto">
-                <div className="tw-flex tw-border-bluegreen tw-border-2 tw-flex-col lg:tw-flex-row">
+                <div className="tw-flex  tw-flex-col lg:tw-flex-row">
                     <div className="tw-flex tw-flex-col tw-justify-center  lg:tw-w-4/12 tw-p-6 tw-py-14 md:tw-p-5">
                         <h3 className="tw-text-3xl md:tw-text-4xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5] tw-mb-5  lg:tw-leading-[1.5]">Initial Wireframing</h3>
                         <p >This early stage focused on outlining the basic structure and user flows of the application. These sketches and low-fidelity prototypes were created to make a roadmap on how this site should look.</p>
@@ -130,7 +130,7 @@ const BookBlog = () => {
                         <Carousel wireframeslides = {intialwireArray}/>
                     </div>
                 </div>
-                <div className="tw-flex tw-border-bluegreen tw-border-2  tw-flex-col lg:tw-flex-row-reverse tw-my-5  ">
+                <div className="tw-flex   tw-flex-col lg:tw-flex-row-reverse tw-my-5  ">
                     <div className="tw-flex tw-flex-col tw-justify-center   lg:tw-w-4/12   tw-p-6 tw-py-14 md:tw-p-3">
                         <h3 className="tw-leading-10 tw-text-3xl md:tw-text-4xl tw-text-bluegreen tw-font-boldonse tw-mb-5 md:tw-leading-[1.5] lg:tw-leading-[1.5]">Refined Wireframing</h3>
                         <p>Next up. I wanted to get an idea where the UI would align and what would make the most sense since its a personal book blog. To keep record with anything, its good to always know where everything should be.</p>
@@ -139,7 +139,7 @@ const BookBlog = () => {
                         <Carousel wireframeslides = {middlewireArray}/>
                     </div>
                 </div>
-                <div className="tw-flex tw-border-bluegreen tw-border-2  tw-flex-col lg:tw-flex-row md:tw-mt-0">
+                <div className="tw-flex  tw-flex-col lg:tw-flex-row md:tw-mt-0">
                     <div className="tw-flex tw-flex-col tw-justify-center  lg:tw-w-4/12 tw-p-6  md:tw-p-3">
                         <h3 className="tw-leading-10 tw-text-3xl md:tw-text-4xl tw-text-bluegreen tw-font-boldonse tw-mb-5 md:tw-leading-[1.5]  lg:tw-leading-[1.5]">Final Wireframing</h3>
                         <p>In the final phase, all feedback and insights were incorporated to create a unified blueprint. The final wireframes reflect a good interface where the functionality and design come together, setting the stage for a good transition to the final development phase.</p>

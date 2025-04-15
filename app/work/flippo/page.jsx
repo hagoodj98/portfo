@@ -21,7 +21,7 @@ export const metadata = {
                 <div className="tw-container tw-mx-auto tw-flex tw-flex-col md:tw-flex-row-reverse tw-gap-2 md:tw-h-[800px]">
                     <div className="tw-border-2 md:tw-w-1/2 tw-flex tw-flex-col tw-justify-center tw-p-5">
                         <div className="">
-                            <h1 className="tw-leading-10 tw-text-4xl lg:tw-text-5xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5] ">Meet Flippo, The Body Builder</h1>
+                            <h1 className="tw-leading-10 tw-text-3xl lg:tw-text-4xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]  lg:tw-leading-[1.5]  ">Meet Flippo, The Body Builder</h1>
                             <div className="tw-w-28"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
                             <div>
                                 <p className="md:tw-text-base lg:tw-text-xl xl:tw-text-3xl tw-text-black ">Storytelling is important, especially sticking with a concept. I got the opportunity to create a character. I create storyboards to tell a joke. A joke I mention below.</p>

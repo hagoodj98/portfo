@@ -141,7 +141,7 @@ export const metadata = {
                 </div>
             </div>
             <div className="tw-container tw-mx-auto ">
-                <div className=" tw-border-bluegreen tw-border-2 tw-flex tw-flex-col  lg:tw-flex-row  md:tw-mt-0">
+                <div className="  tw-flex tw-flex-col  lg:tw-flex-row  md:tw-mt-0">
                     <div className="tw-flex tw-flex-col tw-justify-center lg:tw-w-4/12 tw-p-6 tw-py-14 md:tw-p-3">
                         <h3 className="tw-leading-10 tw-text-3xl md:tw-text-4xl  tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]  lg:tw-leading-[1.5] tw-mb-5">Initial Wireframing </h3>
                         <p>During the initial wireframing phase, I focused on conceptualizing the core structure and layout of the site.</p>
@@ -152,7 +152,7 @@ export const metadata = {
                         <Carousel wireframeslides = {intialwireArray}/>
                     </div>
                 </div>
-                <div className="tw-border-bluegreen tw-border-2 tw-flex tw-flex-col lg:tw-flex-row-reverse  tw-my-5 ">
+                <div className=" tw-flex tw-flex-col lg:tw-flex-row-reverse  tw-my-5 ">
                     <div className="tw-flex tw-flex-col tw-justify-center lg:tw-w-4/12 tw-p-6  md:tw-p-3">
                         <h3 className="tw-leading-10 tw-text-3xl md:tw-text-4xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]  lg:tw-leading-[1.5] tw-mb-5">Refined Wireframing</h3>
                         <p>In the refined wireframing stage, I iterated on the initial sketches based on usability feedback and design principles.</p>
@@ -162,7 +162,7 @@ export const metadata = {
                         <Carousel wireframeslides = {middlewireArray}/>
                     </div>
                 </div>
-                <div className="tw-border-bluegreen tw-border-2 tw-flex tw-flex-col lg:tw-flex-row md:tw-mt-0">
+                <div className=" tw-flex tw-flex-col lg:tw-flex-row md:tw-mt-0">
                     <div className="tw-flex tw-flex-col tw-justify-center  lg:tw-w-4/12   tw-p-6 tw-py-14 md:tw-p-3">
                         <h3 className="tw-leading-10 tw-text-3xl md:tw-text-4xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]  lg:tw-leading-[1.5] tw-mb-5">Final Wireframing</h3>
                         <p>The final wireframing phase brought all the ideas and revisions together into a polished, high-fidelity blueprint.</p>
