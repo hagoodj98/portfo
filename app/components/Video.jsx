@@ -6,7 +6,7 @@ const Video = (props) => {
   
   return (
     <>
-        <video width="1020" height="440" controls preload="none">
+        <video width="1020" playsInline height="440" controls preload="none">
           <source src={props.srclink} type="video/mp4" />
           <track
             src="/path/to/captions.vtt"
