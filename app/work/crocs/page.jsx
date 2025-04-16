@@ -10,7 +10,7 @@ import personathree from '../../../public/persona3.png'
 import ProjectIntro from '../../components/ProjectIntro'
 import Responsive from "@/app/components/Responsive";
 import Personas from "@/app/components/Personas";
-
+import Link from "next/link";
 
 export const metadata = {
     title: "The Object",
@@ -64,6 +64,10 @@ export const metadata = {
             <div className="tw-container tw-mx-auto tw-h-auto">
                 <div className="tw-mx-auto lg:tw-w-2/3   tw-h-full ">
                     <Video srclink='../video/crocsfinalVID.mp4'/>
+                    
+                    <div>
+                        <Link href="https://hagoodj98.github.io/crocs/"> Project on Github</Link>
+                    </div>
                 </div>
             </div>
         </div>
