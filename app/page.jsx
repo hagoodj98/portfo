@@ -23,9 +23,9 @@ export default function Home() {
                     <ImageZoom src={me} alt="this is me"/>
                   </div>
                   <div className="tw-p-6 ">
-                    <div className="tw-mx-auto md:tw-w-1/3 tw-flex tw-flex-col tw-items-center">
+                    <div className="tw-mx-auto md:tw-w-2/3 tw-flex tw-flex-col tw-items-center">
                       <h1 className=" tw-text-4xl lg:tw-text-6xl tw-text-center tw-text-bluegreen tw-mb-5"> <span className="tw-font-boldonse">My Portfilio</span></h1>
-                      <p className=" tw-text-center md:tw-text-base">Hello! My name is Jaiquez Hagood and I am an web developer. I hope you enjoy exploring my recent work!😁</p>
+                      <p className=" tw-text-center md:tw-text-base md:tw-w-2/3">Hello! My name is Jaiquez Hagood and I am an web developer. I hope you enjoy exploring my recent work!😁</p>
                     </div>
                   </div>
                 </div>
