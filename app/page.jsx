@@ -1,13 +1,7 @@
 
 import React from "react";
 import Image from "next/image";
-import Button from "./components/Button";
 import me from '../public/IMG_1958.JPG'
-import Book from "../public/booknotesmockup.svg"
-import LeftDead from "../public/l4dmockup.svg" 
-import Crocs from "../public/crocsmockup.svg"
-import Riddle from "../public/riddlemockup.svg"
-import Flippo from "../public/flippo.svg";
 import anotherme from '../public/Mask group.png'
 import yellowlines from '../public/Group 33.svg'
 import ImageZoom from "@/app/components/ImageZoom";
@@ -43,7 +37,7 @@ export default function Home() {
                   <p className="tw-text-center lg:tw-text-left tw-text-white ">I am from Greenville, South Carolina and I graduated from Carolina High School in 2016 and have an assoicates degree from Greenville Technical College of 2018. I am a digital information design graduate from Winthrop University in 2021. I enjoy coding, producing music, and fishing.</p>
                 </div>
                 <div className=" tw-relative tw-w-64  lg:tw-w-fit tw-mx-auto">
-                  <ImageZoom src={anotherme} alt="another photo of me"/>
+                  <Image src={anotherme} alt="another photo of me"/>
                 </div>
                 <Image className="tw-absolute -tw-bottom-40 tw-left-9 md:tw-left-36 tw-w-14 lg:tw-w-16" src={yellowlines} alt="yellows lines"/>
               </div>
