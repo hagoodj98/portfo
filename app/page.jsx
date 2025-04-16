@@ -31,7 +31,7 @@ export default function Home() {
                   <div className="tw-p-6 ">
                     <div className="tw-mx-auto md:tw-w-2/3 tw-flex tw-flex-col tw-items-center">
                       <h1 className=" tw-text-4xl lg:tw-text-6xl tw-text-center tw-text-bluegreen tw-mb-5"> <span className="tw-font-boldonse">My Portfilio</span></h1>
-                      <p className=" tw-text-center md:tw-text-base">Hello! I’m an web developer developer. Thanks for stopping by. Take a look around, and I hope you enjoy exploring my recent work!😁</p>
+                      <p className=" tw-text-center md:tw-text-base">Hello! My name is Jaiquez Hagood and I am an web developer. I hope you enjoy exploring my recent work!😁</p>
                     </div>
                   </div>
                 </div>
@@ -40,7 +40,7 @@ export default function Home() {
               <div className="tw-container tw-mx-auto tw-relative tw-flex tw-flex-col-reverse lg:tw-flex-row  tw-p-10 md:tw-mt-[10px] md:tw-h-auto ">
                 <div className=" tw-flex tw-flex-col tw-py-8 tw-justify-center md:tw-col-span-2 tw-w-full md:tw-w-3/4 md:tw-ml-20">
                   <h2 className="tw-text-center lg:tw-text-left tw-text-3xl md:tw-text-5xl tw-text-white tw-font-boldonse tw-mb-5">About Me  </h2>
-                  <p className="tw-text-center lg:tw-text-left tw-text-white ">I am from Greenville, South Carolina and I am a digital information design graduate from Winthrop University. I love to code and I am a self release music artist and I am a mastering engineer.</p>
+                  <p className="tw-text-center lg:tw-text-left tw-text-white ">I am from Greenville, South Carolina and I graduated from Carolina High School in 2016 and have an assoicates degree from Greenville Technical College of 2018. I am a digital information design graduate from Winthrop University in 2021. I enjoy coding, producing music, and fishing.</p>
                 </div>
                 <div className=" tw-relative tw-w-64  lg:tw-w-fit tw-mx-auto">
                   <ImageZoom src={anotherme} alt="another photo of me"/>

@@ -33,7 +33,7 @@ export const metadata = {
 
     return (
         <div className="tw-py-20">
-            <ProjectIntro projectname='GamingSite' description='For this project, I chose to redesign a website alot of gamers know, the Left 4 Dead. A game I’m truly enjoy playing. The object was to create my own verison of the original site. I figured the original site (https://www.l4d.com/l4d/home.php) had potential but needed a modern update in terms of usability, good visual, and better user experience. My objective was to reimagine the site by integrating contemporary design principles while still reflecting the gritty, dynamic spirit of Left 4 Dead.' srcname={Mockup} />
+            <ProjectIntro projectname='GamingSite' description='For this project, I chose to redesign a website alot of gamers know, the Left 4 Dead. A game I truly enjoy playing. The objective was to create my own verison of the original site. I figured the original site (https://www.l4d.com/l4d/home.php) had potential but needed a modern update in terms of usability, good visual, and better user experience. My objective was to reimagine the site by integrating contemporary design principles while still reflecting the gritty, dynamic spirit of Left 4 Dead.' srcname={Mockup} />
 
             <Personas persona={persona} personatwo={personatwo} personathree={personathree} />
             <div className="tw-bg-yellow tw-mt-28 tw-py-20">
@@ -42,7 +42,7 @@ export const metadata = {
                         <h3 className="tw-leading-10 tw-text-3xl md:tw-text-5xl  tw-text-black tw-font-boldonse md:tw-leading-[1.5]">Technical Architecture</h3>
                         <div className="tw-w-28"><hr className="tw-h-2 tw-bg-black"/> </div>
                         <div>
-                            <p className="md:tw-text-base lg:tw-text-xl xl:tw-text-3xl tw-text-black ">The project uses Express and Node.js for the backend, with PostgreSQL managing relational data. It secures user credentials using bcrypt and Passport.js (passport-local) for authentication, while express-session and cookies maintain user sessions.</p>
+                            <p className="md:tw-text-base lg:tw-text-xl xl:tw-text-3xl tw-text-black ">The project uses Express and Node.js for the back-end, with PostgreSQL managing relational data. It secures user credentials using bcrypt and Passport.js (passport-local) for authentication, while express-session and cookies maintain user sessions.</p>
                         </div>
                     </div>
                 </div>
@@ -117,7 +117,7 @@ export const metadata = {
                         <h3 className="tw-leading-10 tw-text-3xl md:tw-text-5xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]  lg:tw-leading-[1.5]">Postgres One-to-Many Relationship</h3>
                         <div className="tw-w-28"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
                         <div>
-                            <p className="md:tw-text-base  tw-text-black ">You see the two tables users and post. These tables share a One to Many relationship which basically means one user can have multiple posts. If you see in the one table, on the far right you see whose post it belongs too. The user_id column is the id of the user who created the post.</p>
+                            <p className="md:tw-text-base  tw-text-black ">You see the two tables users and post. These tables share a One-to-Many relationship which basically means one user can have multiple posts. If you see in the one table, on the far right you see whose post it belongs too. The user_id column is the id of the user who created the post.</p>
                            
                         </div>
                     </div>
@@ -176,8 +176,11 @@ export const metadata = {
                 <h3 className="tw-text-2xl md:tw-text-3xl tw-text-bluegreen tw-font-boldonse tw-mb-5">Lessons Learned & Improvements:</h3>
                 <div className="md:tw-w-2/3">
                     <li>Future Enhancements: The project serves as a solid foundation for further iterations, with room for incorporating additional interactive features or integrating social components that engage the gaming community even more like a reply feature. </li>
+                    <br />
                     <li>One challenged faced was learning when to call an asynchronous function. Its important because it helps clean up redundant code on the backend.</li>
+                    <br />
                     <li>Another challenge was figuring out how can I make the login user's name dynamic using EJS. This site is from pure Express. Nextjs would be a great option with its unique capabilities.</li>
+                    <br />
                     <li>Learned about redis in another project. This would indeed speed of the load time expecially when a user logs in and wants to communicate with others. </li>
                 </div>
             </div>

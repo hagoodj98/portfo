@@ -31,7 +31,7 @@ const BookBlog = () => {
     
     return (
         <div className="tw-py-20">
-            <ProjectIntro projectname='Book Blog' description='This is a full-stack application built with the PERN stack that allows users to discover, review, and take notes on their favorite books. Getting the data from the Open Library API, the application fetches dynamic book information cover images, ratings, and more.' srcname={Mockup} />
+            <ProjectIntro projectname='Book Blog' description='This is a full-stack application built with the PERN stack that allows users to discover, review, and take notes on their favorite books. Getting the data from the Open Library API, the application fetches dynamic book information such as cover images, ratings, and more.' srcname={Mockup} />
             <div className="tw-bg-yellow tw-mt-28 tw-py-20">
                 <div className="tw-container tw-mx-auto tw-flex tw-flex-col tw-justify-center tw-p-5">
                     <div className="md:tw-w-1/2">
@@ -54,7 +54,7 @@ const BookBlog = () => {
                     <Card  title="R" text="React: The heart interactive user interfaces, React provides dynamic rendering and state management. I used Next.js for this! "/>
                 </div>
                 <div className="tw-bg-orange tw-text-white tw-text-base tw-p-5">
-                    <Card  title="N" text="NodeJS: Every developer knwos the power of Node. To be able to run javascript on your own computer. Obviousl, it allows us to be able to make these request to different endpoints"/>
+                    <Card  title="N" text="NodeJS: Every developer knows the power of Node. To be able to run javascript on your own computer. Obviously, it allows us to be able to make these request to different endpoints"/>
                 </div>
             </div>
             <div className="tw-container tw-mx-auto tw-flex tw-flex-col lg:tw-flex-row tw-gap-2 tw-my-5">
@@ -63,7 +63,7 @@ const BookBlog = () => {
                         <h3 className="tw-text-3xl md:tw-text-5xl tw-text-bluegreen tw-font-boldonse">PostgreSQL</h3>
                         <div className="tw-w-28"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
                         <div>
-                            <p>PostgreSQL is the database I use for this project. It manages the book entries and the users' notes. Its reliability and the tables relationships are what drives supporting the dynamic nature of the application. You see two tables, entry and note, which both hold certain data. I have to establish a One-to Many relationship in order for the notes to load belonging to the entry selected. In the second photo, the data collected from Open Library API is being into the entry table.
+                            <p>PostgreSQL is the database I use for this project. It manages the book entries and the users' notes. Its reliability and the tables relationships are what drives supporting the dynamic nature of the application. You see two tables, entry and note, which both hold certain data. I have to establish a One-to-Many relationship in order for the notes to load belonging to the entry selected. In the second photo, the data collected from Open Library API is being into the entry table.
                             </p>
                         </div>
                     </div>
@@ -85,7 +85,7 @@ const BookBlog = () => {
                         <h1 className=" tw-leading-10 tw-text-3xl md:tw-text-5xl tw-text-white tw-font-boldonse md:tw-leading-[1.5]  lg:tw-leading-[1.5]">Express and NodeJS</h1>
                         <div className="tw-w-28"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
                         <div>
-                            <p className="md:tw-text-base  tw-text-white">Express and Node.js handles the server-side operations of the Book Blog project. Express simplifies the use of RESTful APIs and the handling of HTTP requests. In the examples, I get the ISBN data from the client and use the data to make a get request to the open library API. To fetch things such as image covers, publishers, ratings, and more. I used the open library url to make the request, according to the documentation.</p>
+                            <p className="md:tw-text-base  tw-text-white">Express and Node.js handles the server-side operations of the Book Blog project. Express simplifies the use of RESTful APIs and the handling of HTTP requests. In the examples, I get the ISBN data from the client and use the data to make a GET request to the Open Library API to fetch image covers, publishers, ratings, and more. I used the Open Library URL to make the request, according to the documentation.</p>
                         </div>
                     </div>
                 </div>
@@ -102,7 +102,7 @@ const BookBlog = () => {
                         <h3 className="tw-text-2xl md:tw-text-4xl tw-text-orange tw-font-boldonse">RestFul API</h3>
                         <div className="tw-w-28"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
                         <div>
-                            <p className="md:tw-text-base  tw-text-black ">The RESTful API is the connective tissue of the application, enabling  communication between the frontend and backend. It supports all CRUD operations—from fetching book data and user notes to updating or deleting entries. In the last photo, you see the id in the url depending on the entry selected which aligns with one of the routes in the photo above. </p>
+                            <p className="md:tw-text-base  tw-text-black ">The RESTful API is the connective tissue of the application, enabling communication between the front-end and back-end. It supports all CRUD operations—from fetching book data and user notes to updating or deleting entries. In the last photo, you see the id in the url depending on the entry selected which aligns with one of the routes in the photo above. </p>
                         </div>
                     </div>
                 </div>
@@ -153,9 +153,9 @@ const BookBlog = () => {
                 <h3 className="tw-text-2xl md:tw-text-3xl md:tw-mt-0 tw-text-bluegreen tw-font-boldonse">Lessons Learned & Improvements:</h3>
                 <div className="md:tw-w-2/3">
                 <br />
-                    <li>I can write each endpoint inside of an api folder instead of creating a separate server folder. That way I can write the same backend logic within that endpoint. I thought I needed a separate server to run the endpoints but I learned you can do the same thing in Express using Nextjs. Thus simplifying the architecture. This was my first rodeo, using Nextjs on an project.</li>
+                    <li>I can write each endpoint inside of an api folder instead of creating a separate server folder. That way I can write the same back-end logic within that endpoint. I thought I needed a separate server to run the endpoints, but I learned you can do the same thing in Express using Nextjs; thus simplifying the architecture. This was my first rodeo, using Nextjs on a project.</li>
                     <br />
-                    <li>A challenge when dealing with the Open Library API is coming up with a way to handle the json body so that it would not break the code. When reading the documentation, you get a glimspe of the kind of payload you can expect to get. But it does not always appear that way. </li>
+                    <li>A challenge when dealing with the Open Library API is coming up with a way to handle the json body so that it would not break the code. When reading the documentation, you get a glimspe of the kind of payload you can expect to get, but it does not always appear that way. </li>
                 </div>
             </div>
             <Responsive repsonsive={repsonsive} />

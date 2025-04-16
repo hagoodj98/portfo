@@ -45,7 +45,7 @@ export const metadata = {
     
     return (
         <div className="tw-py-20">
-            <ProjectIntro projectname='Fan Funnel' description='This is a full-funnel web application designed for people who likes my music. The goal is to capture subscribers for my running campaigns, buying a fan pack, and joining my patreon.' srcname={MusicCover} />
+            <ProjectIntro projectname='Fan Funnel' description='This is a full-funnel web application designed for people who like my music. The goal is to capture subscribers for my running campaigns, buying a fan pack, and joining my patreon.' srcname={MusicCover} />
 
             <Personas persona={persona} personatwo={personatwo} personathree={personathree} />
             
@@ -164,7 +164,7 @@ export const metadata = {
                         <div>
                             <p>Separate endpoints for handling Stripe and Mailchimp webhooks, updating subscriber tags, and updating session data accordingly. In the subscription endpoint at the beginning, once data is processed, the endpoint makes an API request to mailchimp. Mailchimp sends a confirmation email to the user. I have a mailchimp webhook that lets me know when user confirmed email.</p>
                             <p>If they do, then change the user status to subscribed and save the data back into redis. The /check-status endpoint checks this.</p>
-                            <p>If a stripe session is created, I have a stripe webhook to listen for any events that happen, such as checkout expiry, or completion. If the session was completed, then take the data like shipping address, from the session and make an additional API call to mailchimp to update the tag for that user. </p>
+                            <p>If a stripe session is created, I have a stripe webhook to listen for any events that happen, such as checkout expiry, or completion. If the session was completed, then take the shipping address, from the session and make an additional API call to mailchimp to update the tag for that user. </p>
                         </div>
                     </div>
                 </div>
@@ -194,7 +194,7 @@ export const metadata = {
                                 <p>Use of HTTPS, CSRF tokens, and HMAC (with salt) to secure email data. Environment variable management for sensitive API keys.</p>
                                 <p>Redis has a endpoint I use to ensure data is stored security on redis cloud, a paid subscription.</p>
                                 <p>CSRF tokens are used to ensure request being made is from a legit user. For example, if a user clicks the buy button, that endpoint first checks if the CSRF matches with what is stored in redis. If they do not match, do not proceed with the request.</p>
-                                <p>Stripe has an way to check if they payload actually comes from stripe by using the webhook secret key. Stripe request must also be sent over HTTPS, otherwise it will fail.</p>
+                                <p>Stripe has a way to check if the payload actually comes from stripe by using the webhook secret key. Stripe request must also be sent over HTTPS, otherwise it will fail.</p>
                             </div>
                         </div>
                         
@@ -343,7 +343,7 @@ export const metadata = {
                 <div className="tw-flex tw-flex-col lg:tw-flex-row md:tw-mt-0 ">
                     <div className="tw-flex tw-flex-col tw-justify-center  lg:tw-w-4/12 tw-p-6 tw-py-14 md:tw-p-3">
                         <h3 className="tw-leading-10 tw-text-3xl md:tw-text-4xl tw-font-boldonse md:tw-leading-[1.5] tw-text-bluegreen">Final Wireframing</h3>
-                        <p>Every aspect—from typography and color schemes to responsive layouts and interactive behaviors—was concerning a moodboard I created myself. Which intels how do I want my music to sound and do I stand for.</p>
+                        <p>Every aspect—from typography and color schemes to responsive layouts and interactive behaviors—was concerning a moodboard I created myself using pinterest. The moodboard intels how I want my music to sound and what I stand for.</p>
                     </div>
                     <div className='lg:tw-w-8/12 tw-my-auto '>
                         <Carousel wireframeslides={finalwireArray}/>

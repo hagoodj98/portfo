@@ -26,7 +26,7 @@ export const metadata = {
     console.log(middlewireArray);
     return (
         <div className="tw-py-20">
-            <ProjectIntro projectname='The Object' description='The objective was to choose an object that people care about. Given my background in child care, alot of kids and teens wore these shoes. So I wanted to create a simple website just for them.' srcname={Mockup} />
+            <ProjectIntro projectname='The Object' description='The objective was to choose an object that people care about. Given my background in child care, alot of kids and teens wore these shoes. I wanted to create a simple website just for them.' srcname={Mockup} />
             <Personas persona={persona} personatwo={personatwo} personathree={personathree} />
             <div className="tw-container tw-mx-auto tw-my-20">
                 <div className="  tw-flex tw-flex-col lg:tw-flex-row">
