@@ -358,6 +358,8 @@ export const metadata = {
                     <br />
                     <li>I am currently working to get all of the legal documents together such as privacy policies and terms of use.</li>
                     <br />
+                    <li>Trying to get the toast messages to appear when apprioprate. When you refresh the landing page, the toast message keeps appearing. Even on mobile, when a user refreshes the home page the same message appears.</li>
+                    <br />
                     <li>Definitely learned about the power of redis and its intuitiveness when handling sessions.</li>
                     <br />
                     <li>Learned about webhooks. It is important to always check and validate the webhook to ensure it is coming from a place I expect.</li>
