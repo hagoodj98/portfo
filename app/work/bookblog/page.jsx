@@ -162,6 +162,9 @@ const BookBlog = () => {
             <div className="tw-container tw-mx-auto tw-h-auto ">
                 <div className="tw-mx-auto lg:tw-w-2/3  tw-h-full ">
                    <Video srclink='../video/booknotesfinalVID.mp4' /> 
+                   <div>
+                        <Link href="https://github.com/hagoodj98/book_blog"> Project on Github</Link>
+                    </div>
                 </div>
             </div>
         </div>

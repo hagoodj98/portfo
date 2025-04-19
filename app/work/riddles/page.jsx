@@ -51,7 +51,7 @@ export const metadata = {
                 <div className="tw-mx-auto  lg:tw-w-2/3  tw-h-full ">
                     <Video srclink='../video/RiddlesVID.mp4'/>
                     <div>
-                        <Link href="https://github.com/hagoodj98/publicapiriddle/tree/main"> Project on Github</Link>
+                        <Link href="https://github.com/hagoodj98/publicapiriddle"> Project on Github</Link>
                     </div>
                 </div>
             </div>
