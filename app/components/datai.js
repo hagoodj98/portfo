@@ -368,6 +368,67 @@ var poller = [
     },
     
 ]
+var initalScheduler = [
+    {
+        id: 1,
+        subtitle: "test one here ",
+        caption: "this is the caption",
+        image: "/schedulei1.png"
+    },
+    {
+        id: 2,
+        subtitle: "test two here ",
+        caption: "this is the caption",
+        image: "/schedulei2.png"
+    },
+    {
+        id: 3,
+        subtitle: "test three here ",
+        caption: "this is the caption",
+        image: "/schedulei3.png"
+    },
+]
+var middleScheduler = [
+    {
+        id: 1,
+        subtitle: "test one here ",
+        caption: "this is the caption",
+        image: "/schedulem1.png"
+    },
+    {
+        id: 2,
+        subtitle: "test two here ",
+        caption: "this is the caption",
+        image: "/schedulem2.png"
+    },
+    {
+        id: 3,
+        subtitle: "test three here ",
+        caption: "this is the caption",
+        image: "/schedulem3.png"
+    },
+]
+var finalScheduler = [
+    {
+        id: 1,
+        subtitle: "test one here ",
+        caption: "this is the caption",
+        image: "/schedulef1.png"
+    },
+    {
+        id: 2,
+        subtitle: "test two here ",
+        caption: "this is the caption",
+        image: "/schedulef2.png"
+    },
+    {
+        id: 3,
+        subtitle: "test three here ",
+        caption: "this is the caption",
+        image: "/schedulef3.png"
+    },
+]
 
-export default { bookInitial, bookMiddle, bookFinal, initialLeft4Dead, middleLeft4Dead, finalLeft4Dead, initialCroc, middleCroc, finalCroc, initialRiddle, finalRiddle, initialFunnel, refinedFunnel, finalFunnel, storyBoarding, poller};
+
+export default { bookInitial, bookMiddle, bookFinal, initialLeft4Dead, middleLeft4Dead, finalLeft4Dead, initialCroc, middleCroc, finalCroc, initialRiddle, finalRiddle, initialFunnel, refinedFunnel, finalFunnel, storyBoarding, poller, initalScheduler, middleScheduler, finalScheduler};
 

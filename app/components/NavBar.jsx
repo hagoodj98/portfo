@@ -56,6 +56,7 @@ const NavBar = () => {
                 <NavDropdown.Item href="/work/crocs">Crocs</NavDropdown.Item>
                 <NavDropdown.Item href="/work/riddles">Riddles</NavDropdown.Item>
                 <NavDropdown.Item href="/work/flippo">Flippo</NavDropdown.Item>
+                <NavDropdown.Item href="/work/scheduler">Scheduler</NavDropdown.Item>
               </NavDropdown>
               <Nav.Item>
                 <Nav.Link href="/music">Fan Funnel</Nav.Link>
