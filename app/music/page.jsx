@@ -74,9 +74,9 @@ export const metadata = {
                 </div>
             </div>
             <div className="tw-container tw-mx-auto tw-flex tw-flex-col lg:tw-flex-row tw-gap-2 tw-my-10">
-                <div className="tw-border-2 lg:tw-w-4/12 tw-flex tw-flex-col tw-justify-center tw-p-5">
+                <div className=" lg:tw-w-4/12 tw-flex tw-flex-col tw-justify-center tw-p-5">
                     <div className="tw-py-10">
-                        <h3 className="tw-leading-10 tw-text-3xl md:tw-text-5xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5] ">Stack Overview</h3>
+                        <h3 className="tw-leading-10 tw-text-xl md:tw-text-2xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5] ">Stack Overview</h3>
                         <div className="tw-w-28"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
                         <div>
                             <p>Frontend: Next.js 13, React, Material UI, Tailwind CSS
@@ -101,7 +101,7 @@ export const metadata = {
             <div className="tw-container tw-mx-auto tw-flex tw-flex-col lg:tw-flex-row tw-gap-2 tw-my-10">
                 <div className=" lg:tw-w-4/12 tw-flex tw-flex-col tw-justify-center tw-p-5">
                     <div className="tw-py-10">
-                        <h4 className="tw-leading-10 tw-text-2xl md:tw-text-3xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5] ">Subscription Endpoint</h4>
+                        <h4 className="tw-leading-10 tw-text-xl md:tw-text-2xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5] ">Subscription Endpoint</h4>
                         <div className="tw-w-28"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
                         <div>
                             <p>Handles initial subscriber registration, stores data in a preliminary sessionin Redis, and triggers email confirmation via mailchimp.</p>
@@ -119,7 +119,7 @@ export const metadata = {
             <div className="tw-container tw-mx-auto tw-flex tw-flex-col lg:tw-flex-row tw-gap-2 tw-my-10">
                 <div className=" lg:tw-w-4/12 tw-flex tw-flex-col tw-justify-center tw-p-5">
                     <div className="tw-py-10">
-                        <h4 className=" tw-leading-10 tw-text-2xl md:tw-text-3xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5] ">Email Confirmation Endpoint</h4>
+                        <h4 className=" tw-leading-10 tw-text-xl md:tw-text-2xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5] ">Email Confirmation Endpoint</h4>
                         <div className="tw-w-28"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
                         <div>
                             <p>Polls to confirm email subscriptions and activates sessions. The /check-status endpoint checks the status of the user. If subscribed, issue sessionToken and CSRF cookies and along with an active session. The email comonponent polls this endpoint every ten seconds to see if the user's status is subscribed. If so, then redirect to the landing page.  </p>
@@ -140,7 +140,7 @@ export const metadata = {
             <div className="tw-container tw-mx-auto tw-flex tw-flex-col lg:tw-flex-row-reverse tw-gap-2 tw-my-10">
                 <div className=" lg:tw-w-4/12 tw-flex tw-flex-col tw-justify-center tw-p-5">
                     <div className="tw-py-10">
-                        <h4 className="tw-leading-10 tw-text-2xl md:tw-text-3xl tw-text-bluegreen tw-font-boldonse  md:tw-leading-[1.5]">Checkout Session Endpoint</h4>
+                        <h4 className="tw-leading-10 tw-text-xl md:tw-text-2xl tw-text-bluegreen tw-font-boldonse  md:tw-leading-[1.5]">Checkout Session Endpoint</h4>
                         <div className="tw-w-28"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
                         <div>
                             <p>Integrates with Stripe for payment processing and handles checkout status updates via webhooks. On the landing page, if user hits the buy fan pack button, then this endpoint will create a stripe checkoutsessison from Stripe's API docs.</p>
@@ -158,7 +158,7 @@ export const metadata = {
             <div className="tw-container tw-mx-auto tw-flex tw-flex-col lg:tw-flex-row tw-gap-2 tw-my-10">
                 <div className=" lg:tw-w-4/12 tw-flex tw-flex-col tw-justify-center tw-p-5">
                     <div className="tw-py-10">
-                        <h4 className="tw-leading-10 tw-text-2xl md:tw-text-3xl tw-text-bluegreen tw-font-boldonse  md:tw-leading-[1.5]">Webhook Endpoints</h4>
+                        <h4 className="tw-leading-10 tw-text-xl md:tw-text-2xl tw-text-bluegreen tw-font-boldonse  md:tw-leading-[1.5]">Webhook Endpoints</h4>
                         <div className="tw-w-28"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
                         <div>
                             <p>Separate endpoints for handling Stripe and Mailchimp webhooks, updating subscriber tags, and updating session data accordingly. In the subscription endpoint at the beginning, once data is processed, the endpoint makes an API request to mailchimp. Mailchimp sends a confirmation email to the user. I have a mailchimp webhook that lets me know when user confirmed email.</p>
@@ -187,7 +187,7 @@ export const metadata = {
                 <div className="tw-container tw-mx-auto tw-flex tw-flex-col md:tw-flex-row-reverse tw-gap-2 ">
                     <div className=" md:tw-w-1/2  tw-flex tw-flex-col tw-justify-center tw-p-5">
                         <div className="tw-py-10 md:tw-py-0">
-                            <h3 className="tw-text-2xl md:tw-text-3xl tw-text-bluegreen tw-font-boldonse">Security Measures</h3>
+                            <h3 className="tw-text-xl md:tw-text-2xl tw-text-bluegreen tw-font-boldonse">Security Measures</h3>
                             <div className="tw-w-28"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
                             <div>
                                 <p>Use of HTTPS, CSRF tokens, and HMAC (with salt) to secure email data. Environment variable management for sensitive API keys.</p>
@@ -215,10 +215,10 @@ export const metadata = {
                 <div className="tw-container tw-mx-auto tw-flex tw-flex-col md:tw-flex-row tw-gap-2 ">
                     <div className=" md:tw-w-1/2 lg:tw-w-8/12 tw-flex tw-flex-col tw-justify-center tw-p-5">
                         <div className="tw-py-10 md:tw-py-0">
-                            <h3 className="tw-leading-10 tw-text-2xl md:tw-text-3xl  tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]">Performance & Optimization</h3>
+                            <h3 className="tw-leading-10 tw-text-xl md:tw-text-2xl  tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]">Performance & Optimization</h3>
                             <div className="tw-w-28"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
                             <div>
-                                <p className="">Production build optimizations with Next.js. Tailwind purged configuration ensures only used classes are included in the final build.</p>
+                                <p>Production build optimizations with Next.js. Tailwind purged configuration ensures only used classes are included in the final build.</p>
                             </div>
                         </div>
                     </div>
@@ -250,7 +250,7 @@ export const metadata = {
             <div className="tw-container tw-mx-auto tw-flex tw-flex-col lg:tw-flex-row tw-gap-2 tw-my-10">
                 <div className=" lg:tw-w-4/12 tw-flex tw-flex-col tw-justify-center tw-p-5">
                     <div className="tw-py-10">
-                        <h1 className="tw-leading-10 tw-text-3xl md:tw-text-4xl tw-text-bluegreen tw-font-boldonse  md:tw-leading-[1.5]">Subscription Flow</h1>
+                        <h1 className="tw-leading-10 tw-text-xl md:tw-text-2xl tw-text-bluegreen tw-font-boldonse  md:tw-leading-[1.5]">Subscription Flow</h1>
                         <div className="tw-w-28"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
                         <div>
                             <p>The subscription process begins when a user signs up by entering their name and email address. Once submitted, the system stores preliminary session data in Redis and triggers an email confirmation using Mailchimp. A dedicated polling mechanism continually checks for the confirmation response. Once the email is verified, the subscriber’s status is updated, and their session is officially activated. This flow ensures that only genuine subscribers move forward in the funnel.</p>
@@ -268,7 +268,7 @@ export const metadata = {
             <div className="tw-container tw-mx-auto tw-flex tw-flex-col lg:tw-flex-row-reverse tw-gap-2 tw-my-10">
                 <div className=" lg:tw-w-4/12 tw-flex tw-flex-col tw-justify-center tw-p-5">
                     <div className="tw-py-10">
-                        <h3 className="tw-leading-10 tw-text-3xl md:tw-text-4xl tw-text-bluegreen tw-font-boldonse  md:tw-leading-[1.5]">Session Management</h3>
+                        <h3 className="tw-leading-10 tw-text-xl md:tw-text-2xl tw-text-bluegreen tw-font-boldonse  md:tw-leading-[1.5]">Session Management</h3>
                         <div className="tw-w-28"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
                         <div>
                             <p>Sessions are managed using Redis, which securely stores user data with configurable time-to-live (TTL) values ranging from a brief 15 minutes for casual sessions to a full week for users opting to be remembered. </p>
@@ -290,7 +290,7 @@ export const metadata = {
             <div className="tw-container tw-mx-auto tw-flex tw-flex-col lg:tw-flex-row tw-gap-2 tw-my-10">
                 <div className=" lg:tw-w-4/12 tw-flex tw-flex-col tw-justify-center tw-p-5">
                     <div className="tw-py-10">
-                        <h3 className="tw-leading-10 tw-text-3xl md:tw-text-4xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]">Checkout Integration</h3>
+                        <h3 className="tw-leading-10 tw-text-xl md:tw-text-2xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]">Checkout Integration</h3>
                         <div className="tw-w-28"><hr className="tw-h-2 tw-bg-bluegreen"/></div>
                         <div>
                             <p>According to the docs, line 73 is how a stripe session is created. I return the session id. If the id exists, then a stripe session was created successfully.</p>
@@ -314,7 +314,7 @@ export const metadata = {
                 </div>
             </div>
             <div className="tw-container tw-py-10 tw-mx-auto tw-p-5">
-                <h3 className="tw-text-3xl md:tw-text-5xl tw-text-bluegreen tw-font-boldonse">Overview of the process</h3>
+                <h3 className="tw-text-xl md:tw-text-2xl tw-text-bluegreen tw-font-boldonse">Overview of the process</h3>
                 <div className="tw-w-48"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
                 <div className="tw-w-full tw-p-4">
                     <ImageZoom src={funneldiagram} alt="diagram of how the funnel processes data"/>
@@ -323,7 +323,7 @@ export const metadata = {
             <div className="tw-container tw-mx-auto">
                 <div className="tw-flex tw-flex-col lg:tw-flex-row">
                     <div className="tw-flex tw-flex-col tw-justify-center  lg:tw-w-4/12 tw-p-6 tw-py-14 md:tw-p-3">
-                        <h3 className="tw-leading-10 tw-text-3xl md:tw-text-4xl tw-font-boldonse md:tw-leading-[1.5] tw-text-bluegreen">Initial Wireframing</h3>
+                        <h3 className="tw-leading-10 tw-text-xl md:tw-text-2xl tw-font-boldonse md:tw-leading-[1.5] tw-text-bluegreen">Initial Wireframing</h3>
                         <p>In the initial phase, the focus was on brainstorming and mapping out the fundamental layout and user flow for the Music Funnel application. This stage involved sections such as the subscription form, email confirmation process, session indicators, and checkout integration.</p>
                     </div>
                     <div className='lg:tw-w-8/12 tw-my-auto '>
@@ -332,7 +332,7 @@ export const metadata = {
                 </div>
                 <div className="tw-flex tw-flex-col lg:tw-flex-row-reverse  md:tw-mt-0">
                     <div className="tw-flex tw-flex-col tw-justify-center  lg:tw-w-4/12 tw-p-6 tw-py-14 md:tw-p-3">
-                        <h3 className="tw-leading-10 tw-text-3xl md:tw-text-4x tw-font-boldonse md:tw-leading-[1.5] tw-text-bluegreen">Refined Wireframing</h3>
+                        <h3 className="tw-leading-10 tw-text-xl md:tw-text-2xl tw-font-boldonse md:tw-leading-[1.5] tw-text-bluegreen">Refined Wireframing</h3>
                         <p>Building on the initial sketches, the refined wireframing stage involved incorporating early user feedback and applying modern UI/UX principles.</p>
                     </div>
                     <div className='lg:tw-w-8/12 tw-my-auto'>
@@ -341,7 +341,7 @@ export const metadata = {
                 </div>
                 <div className="tw-flex tw-flex-col lg:tw-flex-row md:tw-mt-0 ">
                     <div className="tw-flex tw-flex-col tw-justify-center  lg:tw-w-4/12 tw-p-6 tw-py-14 md:tw-p-3">
-                        <h3 className="tw-leading-10 tw-text-3xl md:tw-text-4xl tw-font-boldonse md:tw-leading-[1.5] tw-text-bluegreen">Final Wireframing</h3>
+                        <h3 className="tw-leading-10 tw-text-xl md:tw-text-2xl tw-font-boldonse md:tw-leading-[1.5] tw-text-bluegreen">Final Wireframing</h3>
                         <p>Every aspect—from typography and color schemes to responsive layouts and interactive behaviors—was concerning a moodboard I created myself using pinterest. The moodboard intels how I want my music to sound and what I stand for.</p>
                     </div>
                     <div className='lg:tw-w-8/12 tw-my-auto '>
@@ -350,7 +350,7 @@ export const metadata = {
                 </div>
             </div>
             <div className="tw-container  md:tw-py-0 tw-p-6  md:tw-p-3 tw-mx-auto">
-                <h3 className="tw-leading-10 tw-text-2xl md:tw-text-3xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]">Lessons Learned & Improvements:</h3>
+                <h3 className="tw-leading-10 tw-text-xl md:tw-text-2xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]">Lessons Learned & Improvements:</h3>
                 <div className="md:tw-w-2/3">
                 <br />
                     <li>I will improve the quality of the landing and thank you page videos.</li>
@@ -366,6 +366,7 @@ export const metadata = {
             </div>
             <Responsive repsonsive={repsonsive} />
             <div className="tw-container tw-mx-auto tw-h-auto ">
+                <h3 className="tw-text-2xl md:tw-text-3xl tw-text-bluegreen tw-font-boldonse tw-mb-5">Final Demo...</h3>
                 <div className="tw-mx-auto lg:tw-w-2/3  tw-h-full ">
                    <Video srclink='../video/funnelvid.mp4' />
                    <h3 className=" tw-leading-10 tw-text-bluegreen tw-p-10 tw-font-boldonse md:tw-leading-[1.5]">Like my music? You can <span className="tw-inline-block"><ProjectLink link="https://jaiquezmusic.com" linktext="join the family"/></span> </h3> 

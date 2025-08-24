@@ -58,7 +58,7 @@ const BookBlog = () => {
             <div className="tw-container tw-mx-auto tw-flex tw-flex-col lg:tw-flex-row tw-gap-2 tw-my-5">
                 <div className=" lg:tw-w-4/12 tw-flex tw-flex-col tw-justify-center tw-p-5">
                     <div className="tw-py-10">
-                        <h3 className="tw-text-3xl md:tw-text-5xl tw-text-bluegreen tw-font-boldonse">PostgreSQL</h3>
+                        <h3 className="tw-text-xl md:tw-text-2xl tw-text-bluegreen tw-font-boldonse">PostgreSQL</h3>
                         <div className="tw-w-28"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
                         <div>
                             <p>PostgreSQL is the database I use for this project. It manages the book entries and the users' notes. Its reliability and the tables relationships are what drives supporting the dynamic nature of the application. You see two tables, entry and note, which both hold certain data. I have to establish a One-to-Many relationship in order for the notes to load belonging to the entry selected. In the second photo, the data collected from Open Library API is being into the entry table.
@@ -80,7 +80,7 @@ const BookBlog = () => {
             <div className="tw-container tw-mx-auto tw-flex tw-flex-col lg:tw-flex-row tw-gap-2 ">
                 <div className=" tw-bg-orange  lg:tw-w-4/12 tw-flex tw-flex-col tw-justify-center tw-p-5">
                     <div className="tw-py-10">
-                        <h1 className=" tw-leading-10 tw-text-3xl md:tw-text-5xl tw-text-white tw-font-boldonse md:tw-leading-[1.5]  lg:tw-leading-[1.5]">Express and NodeJS</h1>
+                        <h1 className=" tw-leading-10 tw-text-xl md:tw-text-2xl tw-text-white tw-font-boldonse md:tw-leading-[1.5]  lg:tw-leading-[1.5]">Express and NodeJS</h1>
                         <div className="tw-w-28"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
                         <div>
                             <p className="md:tw-text-base  tw-text-white">Express and Node.js handles the server-side operations of the Book Blog project. Express simplifies the use of RESTful APIs and the handling of HTTP requests. In the examples, I get the ISBN data from the client and use the data to make a GET request to the Open Library API to fetch image covers, publishers, ratings, and more. I used the Open Library URL to make the request, according to the documentation.</p>
@@ -97,7 +97,7 @@ const BookBlog = () => {
             <div className="tw-container tw-mt-2 tw-mx-auto tw-flex tw-flex-col md:tw-flex-row-reverse tw-gap-2 ">
                 <div className=" md:tw-w-1/2 lg:tw-w-8/12 tw-flex tw-flex-col tw-justify-center tw-p-5">
                     <div className="tw-py-10 md:tw-py-0">
-                        <h3 className="tw-text-2xl md:tw-text-4xl tw-text-orange tw-font-boldonse">RestFul API</h3>
+                        <h3 className="tw-text-xl md:tw-text-2xl tw-text-orange tw-font-boldonse">RestFul API</h3>
                         <div className="tw-w-28"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
                         <div>
                             <p className="md:tw-text-base  tw-text-black ">The RESTful API is the connective tissue of the application, enabling communication between the front-end and back-end. It supports all CRUD operations—from fetching book data and user notes to updating or deleting entries. In the last photo, you see the id in the url depending on the entry selected which aligns with one of the routes in the photo above. </p>
@@ -112,7 +112,7 @@ const BookBlog = () => {
                 </div>
             </div>
             <div className="tw-container tw-py-10 tw-mx-auto tw-p-5">
-                <h3 className="tw-text-3xl md:tw-text-5xl tw-text-bluegreen tw-font-boldonse">Overview of the process</h3>
+                <h3 className="tw-text-xl md:tw-text-2xl tw-text-bluegreen tw-font-boldonse">Overview of the process</h3>
                 <div className="tw-w-48"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
                 <div className="tw-w-full tw-p-4">
                     <ImageZoom src={booknote} alt="map of endpoints and integration" />
@@ -121,25 +121,25 @@ const BookBlog = () => {
             <div className="tw-container tw-mx-auto">
                 <div className="tw-flex  tw-flex-col lg:tw-flex-row">
                     <div className="tw-flex tw-flex-col tw-justify-center  lg:tw-w-4/12 tw-p-6 tw-py-14 md:tw-p-5">
-                        <h3 className="tw-text-3xl md:tw-text-4xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5] tw-mb-5  lg:tw-leading-[1.5]">Initial Wireframing</h3>
+                        <h3 className="tw-text-xl md:tw-text-2xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5] tw-mb-5  lg:tw-leading-[1.5]">Initial Wireframing</h3>
                         <p >This early stage focused on outlining the basic structure and user flows of the application. These sketches and low-fidelity prototypes were created to make a roadmap on how this site should look.</p>
                     </div>
                     <div className='lg:tw-w-8/12 tw-my-auto '>
                         <Carousel wireframeslides = {intialwireArray}/>
                     </div>
                 </div>
-                <div className="tw-flex   tw-flex-col lg:tw-flex-row-reverse tw-my-5  ">
-                    <div className="tw-flex tw-flex-col tw-justify-center   lg:tw-w-4/12   tw-p-6 tw-py-14 md:tw-p-3">
-                        <h3 className="tw-leading-10 tw-text-3xl md:tw-text-4xl tw-text-bluegreen tw-font-boldonse tw-mb-5 md:tw-leading-[1.5] lg:tw-leading-[1.5]">Refined Wireframing</h3>
+                <div className="tw-flex tw-flex-col lg:tw-flex-row-reverse tw-my-5  ">
+                    <div className="tw-flex tw-flex-col tw-justify-center lg:tw-w-4/12  tw-p-6 tw-py-14 md:tw-p-3">
+                        <h3 className="tw-leading-10 tw-text-xl md:tw-text-2xl tw-text-bluegreen tw-font-boldonse tw-mb-5 md:tw-leading-[1.5] lg:tw-leading-[1.5]">Refined Wireframing</h3>
                         <p>Next up. I wanted to get an idea where the UI would align and what would make the most sense since its a personal book blog. To keep record with anything, its good to always know where everything should be.</p>
                     </div>
                     <div className='lg:tw-w-8/12 tw-my-auto  '>
                         <Carousel wireframeslides = {middlewireArray}/>
                     </div>
                 </div>
-                <div className="tw-flex  tw-flex-col lg:tw-flex-row md:tw-mt-0">
-                    <div className="tw-flex tw-flex-col tw-justify-center  lg:tw-w-4/12 tw-p-6  md:tw-p-3">
-                        <h3 className="tw-leading-10 tw-text-3xl md:tw-text-4xl tw-text-bluegreen tw-font-boldonse tw-mb-5 md:tw-leading-[1.5]  lg:tw-leading-[1.5]">Final Wireframing</h3>
+                <div className="tw-flex tw-flex-col lg:tw-flex-row md:tw-mt-0">
+                    <div className="tw-flex tw-flex-col tw-justify-center lg:tw-w-4/12 tw-p-6 md:tw-p-3">
+                        <h3 className="tw-leading-10 tw-text-xl md:tw-text-2xl tw-text-bluegreen tw-font-boldonse tw-mb-5 md:tw-leading-[1.5]  lg:tw-leading-[1.5]">Final Wireframing</h3>
                         <p>In the final phase, all feedback and insights were incorporated to create a unified blueprint. The final wireframes reflect a good interface where the functionality and design come together, setting the stage for a good transition to the final development phase.</p>
                     </div>
                     <div className='lg:tw-w-8/12 tw-my-auto '>

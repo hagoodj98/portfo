@@ -31,7 +31,7 @@ export default function Home() {
             <div className="tw-relative tw-bg-gradient-to-t tw-from-moreblue tw-to-bluegreen  ">
               <div className="tw-container tw-mx-auto tw-relative tw-flex tw-flex-col-reverse lg:tw-flex-row  tw-p-10 md:tw-mt-[10px] md:tw-h-auto ">
                 <div className=" tw-flex tw-flex-col tw-py-8 tw-justify-center md:tw-col-span-2 tw-w-full md:tw-w-3/4 md:tw-ml-20">
-                  <h2 className="tw-text-center lg:tw-text-left tw-text-3xl md:tw-text-5xl tw-text-white tw-font-boldonse tw-mb-5">About Me</h2>
+                  <h2 className="tw-text-center lg:tw-text-left tw-text-xl md:tw-text-2xl tw-text-white tw-font-boldonse tw-mb-5">About Me</h2>
                   <p className="tw-text-center lg:tw-text-left tw-text-white ">I am from Greenville, South Carolina and I graduated from Carolina High School in 2016 and have an assoicates degree from Greenville Technical College of 2018. I am a digital information design graduate from Winthrop University in 2021. I enjoy coding, producing music, and fishing.</p>
                 </div>
                 <div className=" tw-relative tw-w-64  lg:tw-w-fit tw-mx-auto">
@@ -43,7 +43,7 @@ export default function Home() {
             <div className="tw-container tw-mx-auto tw-mt-32">
               <div className="tw-grid sm:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-3 tw-w-full ">
                 <div className="tw-order-first md:tw-order-none tw-flex tw-justify-center tw-items-center tw-my-auto">
-                    <h2 className="tw-text-3xl md:tw-text-5xl tw-mx-auto tw-py-10 tw-text-bluegreen tw-font-boldonse">Works</h2>
+                    <h2 className="tw-text-xl md:tw-text-3xl tw-mx-auto tw-py-10 tw-text-bluegreen tw-font-boldonse">Works</h2>
                 </div>
                 <div className="tw-h-[290px] tw-group tw-relative tw-overflow-hidden tw-bg-[url('../public/booknotesmockup.svg')] tw-bg-no-repeat tw-bg-center tw-bg-cover">
                   <a href="/work/bookblog">

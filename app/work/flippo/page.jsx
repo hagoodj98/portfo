@@ -40,12 +40,12 @@ export const metadata = {
             </div>
             <div className="tw-container tw-mx-auto tw-p-5">
                 <div className=" tw-my-10">
-                    <h2 className=" tw-leading-10 tw-text-end tw-text-3xl md:tw-text-5xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5] tw-mb-5">.....A character in the making</h2>
+                    <h2 className=" tw-leading-10 tw-text-end tw-text-xl md:tw-text-2xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5] tw-mb-5">.....A character in the making</h2>
                     <ImageZoom src={Character} alt="Flippo from all angles"/>
                 </div>
                 <div className=" tw-mx-auto ">
                     <div className=' tw-my-auto '>
-                        <h2 className="tw-text-2xl md:tw-text-4xl tw-text-bluegreen tw-mb-5 tw-font-boldonse">StoryBoarding.....</h2>
+                        <h2 className="tw-text-xl md:tw-text-2xl tw-text-bluegreen tw-mb-5 tw-font-boldonse">StoryBoarding.....</h2>
                         <ImageZoom src={Storyboards} alt="storyboards"/>
                     </div>
                 </div>
@@ -57,6 +57,7 @@ export const metadata = {
                     <p className="tw-text-center"><span className="tw-font-semibold">Interesting fact:</span> Flippo parties at least 12 times a week and works out about 15 hours everyday of the week.</p>
                 </div>
                 <div className="tw-container tw-mx-auto tw-h-full">
+                    <h3 className="tw-text-2xl md:tw-text-3xl tw-text-bluegreen tw-font-boldonse tw-mb-5">Final Demo...</h3>
                     <div className="tw-mx-auto lg:tw-w-2/3 tw-border-2 tw-h-full ">
                         <Video srclink='../video/fba1-376a-48c9-8b1a-c3ececf9d855.mp4' />
                         <div>
