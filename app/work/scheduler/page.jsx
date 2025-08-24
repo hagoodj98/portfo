@@ -1,23 +1,29 @@
 import React from "react";
-import persona from '../../../public/persona4.svg'
-import personatwo from '../../../public/persona5.svg'
-import personathree from '../../../public/persona6.svg'
-import Mockup from "../../../public/l4dmockup.svg" 
+import persona from '../../../public/sarah.png';
+import personatwo from '../../../public/miguel.png';
+import personathree from '../../../public/priya.png'
+import Mockup from "../../../public/smock.png" 
 import Carousel from "@/app/components/Carousel";
 import  infoData  from "../../components/datai";
-import password from '../../../public/Screenshot 2025-04-03 at 10.23.22 PM.png';
-import responsive from '../../../public/l4d.png'
+import Card from '../../components/Card';
 import Video from '../../components/Video';
-import hash from '../../../public/hashingpassword.png'
 import ProjectIntro from '../../components/ProjectIntro'
 import Personas from "@/app/components/Personas";
-import Responsive from "@/app/components/Responsive";
 import ImageZoom from "@/app/components/ImageZoom";
-import passport from '../../../public/Screenshot 2025-04-03 at 10.07.37 PM.png'
-import passporttwo from '../../../public/Screenshot 2025-04-03 at 10.07.06 PM.png';
-import postgresproof from '../../../public/Screenshot 2025-04-03 at 10.41.27 PM.png'
-import postgresrelation from '../../../public/Group7.svg'
-import diagram from '../../../public/l4ddiagram.svg';
+import diagram from '../../../public/scheduleroverview.svg';
+import futurescheduler from '../../../public/soontobecalendarf.png';
+import poll from '../../../public/poll.png';
+import changesfunction from '../../../public/changefunction.png';
+import cronfunctionuses from '../../../public/cronfucntionuses.png';
+import markpending from '../../../public/markpending.png';
+import mytasksfunction from '../../../public/mytasks.png';
+import prefilling from '../../../public/prefillone.png';
+import prefillingtwo from '../../../public/prefillingtwo.png';
+import prefillingthree from '../../../public/prefillingthree.png'
+import productionformdata from '../../../public/productionformdata.png';
+import tablestructure from '../../../public/newtablestructure.png';
+import recharts from '../../../public/recharts.png';
+import Link from "next/link";
 
 const scheduler = () => {
     const intialwireArray = infoData.initalScheduler;
@@ -26,165 +32,256 @@ const scheduler = () => {
 
   return (
     <div className="tw-py-20">
-        <ProjectIntro projectname='Schedule Jobs' description='For this project, I chose to redesign a website alot of gamers know, the Left 4 Dead. A game I truly enjoy playing. The objective was to create my own verison of the original site. I figured the original site (https://www.l4d.com/l4d/home.php) had potential but needed a modern update in terms of usability, good visual, and better user experience. My objective was to reimagine the site by integrating contemporary design principles while still reflecting the gritty, dynamic spirit of Left 4 Dead.' srcname={Mockup} />
-
-<Personas persona={persona} personatwo={personatwo} personathree={personathree} />
-<div className="tw-bg-yellow tw-mt-28 tw-py-20">
-    <div className="tw-container tw-mx-auto tw-flex tw-flex-col tw-justify-center tw-p-5">
-        <div className="md:tw-w-1/2">
-            <h3 className="tw-leading-10 tw-text-3xl md:tw-text-5xl  tw-text-black tw-font-boldonse md:tw-leading-[1.5]">Technical Architecture</h3>
-            <div className="tw-w-28"><hr className="tw-h-2 tw-bg-black"/> </div>
+        <ProjectIntro projectname='Schedule Jobs' description='The purpose of this project was to design and develop a production scheduling system that could streamline how jobs are created, assigned, and tracked across different assembly lines. Traditional scheduling methods—like spreadsheets or paper-based logs—often lead to errors, double bookings, and inefficiencies when coordinating multiple jobs. It was built to provide clarity on job statuses in real time (Available → Scheduled → Busy). ' srcname={Mockup} />
+        <Personas persona={persona} personatwo={personatwo} personathree={personathree} />
+        <div className="tw-bg-yellow tw-mt-28 tw-py-20">
+            <div className="tw-container tw-mx-auto tw-flex tw-flex-col tw-justify-center tw-p-5">
+                <div className="md:tw-w-1/2">
+                    <h3 className="tw-leading-10 tw-text-3xl md:tw-text-5xl  tw-text-black tw-font-boldonse md:tw-leading-[1.5]">Technical Architecture</h3>
+                    <div className="tw-w-28"><hr className="tw-h-2 tw-bg-black"/> </div>
+                    <div>
+                        <p className="md:tw-text-base lg:tw-text-xl xl:tw-text-3xl tw-text-black ">The project uses Node-Cron alongside the useSWR to populate the table data with the assistance of tanstack table. There is a predefined list of resources, that has an in-memory presence on the back-end. As far as the front-end is concerned, the project uses:</p>
+                        <ul className="tw-list-disc">
+                            <li>Framework: Next.js (React-based) for fast rendering and routing.</li>
+                            <li>State Management: React Context and hooks for managing slot selection, pending jobs, and real-time updates.</li>
+                            <li>Data Validation: Zod schemas to ensure input correctness (time slots, resources, etc.) before submission.</li>
+                            <li>UI Components: Built with React and styled using TailwindCSS, with reusable form components for job selection and scheduling.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div className="tw-container tw-mx-auto tw-flex tw-flex-col lg:tw-flex-row tw-gap-2 tw-my-5">
+            <div className=" lg:tw-w-4/12 tw-flex tw-flex-col tw-justify-center tw-p-5">
+                <div className="tw-py-10">
+                    <h3 className="tw-leading-10 tw-text-3xl md:tw-text-5xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]">Tanstack Table Structure</h3>
+                    <div className="tw-w-28"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
+                    <div>
+                        <p className="md:tw-text-base ">Firstly, I created a table definition that is built on data, rows, and columns. The data should be what's already prefined somewehere in the app; however, if there was some change to that prefined data such as Availablity then the table will render such. The columns are built by the separate data file where I can dyanmically create more columns by adding to the time slots array. Then the rows model allows us to transform the data in useful ways  for data grid features like sorting/filterings.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div className="tw-relative  lg:tw-w-8/12  tw-flex tw-justify-center md:tw-items-center md:tw-justify-normal ">
+                <div className="tw-w-full tw-flex tw-flex-col tw-gap-3  tw-mx-auto ">
+                    <div>
+                        <ImageZoom src={tablestructure}  alt="tanstack table"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div className="tw-container tw-mx-auto tw-flex tw-flex-col lg:tw-flex-row tw-gap-2">
+            <div className=" lg:tw-w-4/12 tw-flex tw-flex-col tw-justify-center tw-p-5">
+                <div className="tw-py-10">
+                    <h3 className=" tw-leading-10 tw-text-3xl md:tw-text-5xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]">UseSWR </h3>
+                    <div className="tw-w-28"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
+                    <div>
+                        <p className="md:tw-text-base  tw-text-black ">As before I mentioned that the table relies on data. And that's where useSWR comes in. By default, the table renders in the original data, that is where all jobs have available slots in their respected time slot. With the help of useSWR, it listens for any real-time updates to the status change, depending on the current time. In the case where has been a recent change in the data, then useSWR will bring that new data into the table component and the table will no longer render the original data, but the updates.</p>
+                    </div>
+                </div>
+            </div>
+            <div className="tw-relative  lg:tw-w-8/12  tw-flex tw-justify-center md:tw-items-center md:tw-justify-normal ">
+                <div className="tw-w-full tw-flex tw-flex-col tw-gap-3  tw-mx-auto ">
+                    <div>
+                        <ImageZoom src={poll}  alt="tanstack table"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div className="tw-container tw-mx-auto tw-flex tw-flex-col lg:tw-flex-row-reverse tw-gap-2 ">
+            <div className=" lg:tw-w-4/12 tw-flex tw-flex-col tw-justify-center tw-p-5">
+                <div className="tw-py-10">
+                    <h3 className="tw-leading-10 tw-text-3xl md:tw-text-5xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]  lg:tw-leading-[1.5]">Form Data</h3>
+                    <div className="tw-w-28"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
+                        <div>
+                            <p className="md:tw-text-base  tw-text-black ">There are two endpoints that hanlde the data in the form. One is mark-pending, where if the user does not submit the form but fills in all fields, then that data gets sent to the endpoint thats responsible for only adding to an array and changing the status from Available - Pending. The other endpoint, schedule-task, expects data from the form itself alongside the cell id, in which the user selected before being routed to the form page. This endpoint changes the status from Pending to Scheduled, then adds the data to an array that node-cron will use to know when to change the status apprioprately. 
+                            </p>
+                        </div>
+                </div>
+            </div>
+            <div className="tw-relative  lg:tw-w-8/12  tw-flex tw-justify-center md:tw-items-center md:tw-justify-normal ">
+                <div className="tw-w-full tw-flex tw-flex-col tw-gap-3  tw-mx-auto ">
+                    <div>
+                        <ImageZoom src={markpending} alt="markpending endpoint"/>
+                    </div>
+                    <div>
+                        <ImageZoom src={productionformdata} alt="the productionform"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div className="tw-container tw-mx-auto tw-flex tw-flex-col lg:tw-flex-row-reverse tw-gap-2 ">
+            <div className=" lg:tw-w-4/12 tw-flex tw-flex-col tw-justify-center tw-p-5">
+                <div className="tw-py-10">
+                    <h3 className="tw-leading-10 tw-text-3xl md:tw-text-5xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]  lg:tw-leading-[1.5]">...myTask</h3>
+                    <div className="tw-w-28"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
+                        <div>
+                            <p className="md:tw-text-base  tw-text-black ">After the data is processed in the schedule-task endpoint, it calls a function that is responsible for later processing by node-cron.
+                            </p>
+                        </div>
+                </div>
+            </div>
+            <div className="tw-relative  lg:tw-w-8/12  tw-flex tw-justify-center md:tw-items-center md:tw-justify-normal ">
+                <div className="tw-w-full tw-flex tw-flex-col tw-gap-3  tw-mx-auto ">
+                    <div>
+                        <ImageZoom src={mytasksfunction} alt="the mytask function" />
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <div className="tw-container tw-mx-auto tw-flex tw-flex-col lg:tw-flex-row tw-gap-2">
+            <div className=" lg:tw-w-4/12 tw-flex tw-flex-col tw-justify-center tw-p-5">
+                <div className="tw-py-10">
+                    <h3 className=" tw-leading-10 tw-text-3xl md:tw-text-5xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]">node-cron</h3>
+                    <div className="tw-w-28"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
+                    <div>
+                        <p className="md:tw-text-base  tw-text-black ">node-cron runs in the background of the app. It makes a POST request to the schedule-task endpoint and retrieves the array that the myTasks function adds the data to. Cron then passes that array to another function, loopThroughScheduledJobs, which gets each item in the array and pass it to one final function, changeStatuses. Finally, changeStatuses compares the time slot from the user and the current time, then changes the statuses apprioprately.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div className="tw-relative  lg:tw-w-8/12  tw-flex tw-justify-center md:tw-items-center md:tw-justify-normal ">
+                <div className="tw-w-full tw-flex tw-flex-col tw-gap-3  tw-mx-auto ">
+                    <div>
+                        <ImageZoom src={cronfunctionuses}  alt="function cron uses"/>
+                    </div>
+                    <div>
+                        <ImageZoom src={changesfunction}  alt="changes function"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div className="tw-bg-yellow tw-mt-28 tw-py-20">
+            <div className="tw-container tw-mx-auto tw-flex tw-flex-col tw-justify-center tw-p-5">
+                <div className="md:tw-w-1/2">
+                    <h1 className="tw-leading-10 tw-text-3xl md:tw-text-5xl tw-text-black tw-font-boldonse  md:tw-leading-[1.5]">Features and Functionality</h1>
+                    <div className="tw-w-28"><hr className="tw-h-2 tw-bg-black"/> </div>
+                    <div>
+                        <p className="md:tw-text-base lg:tw-text-xl xl:tw-text-3xl tw-text-black ">To further enhance the user experience for the user I incorporated a couple features to make the application more intuitive.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div className="tw-container tw-mx-auto tw-grid md:tw-grid-cols-2  ">
+            <div className="tw-bg-bluegreen tw-text-white tw-text-base tw-p-5">
+                <Card  title="Prefilling form" text="The form prefills the last inputed data selected by the user before submitting. That way the client does not have to remember what they selected to which job."/>
+            </div>
+            <div className="tw-bg-moreblue tw-text-white tw-text-base tw-p-5">
+                <Card  title="Data Visual" text="This gives users a quick view on which jobs have availablilty."/>
+            </div>
+        </div>
+        <div className="tw-container tw-mx-auto tw-flex tw-flex-col lg:tw-flex-row tw-gap-2">
+            <div className=" lg:tw-w-4/12 tw-flex tw-flex-col tw-justify-center tw-p-5">
+                <div className="tw-py-10">
+                    <h3 className=" tw-leading-10 tw-text-3xl md:tw-text-5xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]"> RechartsJS</h3>
+                    <div className="tw-w-28"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
+                    <div>
+                        <p className="md:tw-text-base  tw-text-black ">React has a library that is Reliable, Composable, and powerful. All you would do is choose an apprioprate chart and incorporate the data with the chart. Recharts are used by its data variable. And all I did was keep track of how many Available statuses there are. And since useSWR listens for real-time updates, the chart changes automatically.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div className="tw-relative  lg:tw-w-8/12  tw-flex tw-justify-center md:tw-items-center md:tw-justify-normal ">
+                <div className="tw-w-full tw-flex tw-flex-col tw-gap-3  tw-mx-auto ">
+                    <div>
+                        <ImageZoom src={recharts}  alt="recharts setup"/>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+        <div className="tw-container tw-mx-auto tw-flex tw-flex-col lg:tw-flex-row tw-gap-2 tw-my-10">
+            <div className=" lg:tw-w-4/12 tw-flex tw-flex-col tw-justify-center tw-p-5">
+                <div className="tw-py-10">
+                    <h3 className="tw-leading-10 tw-text-3xl md:tw-text-4xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]">Prefilling the form</h3>
+                    <div className="tw-w-28"><hr className="tw-h-2 tw-bg-bluegreen"/></div>
+                    <div>
+                        <p>Remember the mark-pending endpoint adds the validated data to an array, a pending array. Then I have a context that I use to set whatever the poll-resource endpoint gives me from the backend. The cell I select, I want to find in the pending array, if there is a match, then I want to retrieve the existing properties of that item. With the help of the context, I share state with the production form component to load that data in its apprioprate fields.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            <div className="tw-relative lg:tw-w-8/12  tw-flex tw-justify-center md:tw-items-center md:tw-justify-normal ">
+                <div className="tw-w-full tw-flex tw-flex-col md:tw-flex-row md:tw-flex-wrap tw-gap-3  tw-mx-auto ">
+                    <div className="md:tw-w-1/2">
+                        <ImageZoom src={prefilling} alt="the api call to create stripe checkout"/>
+                    </div>
+                    <div className="md:tw-w-1/3">
+                        <ImageZoom src={prefillingtwo} alt="the front end getting the session id from endpoint"/>
+                    </div>
+                    <div className="md:tw-w-1/3">
+                        <ImageZoom src={prefillingthree} alt="the front end getting the session id from endpoint"/>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div className="tw-container tw-py-10 tw-mx-auto tw-p-5">
+            <h3 className="tw-text-3xl md:tw-text-5xl tw-text-bluegreen tw-font-boldonse">Overview of the process</h3>
+            <div className="tw-w-48"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
+            <div className="tw-w-full tw-p-4">
+                <ImageZoom src={diagram} alt="diagram of endpoints"/>
+            </div>
+        </div>
+        <div className="tw-container tw-mx-auto ">
+            <div className="  tw-flex tw-flex-col  lg:tw-flex-row  md:tw-mt-0">
+                <div className="tw-flex tw-flex-col tw-justify-center lg:tw-w-4/12 tw-p-6 tw-py-14 md:tw-p-3">
+                    <h3 className="tw-leading-10 tw-text-3xl md:tw-text-4xl  tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]  lg:tw-leading-[1.5] tw-mb-5">Initial Wireframing </h3>
+                    <p>For something that was a challenge I envisioned the application to have about three pages. Dashboard, a way to veiw orders, and the form itself.</p>
+                </div>
+                <div className='lg:tw-w-8/12 tw-my-auto '>
+                    <Carousel wireframeslides = {intialwireArray}/>
+                </div>
+            </div>
+            <div className=" tw-flex tw-flex-col lg:tw-flex-row-reverse  tw-my-5 ">
+                <div className="tw-flex tw-flex-col tw-justify-center lg:tw-w-4/12 tw-p-6  md:tw-p-3">
+                    <h3 className="tw-leading-10 tw-text-3xl md:tw-text-4xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]  lg:tw-leading-[1.5] tw-mb-5">Refined Wireframing</h3>
+                    <p>Continued iteration, of the simple work flow I desired for the app.</p>
+                    
+                </div>
+                <div className='lg:tw-w-8/12 tw-my-auto '>
+                    <Carousel wireframeslides = {middlewireArray}/>
+                </div>
+            </div>
+            <div className=" tw-flex tw-flex-col lg:tw-flex-row md:tw-mt-0">
+                <div className="tw-flex tw-flex-col tw-justify-center  lg:tw-w-4/12 tw-p-6 tw-py-14 md:tw-p-3">
+                    <h3 className="tw-leading-10 tw-text-3xl md:tw-text-4xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]  lg:tw-leading-[1.5] tw-mb-5">Final Wireframing</h3>
+                    <p>The color scheme derived from the colors I chose for the chart, given the amount of jobs/resources were prefined in the app.</p>
+                </div>
+                <div className='lg:tw-w-8/12 tw-my-auto '>
+                    <Carousel wireframeslides={finalwireArray}/>
+                </div>
+            </div>
+        </div>
+        <div className="tw-container tw-p-6 md:tw-p-3 tw-my-5 tw-mx-auto">
+            <h3 className="tw-text-2xl md:tw-text-3xl tw-text-bluegreen tw-font-boldonse tw-mb-5">Lessons Learned & Improvements:</h3>
+            <div className="md:tw-w-2/3">
+                <li> I'd like to incorporate color coding depending on the status of the job.</li>
+                <li> Right now, the data is stored within the application. I manage the data in a storage via PostgreSql, where users can add jobs to and load in the app.
+                </li>
+                <li>I learned the importance of when to access state. Before I gotten the prefilling to work, I tried setting the state and accessing it. But in React, you cannot access state in the same render.</li>
+                <br />
+            </div>
+        </div>
+        <div className="tw-container tw-mx-auto tw-p-6 md:tw-p-3 tw-my-5">
+            <h3 className="tw-text-2xl md:tw-text-3xl tw-text-bluegreen tw-font-boldonse tw-mb-5">The future version will look similar to...</h3>
             <div>
-                <p className="md:tw-text-base lg:tw-text-xl xl:tw-text-3xl tw-text-black ">The project uses Express and Node.js for the back-end, with PostgreSQL managing relational data. It secures user credentials using bcrypt and Passport.js (passport-local) for authentication, while express-session and cookies maintain user sessions.</p>
+                <ImageZoom src={futurescheduler} alt="photo of what the future project might look"/>
             </div>
         </div>
-    </div>
-</div>
-<div className="tw-container tw-mx-auto tw-flex tw-flex-col lg:tw-flex-row tw-gap-2 tw-my-5">
-    <div className=" lg:tw-w-4/12 tw-flex tw-flex-col tw-justify-center tw-p-5">
-        <div className="tw-py-10">
-            <h3 className="tw-leading-10 tw-text-3xl md:tw-text-5xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]">Password Security</h3>
-            <div className="tw-w-28"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
-            <div>
-                <p className="md:tw-text-base ">Password security is a critical component of the project, achieved by using bcrypt for hashing passwords. When users register, their passwords are hashed using bcrypt with a defined number of salt rounds, ensuring that even if the database is compromised, the raw passwords remain protected. During login, the application compares the hashed version of the entered password with the stored hash, which provides a healthy defense against brute-force attacks and other common threats.
-                </p>
+       
+        <div className="tw-container tw-mx-auto tw-h-auto">
+            <h3 className="tw-text-2xl md:tw-text-3xl tw-text-bluegreen tw-font-boldonse tw-mb-5">Final Demo...</h3>
+            <div className="tw-mx-auto lg:tw-w-2/3  tw-h-full ">
+                <Video srclink='../video/schedulerdemo.mp4' />
+                <div>
+                    <Link href="https://github.com/hagoodj98/production-order-scheduler"> Project on Github</Link>
+                </div>
             </div>
         </div>
-    </div>
-    <div className="tw-relative  lg:tw-w-8/12  tw-flex tw-justify-center md:tw-items-center md:tw-justify-normal ">
-        <div className="tw-w-full tw-flex tw-flex-col tw-gap-3  tw-mx-auto ">
-            <div>
-                <ImageZoom src={password}   alt="database relationship"/>
-            </div>
-            <div>
-                <ImageZoom src={hash}  alt="data being sent to the database "/>
-            </div>
-        </div>
-    </div>
-</div>
-<div className="tw-container tw-mx-auto tw-flex tw-flex-col lg:tw-flex-row tw-gap-2">
-    <div className=" lg:tw-w-4/12 tw-flex tw-flex-col tw-justify-center tw-p-5">
-        <div className="tw-py-10">
-            <h3 className=" tw-leading-10 tw-text-3xl md:tw-text-5xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]">Sessions and cookies</h3>
-            <div className="tw-w-28"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
-            <div>
-                <p className="md:tw-text-base  tw-text-black ">In the L4D project, session management is implemented using the express-session. This middleware creates and manages session data on the server, while a signed cookie (secured with a secret key) is sent to the client. This cookie allows the application to maintain persistent sessions across HTTP requests, so authenticated users remain logged in as they navigate through the site.
-                </p>
-            </div>
-        </div>
-    </div>
-    <div className="tw-relative  lg:tw-w-8/12  tw-flex tw-justify-center md:tw-items-center md:tw-justify-normal ">
-        <div className="tw-w-full tw-flex tw-flex-col tw-gap-3  tw-mx-auto ">
-            <div className=" tw-flex tw-items-center">
-                <Video srclink='../video/cookie_session.mp4' />
-            </div>
-        </div>
-    </div>
-</div>
-<div className="tw-container tw-mx-auto tw-flex tw-flex-col lg:tw-flex-row-reverse tw-gap-2 ">
-    <div className=" lg:tw-w-4/12 tw-flex tw-flex-col tw-justify-center tw-p-5">
-        <div className="tw-py-10">
-            <h3 className="tw-leading-10 tw-text-3xl md:tw-text-5xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]  lg:tw-leading-[1.5]">Passport-local and Session Handling</h3>
-            <div className="tw-w-28"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
-            <div>
-                <p className="md:tw-text-base  tw-text-black ">User authentication is managed via Passport.js using the passport-local strategy. This lightweight strategy handles username and password authentication by querying the PostgreSQL database for the user record. When a user attempts to log in, bcrypt verifies the entered password against the stored hashed password. </p>
-                <p>After successful authentication, serializeUser is used to determine what user information should be stored in the session (typically the user ID or essential user details). Conversely, deserializeUser retrieves the full user information from the session on subsequent requests. This mechanism ensures that user sessions are maintained securely and efficiently, providing a seamless experience across the application.
-                </p>
-            </div>
-        </div>
-    </div>
-    <div className="tw-relative  lg:tw-w-8/12  tw-flex tw-justify-center md:tw-items-center md:tw-justify-normal ">
-        <div className="tw-w-full tw-flex tw-flex-col tw-gap-3  tw-mx-auto ">
-            <div>
-                <ImageZoom src={passport}   alt="database relationship"/>
-            </div>
-            <div>
-                <ImageZoom src={passporttwo}  alt="data being sent to the database "/>
-            </div>
-        </div>
-    </div>
-</div>
-<div className="tw-container tw-mx-auto tw-flex tw-flex-col lg:tw-flex-row-reverse tw-gap-2 tw-my-5">
-    <div className="  tw-flex tw-flex-col tw-justify-center tw-p-5">
-        <div className="tw-py-10">
-            <h3 className="tw-leading-10 tw-text-3xl md:tw-text-5xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]  lg:tw-leading-[1.5]">Postgres One-to-Many Relationship</h3>
-            <div className="tw-w-28"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
-            <div>
-                <p className="md:tw-text-base  tw-text-black ">You see the two tables users and post. These tables share a One-to-Many relationship which basically means one user can have multiple posts. If you see in the one table, on the far right you see whose post it belongs too. The user_id column is the id of the user who created the post.</p>
-               
-            </div>
-        </div>
-    </div>
-    <div className="tw-relative    tw-flex tw-justify-center md:tw-items-center md:tw-justify-normal ">
-        <div className="tw-w-full tw-flex tw-flex-col tw-gap-3  tw-mx-auto ">
-            <div >
-                <ImageZoom src={postgresproof} alt="data stored in postgres"/>
-            </div>
-            <div>
-                <ImageZoom src={postgresrelation} alt="table relationship" />
-            </div>
-        </div>
-    </div>
-</div>
-<div className="tw-container tw-py-10 tw-mx-auto tw-p-5">
-    <h3 className="tw-text-3xl md:tw-text-5xl tw-text-bluegreen tw-font-boldonse">Overview of the process</h3>
-    <div className="tw-w-48"><hr className="tw-h-2 tw-bg-bluegreen"/> </div>
-    <div className="tw-w-full tw-p-4">
-        <ImageZoom src={diagram} alt="diagram of endpoints"/>
-    </div>
-</div>
-<div className="tw-container tw-mx-auto ">
-    <div className="  tw-flex tw-flex-col  lg:tw-flex-row  md:tw-mt-0">
-        <div className="tw-flex tw-flex-col tw-justify-center lg:tw-w-4/12 tw-p-6 tw-py-14 md:tw-p-3">
-            <h3 className="tw-leading-10 tw-text-3xl md:tw-text-4xl  tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]  lg:tw-leading-[1.5] tw-mb-5">Initial Wireframing </h3>
-            <p>During the initial wireframing phase, I focused on conceptualizing the core structure and layout of the site.</p>
-            <p>Concept Exploration: I began by sketching out basic ideas for navigation and interactive elements.</p>
-            <p>Layout and Flow: Early wireframes helped establish how different sections of the site could be organized to capture user attention and guide them through the content.</p>
-        </div>
-        <div className='lg:tw-w-8/12 tw-my-auto '>
-            <Carousel wireframeslides = {intialwireArray}/>
-        </div>
-    </div>
-    <div className=" tw-flex tw-flex-col lg:tw-flex-row-reverse  tw-my-5 ">
-        <div className="tw-flex tw-flex-col tw-justify-center lg:tw-w-4/12 tw-p-6  md:tw-p-3">
-            <h3 className="tw-leading-10 tw-text-3xl md:tw-text-4xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]  lg:tw-leading-[1.5] tw-mb-5">Refined Wireframing</h3>
-            <p>In the refined wireframing stage, I iterated on the initial sketches based on usability feedback and design principles.</p>
-            <p>Modern Aesthetics: This phase incorporated modern design trends while retaining the essence of Left 4 Dead’s distinctive look, striking a balance between functionality and visuals.</p>
-        </div>
-        <div className='lg:tw-w-8/12 tw-my-auto '>
-            <Carousel wireframeslides = {middlewireArray}/>
-        </div>
-    </div>
-    <div className=" tw-flex tw-flex-col lg:tw-flex-row md:tw-mt-0">
-        <div className="tw-flex tw-flex-col tw-justify-center  lg:tw-w-4/12 tw-p-6 tw-py-14 md:tw-p-3">
-            <h3 className="tw-leading-10 tw-text-3xl md:tw-text-4xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]  lg:tw-leading-[1.5] tw-mb-5">Final Wireframing</h3>
-            <p>The final wireframing phase brought all the ideas and revisions together into a polished, high-fidelity blueprint.</p>
-        </div>
-        <div className='lg:tw-w-8/12 tw-my-auto '>
-            <Carousel wireframeslides={finalwireArray}/>
-        </div>
-    </div>
-</div>
-<div className="tw-container tw-p-6 md:tw-p-3 tw-my-5 tw-mx-auto">
-    <h3 className="tw-text-2xl md:tw-text-3xl tw-text-bluegreen tw-font-boldonse tw-mb-5">Lessons Learned & Improvements:</h3>
-    <div className="md:tw-w-2/3">
-        <li>Future Enhancements: The project serves as a solid foundation for further iterations, with room for incorporating additional interactive features or integrating social components that engage the gaming community even more like a reply feature. </li>
-        <br />
-        <li>One challenged faced was learning when to call an asynchronous function. Its important because it helps clean up redundant code on the backend.</li>
-        <br />
-        <li>Another challenge was figuring out how can I make the login user's name dynamic using EJS. This site is from pure Express. Nextjs would be a great option with its unique capabilities.</li>
-        <br />
-        <li>Learned about redis in another project. This would indeed speed of the load time expecially when a user logs in and wants to communicate with others. </li>
-    </div>
-</div>
-<Responsive repsonsive={responsive} />
-<div className="tw-container tw-mx-auto tw-h-auto">
-    <div className="tw-mx-auto lg:tw-w-2/3  tw-h-full ">
-        <Video srclink='../video/L4Dfinalvid.mp4' />
-    </div>
-</div>
     </div>
   )
 }
 
-export default scheduler
+export default scheduler;

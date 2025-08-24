@@ -15,19 +15,17 @@ import ProjectIntro from '../../components/ProjectIntro'
 import Responsive from "@/app/components/Responsive";
 import ImageZoom from "@/app/components/ImageZoom";
 import booknote from "../../../public/Group 3.svg";
-
+import Link from "next/link";
 
 export const metadata = {
     title: "Book Blog Project",
   };
-
 
 const BookBlog = () => {
  
     const intialwireArray = infoData.bookInitial;
     const middlewireArray = infoData.bookMiddle;
     const finalwireArray = infoData.bookFinal
-    
     
     return (
         <div className="tw-py-20">
@@ -120,7 +118,7 @@ const BookBlog = () => {
                     <ImageZoom src={booknote} alt="map of endpoints and integration" />
                 </div>
             </div>
-            <div className="tw-container  tw-mx-auto">
+            <div className="tw-container tw-mx-auto">
                 <div className="tw-flex  tw-flex-col lg:tw-flex-row">
                     <div className="tw-flex tw-flex-col tw-justify-center  lg:tw-w-4/12 tw-p-6 tw-py-14 md:tw-p-5">
                         <h3 className="tw-text-3xl md:tw-text-4xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5] tw-mb-5  lg:tw-leading-[1.5]">Initial Wireframing</h3>
@@ -152,7 +150,7 @@ const BookBlog = () => {
             <div className="tw-container tw-my-5 md:tw-py-0 tw-p-6  md:tw-p-3 tw-mx-auto">
                 <h3 className="tw-text-2xl md:tw-text-3xl md:tw-mt-0 tw-text-bluegreen tw-font-boldonse">Lessons Learned & Improvements:</h3>
                 <div className="md:tw-w-2/3">
-                <br />
+                    <br />
                     <li>I can write each endpoint inside of an api folder instead of creating a separate server folder. That way I can write the same back-end logic within that endpoint. I thought I needed a separate server to run the endpoints, but I learned you can do the same thing in Express using Nextjs; thus simplifying the architecture. This was my first rodeo, using Nextjs on a project.</li>
                     <br />
                     <li>A challenge when dealing with the Open Library API is coming up with a way to handle the json body so that it would not break the code. When reading the documentation, you get a glimspe of the kind of payload you can expect to get, but it does not always appear that way. </li>
@@ -160,6 +158,7 @@ const BookBlog = () => {
             </div>
             <Responsive repsonsive={repsonsive} />
             <div className="tw-container tw-mx-auto tw-h-auto ">
+                <h3 className="tw-text-2xl md:tw-text-3xl tw-text-bluegreen tw-font-boldonse tw-mb-5">Final Demo...</h3>
                 <div className="tw-mx-auto lg:tw-w-2/3  tw-h-full ">
                    <Video srclink='../video/booknotesfinalVID.mp4' /> 
                    <div>

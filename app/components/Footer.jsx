@@ -1,14 +1,10 @@
 
-
 import React from 'react'
 import Button from '../components/Button'
 
 const footer = () => {
   const date = new Date();
-
   const year = date.getFullYear();
-
-
 
   return (
     <main>
@@ -29,8 +25,6 @@ const footer = () => {
           </footer>
         </div>
       </div>
-     
-     
     </main>
   )
 }

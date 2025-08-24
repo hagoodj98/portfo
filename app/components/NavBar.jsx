@@ -22,7 +22,6 @@ const NavBar = () => {
       }
       setPrevScrollPos(currentScrollPos);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [prevScrollPos]);
@@ -31,7 +30,6 @@ const NavBar = () => {
     <Navbar
       fixed="top"
       expand="lg"
-      
       className={`${styles.navbar} ${isHidden ? styles.hidden : ''} tw-bg-white`}
     >
       <Container>

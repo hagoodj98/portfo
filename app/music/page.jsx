@@ -36,7 +36,6 @@ export const metadata = {
     title: "Music Funnel",
   };
 
-
  function Music () {
  
     const intialwireArray = infoData.initialFunnel;
@@ -96,8 +95,8 @@ export const metadata = {
                 </div>
             </div>
             <div className="tw-py-5 ">
-                    <h3 className="tw-leading-10 tw-text-3xl tw-text-center md:tw-text-4xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5] ">Key Components & Endpoints</h3>
-                    <div className="tw-mx-auto tw-w-28"><hr className=" tw-h-2 tw-bg-bluegreen"/> </div>
+                <h3 className="tw-leading-10 tw-text-3xl tw-text-center md:tw-text-4xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5] ">Key Components & Endpoints</h3>
+                <div className="tw-mx-auto tw-w-28"><hr className=" tw-h-2 tw-bg-bluegreen"/> </div>
             </div>
             <div className="tw-container tw-mx-auto tw-flex tw-flex-col lg:tw-flex-row tw-gap-2 tw-my-10">
                 <div className=" lg:tw-w-4/12 tw-flex tw-flex-col tw-justify-center tw-p-5">

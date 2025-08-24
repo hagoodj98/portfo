@@ -10,7 +10,7 @@ const CarouselControlled = (props) => {
 
   return (
     <>
-        <Carousel indicators={false} prevIcon=
+      <Carousel indicators={false} prevIcon=
         { <div className='tw-bg-white tw-rounded-full tw-p-2'>
             <span className=' tw-text-moreblue'><ArrowBackIosRoundedIcon fontSize='large' /></span>
           </div>
@@ -20,16 +20,15 @@ const CarouselControlled = (props) => {
           </div>
         } className='md:tw-h-[700px] ' >
             {
-                props.wireframeslides?.map(piece => (
-                        <Carousel.Item key={piece.id} className='  tw-mt-11 tw-h-[500px]'>
-                           <h6 className="tw-text-center tw-p-2 tw-text-moreblue tw-hidden md:tw-block">**hover**</h6>
-                           <div className={styles.background} style={{backgroundImage: `url(${piece.image})`}} >
-
-                           </div>
-                        </Carousel.Item>
-                ))
+              props.wireframeslides?.map(piece => (
+                <Carousel.Item key={piece.id} className='  tw-mt-11 tw-h-[500px]'>
+                    <h6 className="tw-text-center tw-p-2 tw-text-moreblue tw-hidden md:tw-block">**hover**</h6>
+                    <div className={styles.background} style={{backgroundImage: `url(${piece.image})`}} >
+                    </div>
+                </Carousel.Item>
+              ))
             }
-        </Carousel>
+      </Carousel>
     </>
   )
 }

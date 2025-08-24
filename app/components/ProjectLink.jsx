@@ -1,7 +1,6 @@
 'use client';
 import Button from '@mui/material/Button';
 
-
 const ProjectLink = ({link, linktext}) => {
   return (
     <div>

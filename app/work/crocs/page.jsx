@@ -16,8 +16,6 @@ export const metadata = {
     title: "The Object",
   };
 
-
-
  function Crocs () {
     const intialwireArray = infoData.initialCroc;
     const middlewireArray = infoData.middleCroc;
@@ -60,7 +58,6 @@ export const metadata = {
                 </div>
             </div>
             <Responsive repsonsive={repsonsive} />
-            
             <div className="tw-container tw-mx-auto tw-h-auto">
                 <div className="tw-mx-auto lg:tw-w-2/3   tw-h-full ">
                     <Video srclink='../video/crocsfinalVID.mp4'/>

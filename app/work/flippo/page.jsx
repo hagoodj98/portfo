@@ -8,13 +8,14 @@ import Storyboards from '../../../public/flippostoryboards.png'
 import lightbulb from '../../../public/HUZwDRn.png'
 import ImageZoom from "@/app/components/ImageZoom";
 
-
 export const metadata = {
     title: "Flippo the Character", 
   };
 
  function Flippo () {
+
     const storyBoarding = infoData.storyBoarding;
+
     return (
         <div className="tw-py-20">
             <div className=" tw-relative">
@@ -64,7 +65,6 @@ export const metadata = {
                     </div>
                 </div>
             </div>
-            
         </div>
     )
 }
