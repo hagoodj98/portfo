@@ -31,3 +31,9 @@ declare module "*.svg" {
   const value: string;
   export default value;
 }
+
+declare module "tailwind-scrollbar" {
+  import type { PluginCreator } from "tailwindcss/types/config";
+  const plugin: PluginCreator;
+  export default plugin;
+}
