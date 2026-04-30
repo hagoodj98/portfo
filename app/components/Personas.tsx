@@ -15,9 +15,9 @@ const Personas = (props: PersonasProps) => {
             Personas
           </h4>
         </div>
-        <ImageZoom src={props.persona} className=" " alt="Project name" />
-        <ImageZoom src={props.personatwo} className="" alt="Project name" />
-        <ImageZoom src={props.personathree} className="" alt="Project name" />
+        <ImageZoom src={props.persona} alt="Project name" />
+        <ImageZoom src={props.personatwo} alt="Project name" />
+        <ImageZoom src={props.personathree} alt="Project name" />
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 
 import Card from "../../components/Card";
-import repsonsive from "../../../public/book notes.png";
+
 import VideoSection from "../../components/Video";
 import { infoData } from "../../components/datai";
 import ProjectIntro from "../../components/ProjectIntro";
@@ -247,7 +247,7 @@ const BookBlog = () => {
           </li>
         </div>
       </ImprovementSection>
-      <Responsive repsonsive={repsonsive} />
+      <Responsive repsonsive="/book notes.png" width={800} height={600} />
       <VideoSection
         srclink="../bookblog-code-shots/bookblogdemo-small.mp4"
         githubLink="https://github.com/hagoodj98/bookblog"

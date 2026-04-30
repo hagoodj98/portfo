@@ -1,12 +1,9 @@
 import React from "react";
-import persona from "../../../public/sarah.png";
-import personatwo from "../../../public/miguel.png";
-import personathree from "../../../public/priya.png";
+
 import { infoData } from "../../components/datai";
 import Card from "../../components/Card";
 import ProjectIntro from "../../components/ProjectIntro";
 import Personas from "@/app/components/Personas";
-import Mockup from "../../../public/pos/Mockup.png";
 import PERNSection from "@/app/components/PERNSection";
 import ImprovementSection from "@/app/components/ImprovementSection";
 import APIEndpoints from "./components/APIEndpoints";
@@ -35,12 +32,12 @@ const scheduler = () => {
       <ProjectIntro
         projectname="Schedule Jobs"
         description="The purpose of this project was to design and develop a production scheduling system that could streamline how jobs are created, assigned, and tracked across different assembly lines. Traditional scheduling methods—like spreadsheets or paper-based logs—often lead to errors, double bookings, and inefficiencies when coordinating multiple jobs. It was built to provide clarity on job statuses in real time (Available → Scheduled → Busy). "
-        srcname={Mockup}
+        srcname="/pos/Mockup.png"
       />
       <Personas
-        persona={persona}
-        personatwo={personatwo}
-        personathree={personathree}
+        persona="/sarah.png"
+        personatwo="/miguel.png"
+        personathree="/priya.png"
       />
       <PERNSection>
         <h3 className="tw-text-2xl md:tw-text-4xl tw-text-black tw-font-boldonse">
