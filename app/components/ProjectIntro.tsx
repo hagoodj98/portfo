@@ -6,7 +6,7 @@ import ImageZoom from "@/app/components/ImageZoom";
 type ProjectIntroProps = {
   projectname: string;
   description: string;
-  srcname: StaticImageData;
+  srcname: string | StaticImageData;
 };
 
 const ProjectIntro = ({

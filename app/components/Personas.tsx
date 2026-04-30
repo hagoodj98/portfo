@@ -1,7 +1,12 @@
 import React from "react";
 import ImageZoom from "@/app/components/ImageZoom";
 
-const Personas = (props) => {
+type PersonasProps = {
+  persona: string;
+  personatwo: string;
+  personathree: string;
+};
+const Personas = (props: PersonasProps) => {
   return (
     <div className="tw-relative tw-container tw-mx-auto  sm:tw-my-32">
       <div className="tw-grid  tw-grid-cols-1 gap-3 md:tw-grid-cols-2 tw-justify-items-center">
