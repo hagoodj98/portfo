@@ -1,10 +1,8 @@
 import React from "react";
 import VideoSection from "@/app/components/Video";
-import Character from "../../../public/character.png";
+
 import Image from "next/image";
-import him from "../../../public/flippo.svg";
-import Storyboards from "../../../public/flippostoryboards.png";
-import lightbulb from "../../../public/HUZwDRn.png";
+
 import ImageZoom from "@/app/components/ImageZoom";
 
 export const metadata = {
@@ -36,7 +34,7 @@ function Flippo() {
           <div className="tw-relative md:tw-w-8/12  tw-flex tw-justify-center md:tw-items-center md:tw-justify-normal ">
             <div className="">
               <ImageZoom
-                src={him}
+                src="/flippo.svg"
                 className="tw--mt-10 md:tw-mt-0 tw-mx-auto"
                 alt="Flippo himself"
               />
@@ -50,22 +48,27 @@ function Flippo() {
           <h2 className=" tw-leading-10 tw-text-end tw-text-xl md:tw-text-2xl tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5] tw-mb-5">
             .....A character in the making
           </h2>
-          <ImageZoom src={Character} alt="Flippo from all angles" />
+          <ImageZoom src="/character.png" alt="Flippo from all angles" />
         </div>
         <div className=" tw-mx-auto ">
           <div className=" tw-my-auto ">
             <h2 className="tw-text-xl md:tw-text-2xl tw-text-bluegreen tw-mb-5 tw-font-boldonse">
               StoryBoarding.....
             </h2>
-            <ImageZoom src={Storyboards} alt="storyboards" />
+            <ImageZoom src="/flippostoryboards.png" alt="storyboards" />
           </div>
         </div>
         <div className=" tw-mx-auto tw-py-16 ">
-          <h3 className="tw-leading-10 tw-text-center tw-text-moreblue tw-font-boldonse md:tw-leading-[1.5]">
+          <h3 className="tw-leading-10 tw-text-center tw-text-bluegreen tw-font-boldonse md:tw-leading-[1.5]">
             &quot;Hello World I am Flippo.&quot;
           </h3>
           <div className="tw-w-28 tw-mx-auto">
-            <Image src={lightbulb} alt="lightbulb vector" />
+            <Image
+              src="/HUZwDRn.png"
+              width={112}
+              height={112}
+              alt="lightbulb vector"
+            />
           </div>
           <p className="tw-text-center">
             <span className="tw-font-semibold">Interesting fact:</span> Flippo

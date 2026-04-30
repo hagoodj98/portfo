@@ -1,6 +1,5 @@
 import React from "react";
 import ProjectIntro from "@/app/components/ProjectIntro";
-import Mockup from "../../../public/omni-code-shots/Mockup.png";
 import VideoSection from "@/app/components/Video";
 import PERNSection from "@/app/components/PERNSection";
 import Card from "@/app/components/Card";
@@ -11,7 +10,7 @@ const page = () => {
       <ProjectIntro
         projectname="Omnia Workspace"
         description="I had the opportunity to work on Omnia Workspace, an innovative project focused on creating a dynamic and interactive infinite canvas for users to manage their workflows. The workspace allows users to create nodes representing tasks or applications, and connect them with edges to visualize their workflow. My contributions included implementing tab/view management using Electron's webContents API, integrating Prisma as the ORM for efficient database management, utilizing the react flow library for node visualization, and developing Fastify endpoints to handle server-side logic in a constantly changing environment."
-        srcname={Mockup}
+        srcname="/omni-code-shots/Mockup.png"
       />
       <PERNSection>
         <h3 className="tw-text-2xl md:tw-text-4xl tw-text-black tw-font-boldonse">

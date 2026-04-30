@@ -1,8 +1,5 @@
 import React from "react";
-import persona from "../../../public/persona4.svg";
-import personatwo from "../../../public/persona5.svg";
-import personathree from "../../../public/persona6.svg";
-import Mockup from "../../../public/l4d/Mockup.png";
+
 import { infoData } from "../../components/datai";
 import responsive from "../../../public/l4d.png";
 import Video from "../../components/Video";
@@ -37,13 +34,13 @@ function Left4Dead() {
       <ProjectIntro
         projectname="GamingSite"
         description="For this project, I chose to redesign a website alot of gamers know, the Left 4 Dead. A game I truly enjoy playing. The objective was to create my own verison of the original site. I figured the original site (https://www.l4d.com/l4d/home.php) had potential but needed a modern update in terms of usability, good visual, and better user experience. My objective was to reimagine the site by integrating contemporary design principles."
-        srcname={Mockup}
+        srcname="/l4d/Mockup.png"
       />
 
       <Personas
-        persona={persona}
-        personatwo={personatwo}
-        personathree={personathree}
+        persona="/persona4.svg"
+        personatwo="/persona5.svg"
+        personathree="/persona6.svg"
       />
       <PERNSection>
         <h2 className="tw-leading-10 tw-text-3xl md:tw-text-4xl tw-text-black tw-font-boldonse md:tw-leading-[1.5]">

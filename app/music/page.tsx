@@ -1,8 +1,5 @@
 import React from "react";
-import MusicCover from "../../public/GOOD.jpg";
-import persona from "../../public/Yellow-And-Light-Yellow-Modern-User-Persona-Graph-1.png";
-import personatwo from "../../public/Yellow-And-Light-Yellow-Modern-User-Persona-Graph.png";
-import personathree from "../../public/Yellow-And-Light-Yellow-Modern-User-Persona-Graph-2.png";
+
 import repsonsive from "../../public/Untitleddesign.png";
 import Personas from "../components/Personas";
 import Responsive from "@/app/components/Responsive";
@@ -34,13 +31,13 @@ function Music() {
       <ProjectIntro
         projectname="Fan Funnel"
         description="This is a full-funnel web application designed for people who like my music. The goal is to capture subscribers for my running campaigns, buying a fan pack, and joining my patreon."
-        srcname={MusicCover}
+        srcname="/GOOD.jpg"
       />
 
       <Personas
-        persona={persona}
-        personatwo={personatwo}
-        personathree={personathree}
+        persona="/Yellow-And-Light-Yellow-Modern-User-Persona-Graph-1.png"
+        personatwo="/Yellow-And-Light-Yellow-Modern-User-Persona-Graph.png"
+        personathree="/Yellow-And-Light-Yellow-Modern-User-Persona-Graph-2.png"
       />
 
       <div className="tw-bg-yellow tw-mt-28 tw-py-20">
@@ -248,6 +245,10 @@ function Music() {
               will be informed about the next steps they need to take to
               complete their subscription, improving overall engagement and
               satisfaction with the application.
+            </li>
+            <li>
+              Need to update the confirmation email such as the email its coming
+              from. It should be my domain email associated with the site
             </li>
             <li>
               Will tighten up file structre and clean up code to make it more
