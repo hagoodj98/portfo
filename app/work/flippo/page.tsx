@@ -78,6 +78,10 @@ function Flippo() {
           hideGithubLink={true}
           joke={true}
         />
+        <p className="tw-mt-10 tw-text-sm tw-text-gray-500">
+          *** This character was created using Illustrator, while the short film
+          was created using After Effects.{" "}
+        </p>
       </div>
     </div>
   );

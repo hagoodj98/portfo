@@ -10,22 +10,23 @@ const page = () => {
     <div className="tw-py-20">
       <ProjectIntro
         projectname="Omnia Workspace"
-        description="This is a full-stack application built with the PERN stack that allows users to discover, review, and take notes on their favorite books. Getting the data from the Open Library API, the application fetches dynamic book information such as cover images, ratings, and more."
+        description="I had the opportunity to work on Omnia Workspace, an innovative project focused on creating a dynamic and interactive infinite canvas for users to manage their workflows. The workspace allows users to create nodes representing tasks or applications, and connect them with edges to visualize their workflow. My contributions included implementing tab/view management using Electron's webContents API, integrating Prisma as the ORM for efficient database management, utilizing the react flow library for node visualization, and developing Fastify endpoints to handle server-side logic in a constantly changing environment."
         srcname={Mockup}
       />
       <PERNSection>
         <h3 className="tw-text-2xl md:tw-text-4xl tw-text-black tw-font-boldonse">
-          Contributions
+          Contribution
         </h3>
         <div className="tw-w-28">
           <hr className="tw-h-2 tw-bg-black" />{" "}
         </div>
         <p className="md:tw-text-base lg:tw-text-xl xl:tw-text-3xl tw-text-black ">
-          The project is built on the PERN stack, which combines PostgreSQL for
-          the database, Express.js for the server, React for the front-end, and
-          Node.js as the runtime environment. This stack allows for efficient
-          development of full-stack applications with a clear separation of
-          concerns between the client and server.
+          During my time working on Omnia Workspace, I made significant
+          contributions to the project&apos;s development and success. I
+          implemented tab/view management using Electron&apos;s webContents API,
+          allowing for dynamic creation and control of multiple views within the
+          application. The goal is to have everything you need in a space
+          without ever having to leaving it.
         </p>
         <p className="md:tw-w-2/3 tw-mt-3 tw-text-black">
           <span className="tw-font-bold">Note:</span> Respecting the
@@ -51,9 +52,9 @@ const page = () => {
             Prisma
           </h3>
           <p>
-            Integrating Prisma as the ORM for efficient database management,
-            allowing for seamless interaction with the PostgreSQL database, and
-            enabling robust data modeling and querying capabilities.
+            Integrating Prisma as the ORM for efficient database management and
+            querying capabilities without worrying about changing databases
+            later.
           </p>
         </Card>
 
@@ -75,8 +76,8 @@ const page = () => {
           <p>
             Implemented endpoints for workflows/canvas using Fastify, a
             high-performance web framework for Node.js, to handle server-side
-            logic and API requests efficiently in constant changing environment
-            like an infinite canvas.
+            logic and API requests efficiently in a constantly changing
+            environment like an infinite canvas.
           </p>
         </Card>
       </div>

@@ -14,7 +14,7 @@ const VideoSection = (props: {
   return (
     <div className="tw-container tw-mx-auto tw-h-auto ">
       <h3 className="tw-text-2xl md:tw-text-3xl tw-text-bluegreen tw-text-center tw-font-boldonse tw-mb-5">
-        Final Demo...
+        {props.joke ? "Short Film  " : "Final Demo..."}
       </h3>
       <div className="tw-mx-auto lg:tw-w-2/3  tw-h-full ">
         <video

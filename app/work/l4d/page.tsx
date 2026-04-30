@@ -36,7 +36,7 @@ function Left4Dead() {
     <div className="tw-py-20">
       <ProjectIntro
         projectname="GamingSite"
-        description="For this project, I chose to redesign a website alot of gamers know, the Left 4 Dead. A game I truly enjoy playing. The objective was to create my own verison of the original site. I figured the original site (https://www.l4d.com/l4d/home.php) had potential but needed a modern update in terms of usability, good visual, and better user experience. My objective was to reimagine the site by integrating contemporary design principles while still reflecting the gritty, dynamic spirit of Left 4 Dead."
+        description="For this project, I chose to redesign a website alot of gamers know, the Left 4 Dead. A game I truly enjoy playing. The objective was to create my own verison of the original site. I figured the original site (https://www.l4d.com/l4d/home.php) had potential but needed a modern update in terms of usability, good visual, and better user experience. My objective was to reimagine the site by integrating contemporary design principles."
         srcname={Mockup}
       />
 
@@ -92,12 +92,6 @@ function Left4Dead() {
       <TablesSlides />
       <ProjectLayers />
       <div className="tw-container tw-mx-auto tw-my-8 tw-p-5">
-        <h2 className="tw-text-3xl md:tw-text-4xl tw-text-bluegreen tw-font-boldonse">
-          Authentication, Registration, and Security
-        </h2>
-        <div className="tw-w-64">
-          <hr className="tw-h-2 tw-bg-bluegreen" />
-        </div>
         <div className="tw-space-y-8 tw-mt-6">
           {/* Registration Endpoint */}
 
@@ -197,7 +191,7 @@ function Left4Dead() {
       </div>
       <ImprovementSection>
         <div className="md:tw-w-2/3">
-          <ul className="tw-list-disc tw-ml-5 tw-mt-2 tw-text-black tw-text-sm">
+          <ul className="tw-list-disc  tw-mt-2 tw-text-black tw-text-sm">
             <li>
               One challenged faced was learning when to call an asynchronous
               function. Its important because it helps clean up redundant code
@@ -221,7 +215,7 @@ function Left4Dead() {
               quality and reliability.
             </li>
             <li>
-              Docker was also a new tool i came across during intership work. I
+              Docker was also a new tool I came across during internship work. I
               had to learn how to create a Docker Compose configuration that
               sets up a PostgreSQL container for local development. This
               involved mounting the database schema for initialization and
@@ -232,7 +226,7 @@ function Left4Dead() {
               the project in the future.
             </li>
             <li>
-              Will implement ajax in the future to make the site more dynamic
+              Will implement AJAX in the future to make the site more dynamic
               and interactive. This would allow users to like a post without
               refreshing the page.
             </li>
@@ -242,7 +236,7 @@ function Left4Dead() {
       </ImprovementSection>
       <Responsive repsonsive={responsive} />
       <Video
-        githubLink="https://github.com/your-repo/left4dead"
+        githubLink="https://github.com/hagoodj98/L4D"
         srclink="../l4d/demo-small.mp4"
       />
     </div>

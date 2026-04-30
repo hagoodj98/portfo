@@ -28,7 +28,7 @@ const calendarSlides = [
 
 const CalendarSection = () => {
   return (
-    <div className="tw-container tw-mx-auto tw-flex tw-flex-col lg:tw-flex-row tw-gap-2 tw-my-5">
+    <div className="tw-container tw-mx-auto tw-flex tw-flex-col lg:tw-flex-row-reverse tw-gap-2 tw-my-5">
       <div className=" lg:tw-w-4/12 tw-flex tw-flex-col tw-justify-center tw-p-5">
         <div className="tw-py-10">
           <h3 className="tw-text-xl md:tw-text-2xl tw-text-bluegreen tw-font-boldonse">
@@ -39,9 +39,15 @@ const CalendarSection = () => {
           </div>
           <div>
             <p>
-              Talk about here how React Big Calendar is used to display and
-              manage events, providing a user-friendly interface for scheduling
-              and viewing tasks.
+              The calendar visualizes all jobs, color-coded by status. Status
+              colors are consistent across the calendar, legend, and pie chart.
+              This design choice allows users to quickly identify the status of
+              each job at a glance, improving usability and efficiency when
+              managing production schedules. By maintaining consistent color
+              coding across different components of the application, users can
+              easily correlate information between the calendar, legend, and pie
+              chart, enhancing their overall experience and understanding of the
+              scheduling data.
             </p>
           </div>
         </div>

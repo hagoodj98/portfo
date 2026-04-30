@@ -120,9 +120,12 @@ const CronSection = () => {
           </div>
           <div>
             <p>
-              Talk about here how Node-Cron is used to schedule background
-              tasks, providing real-time updates and ensuring the UI stays in
-              sync with backend changes.
+              A background cron job runs every 5 seconds to update job statuses
+              based on the current time, keeping the UI in sync with backend
+              changes. The loopThroughScheduledJobs function is called by the
+              cron job to iterate through all scheduled jobs and update their
+              statuses based on the current time. It checks if jobs should
+              transition from Scheduled to Busy or from Busy to Completed.
             </p>
           </div>
         </div>

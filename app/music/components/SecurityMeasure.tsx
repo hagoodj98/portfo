@@ -46,7 +46,8 @@ const validateAddressRateLimiter = () => {
   },
   {
     id: "secure-redis-access",
-    title: "Secure Redis Access from Middleware",
+    title:
+      'Secure Redis Access from Middleware(as of v.15 - the file must be labeled "proxy")',
     summary:
       "Internal API route (/redis-handler) acts as a proxy for Redis operations, allowing secure access from Next.js middleware.",
     description: `// redis-handler/route.ts\n
@@ -139,20 +140,18 @@ export async function POST(req: NextRequest) {
       "Validates shipping addresses using the SmartyStreets API and implements rate limiting to prevent abuse.",
     description: `// validate-shipping-address/route.ts\n
     // Build a fresh Smarty lookup for this request
-    const lookup = createLookup();
-    lookup.street = line1;
-    if (line2) lookup.street2 = line2;
-    lookup.city = city;
-    lookup.state = state;
-    lookup.zipCode = postal_code;
-    lookup.maxCandidates = 1;
-    lookup.match = "strict";
-    await client.send(lookup); // Send the lookup request to Smarty's API
-    const isDeliverable = (lookup.result ?? []).length > 0;
-    if (!isDeliverable) {
+     try {
+     // The duration is irrelevant here because if users exceed the limit, they are probably scammers. So go ahead and delete their session and make them start over. This will make it more time consuming for scammers to brute-force addresses, while still allowing legitimate users to try again after an hour if they make a mistake in entering their address.
+      await handleValidateAddressRateLimit(sessionToken); 
+    } catch (error) {
+      console.error("Rate limit error for address validation:", error);
+      // Delete session server-side so the ban holds even if the client ignores the 429 and clears their own cookies.
+      await redis.del(session:${"${sessionToken}"});
+      cookieStore.delete("sessionToken");
+      cookieStore.delete("csrfToken");
       throw new HttpError(
-        "The provided shipping address is undeliverable.",
-        422,
+        Too many attempts for validating address. Your session is closed. Try again later.,
+        429,
       );
     }`,
   },
@@ -234,7 +233,7 @@ export async function POST(req: NextRequest) {
     id: "Stripe Checkout Session Security",
     title: "Stripe Checkout Session Security",
     summary:
-      "The system ensures that Stripe checkout sessions are securely managed. Only authorized users with valid sessions can initiate or complete a checkout process, preventing unauthorized access or manipulation of payment sessions. To comply with PCI DSS requirements, the application does not store any sensitive payment information and relies on Stripe's secure handling of payment data. The checkout session creation endpoint validates the user's session and CSRF token before creating a Stripe checkout session, ensuring that only legitimate requests can initiate the payment process. If the checkout session is already completed, the endpoint will prevent creating a new session, adding an extra layer of security against potential abuse. Additionally, the processSuccessfulCheckout function updates the checkout status to complete and use shipping information from the Stripe session to update the subscriber's status in Redis and Mailchimp, ensuring that the purchase is properly recorded and the user's subscription status is updated accordingly.`",
+      "Before creating a Stripe checkout session, the system checks the session data to ensure that a checkout session has not already been completed. This prevents users from initiating multiple checkout sessions for the same purchase, which could lead to confusion or unintended consequences. By enforcing this check, we maintain a clear and secure checkout process for users.",
     description: `// create-checkout-session/route.ts\n
      
     if (sessionData.checkoutStatus === "completed") {
@@ -297,7 +296,7 @@ const SecurityMeasure = () => {
       <div className="tw-flex tw-flex-col tw-gap-8 tw-mt-8">
         <div className="tw-bg-[#17213a] tw-rounded-2xl tw-border tw-border-[#38bdf8]/30 tw-p-5 tw-shadow-md tw-w-full">
           <h4 className="tw-text-[#38bdf8] tw-font-semibold tw-mb-3 tw-text-lg">
-            Security Layer (entryRepository.ts)
+            Security Layer
           </h4>
           <CarouselControlled
             wireframeslides={securitySlides}

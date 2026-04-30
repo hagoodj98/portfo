@@ -47,19 +47,21 @@ const TablesSlides = () => {
       <div className=" lg:tw-w-4/12 tw-flex tw-flex-col tw-justify-center tw-p-5">
         <div className="tw-py-10">
           <h3 className="tw-text-xl md:tw-text-2xl tw-text-bluegreen tw-font-boldonse">
-            PostgreSQL
+            Prisma Schema - PostgreSQL Tables
           </h3>
           <div className="tw-w-28">
             <hr className="tw-h-2 tw-bg-bluegreen" />{" "}
           </div>
           <div>
             <p>
-              PostgreSQL is the relational database powering this project. The
-              schema centers on two core tables: <strong>entries</strong> stores
-              book metadata fetched from the Open Library API, while{" "}
-              <strong>notes</strong> stores user annotations. The relationship
-              is enforced via foreign key constraints with cascade delete,
-              ensuring data integrity when entries are removed.
+              The project uses Prisma as an ORM to define the database schema
+              for PostgreSQL. The schema includes three main tables:
+              ProductionOrder, SelectedResource, and Resource. Each table is
+              designed to capture specific aspects of the scheduling system,
+              with relationships defined to enable efficient data management and
+              querying. The ProductionOrder table stores metadata about
+              production orders, while the SelectedResource and Resource tables
+              manage resource information and assignments.
             </p>
           </div>
         </div>

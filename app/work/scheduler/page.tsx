@@ -8,6 +8,7 @@ import ProjectIntro from "../../components/ProjectIntro";
 import Personas from "@/app/components/Personas";
 import Mockup from "../../../public/pos/Mockup.png";
 import PERNSection from "@/app/components/PERNSection";
+import ImprovementSection from "@/app/components/ImprovementSection";
 import APIEndpoints from "./components/APIEndpoints";
 import CISection from "./components/CISection";
 import DesignTimeLine from "@/app/components/DesignTimeLine";
@@ -50,10 +51,10 @@ const scheduler = () => {
         </div>
         <p className="md:tw-text-base lg:tw-text-xl xl:tw-text-3xl tw-text-black ">
           The project is built on the PERN stack, which combines PostgreSQL for
-          the database, Express.js for the server, React for the front-end, and
-          Node.js as the runtime environment. This stack allows for efficient
-          development of full-stack applications with a clear separation of
-          concerns between the client and server.
+          the database, Express/Nextjs for the server, React for the front-end,
+          and Node.js as the runtime environment. This stack allows for
+          efficient development of full-stack applications with a clear
+          separation of concerns between the client and server.
         </p>
       </PERNSection>
       <div className="tw-container tw-mx-auto tw-grid md:tw-grid-cols-2 lg:tw-grid-cols-4 ">
@@ -62,8 +63,9 @@ const scheduler = () => {
             P
           </h3>
           <p>
-            PostgreSQL: A relational database that stores data securing managed
-            by PG Admin
+            Prisma: ORM that simplifies database interactions, schema
+            management, and migrations. It provides a type-safe API for working
+            with PostgreSQL, making it easier to query and manipulate data.
           </p>
         </Card>
         <Card className="tw-bg-moreblue tw-text-white tw-p-5">
@@ -91,9 +93,8 @@ const scheduler = () => {
             N
           </h3>
           <p>
-            NodeJS: Every developer knows the power of Node. To be able to run
-            javascript on your own computer. Obviously, it allows us to be able
-            to make these request to different endpoints
+            Nextjs has two available server-side runtimes: Node.js and Edge. I
+            used Node.js for this project.
           </p>
         </Card>
       </div>
@@ -102,7 +103,7 @@ const scheduler = () => {
         <p className="md:tw-w-2/3 tw-mt-3">
           The following diagram provides a visual overview of the main REST API
           endpoints for authentication, forum content, and reactions. It
-          illustrates the flow of requests between the client, Express routes,
+          illustrates the flow of requests between the client, Next.js routes,
           and the PostgreSQL database.
         </p>
       </Diagram>
@@ -120,17 +121,14 @@ const scheduler = () => {
               </div>
               <div>
                 <p className="md:tw-text-base  tw-text-white">
-                  Rather than a separate Express server, Next.js API routes
-                  handle server-side operations. These endpoints orchestrate
-                  service layer logic, which in turn calls repository functions
-                  and external APIs. Each route validates input, delegates to
-                  the appropriate service, and returns standardized responses
-                  with error handling.
-                </p>
-                <p className="md:tw-text-base tw-text-white tw-mt-3">
-                  Next step: protect write endpoints behind basic auth so
-                  account sessions control who can create, edit, and delete
-                  data.
+                  Next.js API routes are serverless functions that run on the
+                  server side. They allow you to create backend endpoints within
+                  your Next.js application without needing a separate server.
+                  Each file in the app/api directory corresponds to an API
+                  endpoint, and you can define your request handlers (GET, POST,
+                  etc.) within these files. This makes it easy to build
+                  full-stack applications with Next.js, as you can handle both
+                  frontend and backend logic in the same project.
                 </p>
               </div>
             </div>
@@ -314,18 +312,13 @@ const scheduler = () => {
           </div>
         </WireframeSlide>
 
-        <div className="tw-container tw-my-5 md:tw-py-0 tw-p-6  md:tw-p-3 tw-mx-auto">
-          <h3 className="tw-text-2xl md:tw-text-3xl md:tw-mt-0 tw-text-bluegreen tw-font-boldonse">
-            Lessons Learned & Improvements:
-          </h3>
+        <ImprovementSection>
           <div className="md:tw-w-2/3">
-            <br />
             <li>
               Will implement a more robust error handling strategy for API
               calls, including user-friendly error messages and retry logic to
               improve resilience.
             </li>
-            <br />
             <li>
               Plan to create a basic authentication system to restrict access to
               scheduling features, ensuring only authorized users can create and
@@ -344,10 +337,10 @@ const scheduler = () => {
               use them.
             </li>
           </div>
-        </div>
+        </ImprovementSection>
         <VideoSection
           srclink="/pos/demo-small.mp4"
-          githubLink="https://github.com/hagoodj98/production-scheduler"
+          githubLink="https://github.com/hagoodj98/production_scheduler"
         />
       </div>
     </div>

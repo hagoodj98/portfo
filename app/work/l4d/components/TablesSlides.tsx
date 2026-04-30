@@ -77,12 +77,14 @@ const TablesSlides = () => {
           </div>
           <div>
             <p>
-              PostgreSQL is the relational database powering this project. The
-              schema centers on two core tables: <strong>entries</strong> stores
-              book metadata fetched from the Open Library API, while{" "}
-              <strong>notes</strong> stores user annotations. The relationship
-              is enforced via foreign key constraints with cascade delete,
-              ensuring data integrity when entries are removed.
+              The database schema is designed to support a forum-like
+              application with users, posts, replies, and reactions. The users
+              table accommodates both local and OAuth identities while enforcing
+              unique email constraints. Posts and replies are linked to their
+              authors, and reactions are tracked in separate tables to allow for
+              efficient querying of likes/dislikes on both posts and comments.
+              This structure ensures data integrity and supports the core
+              functionalities of the application.
             </p>
           </div>
         </div>

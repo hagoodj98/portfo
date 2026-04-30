@@ -6,7 +6,7 @@ type ImprovementSectionProps = {
 
 const ImprovementSection = ({ children }: ImprovementSectionProps) => {
   return (
-    <div className="tw-container tw-my-5 md:tw-py-0 tw-p-6  md:tw-p-3 tw-mx-auto">
+    <div className="tw-container tw-my-5 md:tw-py-0 tw-p-6 tw-mx-auto">
       <h3 className="tw-text-2xl md:tw-text-3xl md:tw-mt-0 tw-text-bluegreen tw-font-boldonse">
         Challenges and Future Improvements
       </h3>

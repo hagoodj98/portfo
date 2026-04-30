@@ -6,7 +6,7 @@ import personathree from "../../public/Yellow-And-Light-Yellow-Modern-User-Perso
 import repsonsive from "../../public/Untitleddesign.png";
 import Personas from "../components/Personas";
 import Responsive from "@/app/components/Responsive";
-import infoData from "../components/datai";
+import { infoData } from "../components/datai";
 import ProjectIntro from "../components/ProjectIntro";
 import Card from "../components/Card";
 import ProjectLink from "../components/ProjectLink";
@@ -55,7 +55,7 @@ function Music() {
             <div>
               <p className="md:tw-text-base lg:tw-text-xl xl:tw-text-3xl tw-text-black ">
                 The Music Funnel application is built with a modern full-stack
-                approach using Next.js 13 and React for the frontend and
+                approach using Next.js 15 and React for the frontend and
                 backend. It leverages Next.js API routes for all server-side
                 logic, eliminating the need for a separate backend server. Key
                 integrations include
@@ -230,12 +230,7 @@ function Music() {
               I am currently working to get all of the legal documents together
               such as privacy policies and terms of use.
             </li>
-            <li>
-              Trying to get the toast messages to appear when apprioprate. When
-              you refresh the landing page, the toast message keeps appearing.
-              Even on mobile, when a user refreshes the home page the same
-              message appears.
-            </li>
+
             <li>
               Definitely learned about the power of redis and its intuitiveness
               when handling sessions.
@@ -245,8 +240,18 @@ function Music() {
               validate the webhook to ensure it is coming from a place I expect.
             </li>
             <li>
-              Will tighten up file structure. All clients should be the same
-              dir, but a couple are not.
+              Should prompt user to check their email for confirmation after
+              they subscribe to their email. Currently, the user has no
+              indication that they need to check their email to confirm their
+              subscription, which could lead to confusion and a poor user
+              experience. By adding a prompt after the subscription step, users
+              will be informed about the next steps they need to take to
+              complete their subscription, improving overall engagement and
+              satisfaction with the application.
+            </li>
+            <li>
+              Will tighten up file structre and clean up code to make it more
+              readable and maintainable.
             </li>
             <li>
               Need to call mailchimp API to delete subscriber if my application

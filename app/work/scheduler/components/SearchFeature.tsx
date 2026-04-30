@@ -23,8 +23,14 @@ const SearchFeature = () => {
           </div>
           <div>
             <p>
-              Talk about here how useSWR is used to fetch data for the table and
-              keep it up-to-date in real time.
+              The Add Resource UI provides instant feedback as you type,
+              searching the database in real time for matching resources. This
+              feature enhances user experience by allowing users to quickly find
+              and select resources without needing to submit a form or refresh
+              the page. The implementation uses the useEffect hook to trigger a
+              search function whenever the resourceName state changes, making an
+              API call to fetch matching resources and updating the UI
+              accordingly.
             </p>
           </div>
         </div>

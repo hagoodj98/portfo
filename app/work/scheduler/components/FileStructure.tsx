@@ -26,10 +26,14 @@ const FileStructure = () => {
             <hr className="tw-h-2 tw-bg-bluegreen" />
           </div>
           <p className="md:tw-text-base tw-text-black">
-            The project is organized by layers for clarity and maintainability:
-            database logic, authentication, repositories, services, EJS views,
-            and tests are all separated. This structure makes it easy to expand
-            features and keep responsibilities clear.
+            The project is organized into a clear and modular file structure,
+            with API routes handling all server-side logic and a dedicated utils
+            folder for shared functions. The lib folder contains essential
+            services like database access, while the node_cron directory houses
+            the automated job scheduling logic. The prisma folder defines the
+            database schema, and the task directory contains the core scheduling
+            algorithm. This architecture promotes maintainability, scalability,
+            and separation of concerns across the application.
           </p>
         </div>
       </div>

@@ -12,7 +12,7 @@ const pieChartSlides = [
 
 const PieSection = () => {
   return (
-    <div className="tw-container tw-mx-auto tw-flex tw-flex-col lg:tw-flex-row tw-gap-2 tw-my-5">
+    <div className="tw-container tw-mx-auto tw-flex tw-flex-col lg:tw-flex-row-reverse tw-gap-2 tw-my-5">
       <div className=" lg:tw-w-4/12 tw-flex tw-flex-col tw-justify-center tw-p-5">
         <div className="tw-py-10">
           <h3 className="tw-text-xl md:tw-text-2xl tw-text-bluegreen tw-font-boldonse">
@@ -23,9 +23,15 @@ const PieSection = () => {
           </div>
           <div>
             <p>
-              Talk about here how Recharts is used to visualize data in the form
-              of charts and graphs, providing real-time insights and interactive
-              features for a better user experience.
+              The dashboard pie chart shows a live breakdown of all jobs by
+              status. Clicking a segment filters the calendar and legend. This
+              feature provides users with an at-a-glance overview of the current
+              state of all jobs, allowing them to quickly identify how many
+              tasks are pending, scheduled, completed, or if any resources are
+              currently busy. The interactivity of the pie chart enhances user
+              experience by enabling quick filtering of the calendar and legend
+              based on job status, making it easier for users to focus on
+              specific subsets of data relevant to their needs.
             </p>
           </div>
         </div>

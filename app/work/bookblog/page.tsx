@@ -45,10 +45,11 @@ const BookBlog = () => {
         <div>
           <p className="md:tw-text-base lg:tw-text-xl xl:tw-text-3xl tw-text-black ">
             While grasping the power of the PERN stack, this project is a
-            testament to it. By using PostgreSQL, Express, React, and Node.js,
-            the application not only manages data interactions but also in a
-            user friendly UI. This section highlights the strengths of these
-            technologies in building a dynamic book blog.
+            testament to it. By using PostgreSQL, Nextjs built-in server
+            components, React, and Node.js, the application not only manages
+            data interactions but also in a user friendly UI. This section
+            highlights the strengths of these technologies in building a dynamic
+            book blog.
           </p>
         </div>
       </PERNSection>
@@ -59,7 +60,7 @@ const BookBlog = () => {
           </h3>
           <p>
             PostgreSQL: A relational database that stores data securing managed
-            by PG Admin
+            by my postgres extension in VSCode.
           </p>
         </Card>
 
@@ -89,8 +90,7 @@ const BookBlog = () => {
           </h3>
           <p>
             NodeJS: Every developer knows the power of Node. To be able to run
-            javascript on your own computer. Obviously, it allows us to be able
-            to make these request to different endpoints
+            javascript on your own computer.
           </p>
         </Card>
       </div>
@@ -99,10 +99,7 @@ const BookBlog = () => {
         alt="Book Blog Architecture Diagram"
       />
       <BookBlogTables />
-      <FileArch
-        image="/bookblog-code-shots/bookblog-file-architecture.png"
-        alt="Book Blog File Architecture"
-      />
+      <FileArch />
       <div className="tw-bg-orange  tw-w-full ">
         <div className="tw-container tw-mx-auto tw-flex tw-flex-col lg:tw-flex-row tw-gap-2 tw-py-10 ">
           <div className="lg:tw-w-4/12 tw-flex tw-flex-col tw-justify-center tw-p-5">
@@ -219,13 +216,7 @@ const BookBlog = () => {
             in Express using Nextjs; thus simplifying the architecture. This was
             my first rodeo, using Nextjs on a project.
           </li>
-          <li>
-            A challenge when dealing with the Open Library API is coming up with
-            a way to handle the json body so that it would not break the code.
-            When reading the documentation, you get a glimspe of the kind of
-            payload you can expect to get, but it does not always appear that
-            way.{" "}
-          </li>
+
           <li>
             Introduce session management with secure cookie settings and sign
             out support.

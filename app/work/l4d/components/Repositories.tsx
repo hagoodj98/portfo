@@ -192,7 +192,7 @@ const Repositories = () => {
   return (
     <div className="tw-bg-[#17213a] tw-rounded-2xl tw-border tw-border-[#38bdf8]/30 tw-p-5 tw-shadow-md tw-w-full">
       <h4 className="tw-text-[#38bdf8] tw-font-semibold tw-mb-3 tw-text-lg">
-        Repository Layer (entryRepository.ts)
+        Repository Layer
       </h4>
       <CarouselControlled
         wireframeslides={RepositoriesLayerSlides}
