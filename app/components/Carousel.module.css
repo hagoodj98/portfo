@@ -1,0 +1,64 @@
+/* Custom scrollbars for code blocks in carousel */
+.carousel-code-scrollable {
+  max-height: 400px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  scrollbar-width: thin;
+  scrollbar-color: #24a3bf #181f2a;
+  scrollbar-gutter: stable both-edges;
+}
+
+.carousel-code-scrollable pre {
+  flex: 1 1 auto;
+  width: 100%;
+  margin: 0;
+  min-width: 0;
+  overflow-x: auto;
+}
+.carousel-code-scrollable code {
+  width: 100%;
+  display: block;
+  min-width: 0;
+}
+.carousel-code-scrollable::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+  background: #181f2a;
+  border-radius: 8px;
+}
+.carousel-code-scrollable::-webkit-scrollbar-thumb {
+  background: #24a3bf;
+  border-radius: 8px;
+}
+.carousel-code-scrollable::-webkit-scrollbar-thumb:hover {
+  background: #158fbf;
+}
+/* Carousel image scroll on hover */
+.carousel-image-container {
+  overflow: hidden;
+}
+
+.carousel-image-container:hover .carousel-image-scrollable {
+  overflow: auto;
+  cursor: grab;
+}
+
+/* Custom vertical scrollbar for carousel slides */
+.carousel-slide-scrollable {
+  scrollbar-width: thin;
+  scrollbar-color: #24a3bf #181f2a;
+}
+
+.carousel-slide-scrollable::-webkit-scrollbar {
+  width: 8px;
+  background: #181f2a;
+  border-radius: 8px;
+}
+.carousel-slide-scrollable::-webkit-scrollbar-thumb {
+  background: #24a3bf;
+  border-radius: 8px;
+}
+.carousel-slide-scrollable::-webkit-scrollbar-thumb:hover {
+  background: #158fbf;
+}
