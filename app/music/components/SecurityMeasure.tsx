@@ -137,7 +137,7 @@ export async function POST(req: NextRequest) {
     id: "",
     title: "Address Validation with Rate Limiting",
     summary:
-      "Validates shipping addresses using the SmartyStreets API and implements rate limiting to prevent abuse.",
+      "Checkout can only be completed/successful if the shipping address is validated as deliverable using the SmartyStreets API. This endpoint implements rate limiting to prevent abuse, and if the limit is exceeded, the user's session is terminated to enforce the block. This reduce the chance for users inserting fake addresses and abusing the checkout process.",
     description: `// validate-shipping-address/route.ts\n
     // Build a fresh Smarty lookup for this request
      try {

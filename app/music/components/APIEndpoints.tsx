@@ -307,7 +307,7 @@ const apiEndpointSlides = [
   {
     id: "/validate-shipping-address Endpoint",
     title: "/validate-shipping-address Endpoint",
-    summary: `Validates shipping address using SmartyStreets API. This endpoint receives shipping address details from the client, validates them against the SmartyStreets API to ensure they are deliverable, and implements rate limiting to prevent abuse. If the address is valid and deliverable, it returns a success message; otherwise, it returns an appropriate error response.`,
+    summary: `Validates shipping address using SmartyStreets API. This endpoint receives shipping address details from the client, validates them against the SmartyStreets API to ensure they are deliverable, and implements rate limiting to prevent abuse.`,
     description: `    // Build a fresh Smarty lookup for this request
     const lookup = createLookup();
     lookup.street = line1;
