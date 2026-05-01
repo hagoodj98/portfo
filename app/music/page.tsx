@@ -91,7 +91,7 @@ function Music() {
       <FileArch />
 
       <div className="tw-bg-orange  tw-w-full ">
-        <div className="tw-container tw-mx-auto tw-flex tw-flex-col lg:tw-flex-row tw-gap-2 tw-py-10 ">
+        <div className="tw-container tw-mx-auto tw-flex tw-flex-col  tw-gap-2 tw-py-10 ">
           <div className="lg:tw-w-4/12 tw-flex tw-flex-col tw-justify-center tw-p-5">
             <div className="tw-py-10">
               <h1 className=" tw-leading-10 tw-text-xl md:tw-text-2xl tw-text-white tw-font-boldonse md:tw-leading-[1.5]  lg:tw-leading-[1.5]">

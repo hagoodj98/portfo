@@ -478,29 +478,12 @@ const apiEndpointSlides = [
 
 const APIEndpoints = () => {
   return (
-    <div className="tw-relative lg:tw-w-8/12 tw-flex tw-justify-center md:tw-items-center md:tw-justify-normal">
+    <div className="tw-relative  tw-flex tw-justify-center md:tw-items-center md:tw-justify-normal">
       <div className="tw-w-full tw-mx-auto">
         <CarouselControlled
-          wireframeslides={apiEndpointSlides.map((endpoint) => ({
-            id: endpoint.id,
-            custom: (
-              <div className="tw-bg-[#17213a] tw-rounded-2xl tw-border tw-border-[#38bdf8]/30 tw-p-5 tw-shadow-md tw-h-[320px] tw-flex tw-flex-col">
-                <h4 className="tw-text-[#38bdf8] tw-font-semibold tw-mb-2 tw-text-lg">
-                  {endpoint.title}
-                </h4>
-                <p className="tw-text-[#e0e7ef] tw-text-sm tw-mb-3">
-                  {endpoint.summary}
-                </p>
-                <div className="tw-flex-1 tw-min-h-0">
-                  <pre className="tw-bg-[#22315a] tw-rounded-lg tw-p-4 tw-text-xs tw-text-[#7dd3fc] tw-overflow-x-auto tw-font-mono tw-border tw-border-[#334155]/60 tw-h-full tw-max-h-full tw-overflow-y-auto">
-                    <code>{endpoint.description}</code>
-                  </pre>
-                </div>
-              </div>
-            ),
-          }))}
+          wireframeslides={apiEndpointSlides}
           width="100%"
-          height={360}
+          height="auto"
         />
       </div>
     </div>
