@@ -1,6 +1,6 @@
 import React from "react";
 import ProjectIntro from "@/app/components/ProjectIntro";
-import VideoSection from "@/app/components/Video";
+import Video from "@/app/components/Video";
 import PERNSection from "@/app/components/PERNSection";
 import Card from "@/app/components/Card";
 
@@ -25,7 +25,7 @@ const page = () => {
           implemented tab/view management using Electron&apos;s webContents API,
           allowing for dynamic creation and control of multiple views within the
           application. The goal is to have everything you need in a space
-          without ever having to leaving it.
+          without ever having to leave it.
         </p>
         <p className="md:tw-w-2/3 tw-mt-3 tw-text-black">
           <span className="tw-font-bold">Note:</span> Respecting the
@@ -68,7 +68,7 @@ const page = () => {
             effectively.
           </p>
         </Card>
-        <Card className="tw-bg-yellow tw-text-black tw-p-5">
+        <Card className="tw-bg-orange tw-text-white tw-p-5">
           <h3 className="tw-leading-10 tw-text-xl md:tw-text-2xl tw-font-boldonse  md:tw-leading-[1.5]">
             Fastify Endpoints
           </h3>
@@ -80,12 +80,20 @@ const page = () => {
           </p>
         </Card>
       </div>
+
       <div className="tw-container tw-mx-auto tw-mt-10">
-        <VideoSection
+        <Video
           muted={false}
           hideGithubLink={true}
           srclink="/omni-code-shots/demo-small.mp4"
         />
+      </div>
+      <div className="tw-container tw-mx-auto tw-px-5 tw-pb-2">
+        <p className="tw-text-sm tw-text-gray-500 tw-italic">
+          Note: Electron channels manage IPC between processes. Without them,
+          views remain stationary. I move nodes instead - nodes tell views where
+          to move and how large to become.
+        </p>
       </div>
     </div>
   );

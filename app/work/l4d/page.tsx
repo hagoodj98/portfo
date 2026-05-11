@@ -1,7 +1,7 @@
 import React from "react";
 
 import { infoData } from "../../components/datai";
-import responsive from "../../../public/l4d.png";
+import responsive from "../../../public/l4d/l4d.png";
 import Video from "../../components/Video";
 import ProjectIntro from "../../components/ProjectIntro";
 import Personas from "@/app/components/Personas";
@@ -38,9 +38,9 @@ function Left4Dead() {
       />
 
       <Personas
-        persona="/persona4.svg"
-        personatwo="/persona5.svg"
-        personathree="/persona6.svg"
+        persona="/l4d/persona.svg"
+        personatwo="/l4d/persona2.svg"
+        personathree="/l4d/persona3.svg"
       />
       <PERNSection>
         <h2 className="tw-leading-10 tw-text-3xl md:tw-text-4xl tw-text-black tw-font-boldonse md:tw-leading-[1.5]">

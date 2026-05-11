@@ -34,7 +34,7 @@ function Flippo() {
           <div className="tw-relative md:tw-w-8/12  tw-flex tw-justify-center md:tw-items-center md:tw-justify-normal ">
             <div className="">
               <ImageZoom
-                src="/flippo.svg"
+                src="/flippo/flippo.svg"
                 className="tw--mt-10 md:tw-mt-0 tw-mx-auto"
                 alt="Flippo himself"
               />

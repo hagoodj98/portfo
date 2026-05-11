@@ -33,7 +33,7 @@ const BookBlog = () => {
       <ProjectIntro
         projectname="Book Blog"
         description="This is a full-stack application built with the PERN stack that allows users to discover, review, and take notes on their favorite books. Getting the data from the Open Library API, the application fetches dynamic book information such as cover images, ratings, and more."
-        srcname="/booknotesmockup.svg"
+        srcname="/bookblog-code-shots/booknotesmockup.svg"
       />
       <PERNSection>
         <h3 className="tw-leading-10 tw-text-3xl md:tw-text-5xl  tw-text-black tw-font-boldonse md:tw-leading-[1.5]">
