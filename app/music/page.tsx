@@ -1,6 +1,6 @@
 import React from "react";
 
-import repsonsive from "../../public/Untitleddesign.png";
+import repsonsive from "../../public/funnel/Untitleddesign.png";
 import Personas from "../components/Personas";
 import Responsive from "@/app/components/Responsive";
 import { infoData } from "../components/datai";
@@ -12,7 +12,7 @@ import SecurityMeasure from "./components/SecurityMeasure";
 import PERNSection from "../components/PERNSection";
 import CI from "./components/CI";
 import DesignTimeLine from "../components/DesignTimeLine";
-import VideoSection from "../components/Video";
+import Video from "../components/Video";
 import ImprovementSection from "../components/ImprovementSection";
 import WireframeSlide from "../components/WireframeSlide";
 import Diagram from "../components/Diagram";
@@ -54,8 +54,11 @@ function Music() {
                 The Music Funnel application is built with a modern full-stack
                 approach using Next.js 15 and React for the frontend and
                 backend. It leverages Next.js API routes for all server-side
-                logic, eliminating the need for a separate backend server. Key
-                integrations include
+                logic, eliminating the need for a separate backend server.
+                Subscriber quality is protected with layered email legitimacy
+                checks (Zod validation, disposable/junk filtering, Abstract API
+                deliverability checks, and DNS MX fallback). Key integrations
+                include
               </p>
             </div>
           </div>
@@ -255,15 +258,28 @@ function Music() {
               readable and maintainable.
             </li>
             <li>
-              Need to call mailchimp API to delete subscriber if my application
-              senses abuse as it already deletes session. I should go ahead and
-              remove from audience to save money.
+              I still need to call the Mailchimp API to delete a subscriber when
+              the application detects abuse, since it already deletes the
+              session. That would also remove the contact from the audience and
+              save money.
+            </li>
+            <li>
+              I still need to fully test the cross-device confirmation case:
+              user submits an email on one device, then opens the confirmation
+              email and confirms on a different device/browser.
             </li>
           </div>
         </ImprovementSection>
         <Responsive repsonsive={repsonsive} />
       </div>
-      <VideoSection srclink="/funnel/musicfinaldemo-small.mp4" muted={false}>
+      <div className="tw-container tw-mx-auto tw-px-5 tw-pb-2">
+        <p className="tw-text-sm tw-text-gray-500 tw-italic">
+          Note: This repository is private because this is an active commercial
+          product. I share architecture, implementation details, and demo flows
+          publicly while keeping source code and business logic private.
+        </p>
+      </div>
+      <Video srclink="/funnel/revisedmusicfunnel-small.mp4" muted={false}>
         <h3 className=" tw-leading-10 tw-text-bluegreen tw-p-10 tw-font-boldonse md:tw-leading-[1.5]">
           Like my music? You can 
           <span className="tw-inline-block">
@@ -273,7 +289,7 @@ function Music() {
             />
           </span>{" "}
         </h3>
-      </VideoSection>
+      </Video>
     </div>
   );
 }

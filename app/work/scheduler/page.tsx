@@ -35,9 +35,9 @@ const scheduler = () => {
         srcname="/pos/Mockup.png"
       />
       <Personas
-        persona="/sarah.png"
-        personatwo="/miguel.png"
-        personathree="/priya.png"
+        persona="/pos/persona.png"
+        personatwo="/pos/miguel.png"
+        personathree="/pos/persona3.png"
       />
       <PERNSection>
         <h3 className="tw-text-2xl md:tw-text-4xl tw-text-black tw-font-boldonse">

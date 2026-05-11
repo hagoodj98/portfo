@@ -27,7 +27,7 @@ export default function Home() {
             <div className="tw-mx-auto md:tw-w-2/3 tw-flex tw-flex-col tw-items-center">
               <h1 className=" tw-text-4xl lg:tw-text-6xl tw-text-center tw-text-bluegreen tw-mb-5">
                 {" "}
-                <span className="tw-font-boldonse">My Portfilio</span>
+                <span className="tw-font-boldonse">My Portfolio</span>
               </h1>
               <p className=" tw-text-center md:tw-text-base md:tw-w-2/3">
                 Hello! My name is Jaiquez Hagood and I am a web developer. I
@@ -45,8 +45,8 @@ export default function Home() {
             </h2>
             <p className="tw-text-center lg:tw-text-left tw-text-white ">
               I am from Greenville, South Carolina and I graduated from Carolina
-              High School in 2016 and have an assoicates degree from Greenville
-              Technical College of 2018. I am a digital information design
+              High School in 2016 and have an associate's degree from Greenville
+              Technical College from 2018. I am a digital information design
               graduate from Winthrop University in 2021. I enjoy coding,
               producing music, and fishing.
             </p>
@@ -69,7 +69,7 @@ export default function Home() {
             </h2>
           </div>
           <ProjectThumbnail
-            projectUrl="/booknotesmockup.svg"
+            projectUrl="/bookblog-code-shots/booknotesmockup.svg"
             projectName="BookBlog Project"
             link="/work/bookblog"
           />
@@ -91,12 +91,17 @@ export default function Home() {
             link="/work/l4d"
           />
           <ProjectThumbnail
-            projectUrl="/flippo.svg"
+            projectUrl="/flippo/flippo.svg"
             projectName="Animate Project"
             link="/work/flippo"
           />
           <ProjectThumbnail
-            projectUrl="/VinylRecordMockup.jpg"
+            projectUrl="/sonicdna/soundapi.png"
+            projectName="SonicDNA Project"
+            link="/work/sonicdna"
+          />
+          <ProjectThumbnail
+            projectUrl="/funnel/VinylRecordMockup.jpg"
             projectName="Music Project"
             link="/music"
           />

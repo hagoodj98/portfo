@@ -2,28 +2,33 @@ import React from "react";
 import CarouselControlled from "../../../components/Carousel";
 const apiEndpointSlides = [
   {
+    id: "api-summary",
+    title: "BookBlog API Summary",
+    summary:
+      "The API supports listing entries, creating entries from ISBN, and sorted retrieval for multiple UX views.",
+    description:
+      "Endpoints:\n  GET /api/entries\n  POST /api/newentry\n  GET /api/sort-entry-by?order={order}\n\nPurpose:\n  Keep entry retrieval and creation logic centralized in services/repositories.",
+  },
+  {
     id: "api-entries-get",
     title: "GET /api/entries",
-    summary:
-      "Fetches all book entries from the database. Calls getAllEntries() from entryRepository to return the complete collection.",
+    summary: "Fetches all saved entries for the default library view.",
     description:
-      "Endpoint: GET /api/entries\nReturns: Array of all entry objects\nFlow: Request → entryRepository.getAllEntries() → PostgreSQL query → Response",
+      "Returns:\n  Array of all entry objects\n\nWhat it does:\n  Queries PostgreSQL through repository methods and returns a complete list.",
   },
   {
     id: "api-newentry-post",
     title: "POST /api/newentry",
-    summary:
-      "Creates a new entry from an ISBN. Accepts isbn and summary, calls addEntryFromIsbn() service to fetch Open Library data and persist to database.",
+    summary: "Creates a new entry from ISBN and optional user summary.",
     description:
-      "Endpoint: POST /api/newentry\nBody: { isbn, summary }\nFlow: Request → entryService.addEntryFromIsbn() → openLibraryService.fetch() → entryRepository.create() → Database",
+      "Body:\n  { isbn, summary }\n\nWhat it does:\n  Fetches Open Library metadata, merges user input, and persists the new entry.",
   },
   {
     id: "api-sort-get",
     title: "GET /api/sort-entry-by?order=recency",
-    summary:
-      "Returns entries sorted by the specified order parameter (oldest, recency, title, relevance). Routes to listSortedEntries() service.",
+    summary: "Returns entries sorted for timeline, title, or relevance views.",
     description:
-      "Endpoint: GET /api/sort-entry-by?order={order}\nQuery Params: order (oldest | recency | title | relevance)\nFlow: Request → entryService.listSortedEntries(order) → Repository sort method → Sorted response",
+      "Query:\n  order = oldest | recency | title | relevance\n\nWhat it does:\n  Applies service-level sort selection and returns a sorted entry collection.",
   },
 ];
 

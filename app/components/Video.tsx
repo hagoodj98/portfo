@@ -11,6 +11,13 @@ const VideoSection = (props: {
   children?: React.ReactNode;
   hideGithubLink?: boolean;
 }) => {
+  const srcLower = props.srclink.toLowerCase();
+  const videoType = srcLower.endsWith(".webm")
+    ? "video/webm"
+    : srcLower.endsWith(".mov")
+      ? "video/quicktime"
+      : "video/mp4";
+
   return (
     <div className="tw-container tw-mx-auto tw-h-auto ">
       <h3 className="tw-text-2xl md:tw-text-3xl tw-text-bluegreen tw-text-center tw-font-boldonse tw-mb-5">
@@ -25,7 +32,7 @@ const VideoSection = (props: {
           controls
           preload="none"
         >
-          <source src={props.srclink} type="video/mp4" />
+          <source src={props.srclink} type={videoType} />
           <track
             src="/path/to/captions.vtt"
             kind="subtitles"

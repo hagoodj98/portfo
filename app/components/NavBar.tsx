@@ -61,6 +61,9 @@ const NavBar = () => {
                 <NavDropdown.Item href="/work/scheduler">
                   Scheduler
                 </NavDropdown.Item>
+                <NavDropdown.Item href="/work/sonicdna">
+                  SonicDNA
+                </NavDropdown.Item>
               </NavDropdown>
               <Nav.Item>
                 <Nav.Link href="/music">Fan Funnel</Nav.Link>

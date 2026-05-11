@@ -32,7 +32,7 @@ type CarouselProps = {
 const CarouselControlled = ({
   wireframeslides,
   width,
-  height = 400,
+  height = 600,
   classname,
 }: CarouselProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -59,7 +59,8 @@ const CarouselControlled = ({
                 height: height,
                 display: idx === activeIndex ? "block" : "none",
                 borderRadius: 16,
-                // Removed overflow: 'hidden' to avoid React warning
+                overflowY: "auto",
+                overflowX: "hidden",
                 boxShadow: "0 4px 16px 0 rgba(31, 38, 135, 0.17)",
                 background: "#181f2a",
                 padding: 24,
@@ -130,23 +131,21 @@ const CarouselControlled = ({
                     className={styles["carousel-image-scrollable"]}
                     style={{
                       width: "100%",
-                      height: height,
-                      overflow: "hidden",
+                      maxHeight: height,
+                      overflowY: "auto",
+                      overflowX: "hidden",
                       position: "relative",
                     }}
                   >
                     <Image
                       src={`${piece.image}`}
-                      fill
                       alt={"alt" in piece ? piece.alt : "slide image"}
+                      width={1200}
+                      height={2000}
                       style={{
-                        objectFit: "cover",
                         width: "100%",
-                        height: "100%",
+                        height: "auto",
                         display: "block",
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
                       }}
                     />
                   </div>

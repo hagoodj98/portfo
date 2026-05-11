@@ -14,7 +14,6 @@ const nextConfig = {
       "import",
       "global-builtin",
       "color-functions",
-      "mixed-decls",
     ],
     quietDeps: true,
   },

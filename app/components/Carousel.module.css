@@ -1,12 +1,14 @@
 /* Custom scrollbars for code blocks in carousel */
 .carousel-code-scrollable {
-  max-height: 400px;
-  overflow: auto;
+  max-height: 600px;
+  overflow-y: auto;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   scrollbar-width: thin;
   scrollbar-color: #24a3bf #181f2a;
   scrollbar-gutter: stable both-edges;
+  scroll-behavior: smooth;
 }
 
 .carousel-code-scrollable pre {
@@ -39,9 +41,23 @@
   overflow: hidden;
 }
 
-.carousel-image-container:hover .carousel-image-scrollable {
-  overflow: auto;
-  cursor: grab;
+.carousel-image-scrollable {
+  position: relative;
+}
+
+.carousel-image-scrollable::-webkit-scrollbar {
+  width: 8px;
+  background: #181f2a;
+  border-radius: 8px;
+}
+
+.carousel-image-scrollable::-webkit-scrollbar-thumb {
+  background: #24a3bf;
+  border-radius: 8px;
+}
+
+.carousel-image-scrollable::-webkit-scrollbar-thumb:hover {
+  background: #158fbf;
 }
 
 /* Custom vertical scrollbar for carousel slides */
@@ -49,7 +65,19 @@
   scrollbar-width: thin;
   scrollbar-color: #24a3bf #181f2a;
 }
+.carousel-image-scrollable::after {
+  content: "";
 
+  position: sticky;
+
+  bottom: 0;
+
+  display: block;
+
+  height: 40px;
+
+  background: linear-gradient(to top, #181f2a, transparent);
+}
 .carousel-slide-scrollable::-webkit-scrollbar {
   width: 8px;
   background: #181f2a;

@@ -6,210 +6,66 @@ const EndpointsLayerSlides = [
     title: "POST /login",
     summary:
       "Express routes are protected with authentication checks and input validation using Zod schemas.",
-    description: `app.post("/login", async (req, res, next) => {
-      // Keep local auth result handling in this route so form-specific errors
-      // can be normalized into the central error middleware.
-      passport.authenticate("local", function (err, user, info) {
-        const validation = loginSchema.safeParse({
-          username: req.body.username,
-          password: req.body.password,
-        });
-    
-        if (!validation.success) {
-          return next(
-            new ErrorHandler(400, "Validation failed", {
-              username: validation.error.issues.find(
-                (err) => err.path[0] === "username",
-              )
-                ? validation.error.issues.find((err) => err.path[0] === "username")
-                    .message
-                : null,
-              password: validation.error.issues.find(
-                (err) => err.path[0] === "password",
-              )
-                ? validation.error.issues.find((err) => err.path[0] === "password")
-                    .message
-                : null,
-            }),
-          );
-        }
-        if (err) {
-          return next(err);
-        }
-        if (!user) {
-          if (info && info.message === "User not found") {
-            return next(new ErrorHandler(401, "User not found", info));
-          }
-    
-          return next(new ErrorHandler(401, "Invalid credentials", info));
-          // return res.redirect("/login-error");
-        }
-        req.logIn(user, function (err) {
-          if (err) {
-            return next(err);
-          }
-          return res.redirect("/forum");
-        });
-      })(req, res, next);
-    });`,
+    description: `What it does:
+  - Validates username/password with Zod
+  - Authenticates via Passport local strategy
+  - Starts user session on success
+
+Responses:
+  200 redirect to /forum
+  401 invalid credentials
+  400 validation errors`,
   },
   {
     id: "register-endpoint",
     title: "POST /register",
     summary:
       "Registration route validates input and creates a new user with hashed password before redirecting to login.",
-    description: `app.post("/register", async (req, res, next) => {
-        if (req.isAuthenticated()) {
-          return res.redirect("/forum");
-        }
-      
-        const username = req.body.username;
-        const email = req.body.email;
-        const password = req.body.password;
-        const validation = registrationSchema.safeParse({
-          username,
-          email,
-          password,
-        });
-      
-        if (!validation.success) {
-          return next(
-            new ErrorHandler(400, "Registration failed", {
-              username: validation.error.issues.find(
-                (err) => err.path[0] === "username",
-              )
-                ? validation.error.issues.find((err) => err.path[0] === "username")
-                    .message
-                : null,
-              email: validation.error.issues.find((err) => err.path[0] === "email")
-                ? validation.error.issues.find((err) => err.path[0] === "email")
-                    .message
-                : null,
-              password: validation.error.issues.find(
-                (err) => err.path[0] === "password",
-              )
-                ? validation.error.issues.find((err) => err.path[0] === "password")
-                    .message
-                : null,
-            }),
-          );
-        }
-      
-        try {
-          const userExists = await checkingIfExisting(email, username);
-          if (userExists) {
-            return next(
-              new ErrorHandler(400, "User already exists", {
-                duplicateInfo:
-                  "You typed an email or username that already exists, try a new one!",
-              }),
-            );
-          } else {
-            // Hash password before persistence, then create a logged-in session.
-            bcrypt.hash(password, saltRounds, async (err, hash) => {
-              if (err) {
-                return next(new ErrorHandler(500, "Error hashing password"));
-              } else {
-                const user = await createUser(username, email, hash);
-                req.login(user, (loginError) => {
-                  if (loginError) {
-                    return next(loginError);
-                  }
-                  return res.redirect("/forum");
-                });
-              }
-            });
-          }
-        } catch (err) {
-          return next(err);
-        }
-      });`,
+    description: `What it does:
+  - Validates username/email/password
+  - Checks duplicates before create
+  - Hashes password and stores user
+  - Creates authenticated session`,
   },
   {
     id: "passport-auth-endpoints",
     title: "OAuth Authentication Endpoints",
     summary:
       "Passport routes for Google, Twitch, and Discord initiate OAuth flows and handle callbacks to authenticate users.",
-    description: `app.get(
-      "/auth/google",
-      passport.authenticate("google", { scope: ["profile", "email"] }),
-    );
-    app.get(
-      "/auth/discord",
-      passport.authenticate("discord", { scope: ["identify", "email"] }),
-    );
-     app.get(
-      "/auth/discord/forum",
-      passport.authenticate("discord", {
-        successRedirect: "/forum",
-        failureRedirect: "/login",
-      }),
-    );
-    app.get(
-      "/auth/google/forum",
-      passport.authenticate("google", {
-        successRedirect: "/forum",
-        failureRedirect: "/login",
-      }),
-    );`,
+    description: `OAuth routes:
+  /auth/google
+  /auth/discord
+  callback routes with successRedirect/failureRedirect
+
+What it does:
+  - Starts provider auth flow
+  - Handles callback and session creation
+  - Redirects to forum on success`,
   },
   {
     id: "protected-routes",
     title: "Protected Routes with Authentication Checks",
     summary:
       "Middleware guards forum and content creation routes to ensure only authenticated users can access them. For example, the POST /add-post route checks authentication and validates input before allowing post creation.",
-    description: `app.post("/add-post", async (req, res, next) => {
-      if (!req.isAuthenticated()) return res.redirect("/login");
-    
-      const post = req.body.newPost;
-    
-      const validation = postSchema.safeParse({ newPost: post });
-      if (!validation.success) {
-        return next(
-          new ErrorHandler(400, "Invalid post data", validation.error.issues),
-        );
-      }
-      try {
-        await createPost(post, req.user.id);
-        res.redirect("/forum");
-      } catch (err) {
-        return next(new ErrorHandler(500, "Internal Server Error", err));
-      }
-    });`,
+    description: `What it does:
+  - Requires authenticated session for protected routes
+  - Validates payload before persistence
+  - Rejects unauthorized requests early
+
+Example protected action:
+  POST /add-post`,
   },
   {
     id: "logout-endpoint",
     title: "Logout Endpoint",
     summary:
       "GET /logout route terminates the user session and redirects to login. Passport's req.logout is used to clear the session and ensure the user is logged out securely. Sessions were created using express-session with secure cookie settings to protect against common vulnerabilities.",
-    description: ` 
-    app.use(
-      session({
-        name: "zombieslayers.sid",
-        cookie: {
-          maxAge: 1000 * 60 * 60 * 24, // 1 day
-          httpOnly: true,
-          sameSite: "lax",
-          secure: isProduction,
-        },
-        secret: process.env.SESSION_SECRET || "test-session-secret",
-        resave: false,
-        saveUninitialized: false,
-        // Refresh cookie expiry on each request while a user is active.
-        rolling: true,
-      }),
-    );
-    
-    
-    
-    app.get("/logout", (req, res, next) => {
-      req.logout(function (err) {
-        if (err) {
-          return next(err);
-        }
-        res.redirect("/login    ");
-      });
-    });`,
+    description: `GET /logout
+
+What it does:
+  - Calls Passport logout
+  - Clears active authenticated session
+  - Redirects user to login screen`,
   },
 ];
 
