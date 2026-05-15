@@ -333,6 +333,10 @@ const scheduler = () => {
               concerns, such as grouping related components in directories that
               use them.
             </li>
+            <li>
+              Did not yet fix the bfcache bug to prevent stale data when user
+              uses the back and forward nav buttons.
+            </li>
           </div>
         </ImprovementSection>
         <VideoSection
