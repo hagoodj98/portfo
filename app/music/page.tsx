@@ -31,13 +31,13 @@ function Music() {
       <ProjectIntro
         projectname="Fan Funnel"
         description="This is a full-funnel web application designed for people who like my music. The goal is to capture subscribers for my running campaigns, buying a fan pack, and joining my patreon."
-        srcname="/GOOD.jpg"
+        srcname="/funnel/GOOD.jpg"
       />
 
       <Personas
-        persona="/Yellow-And-Light-Yellow-Modern-User-Persona-Graph-1.png"
-        personatwo="/Yellow-And-Light-Yellow-Modern-User-Persona-Graph.png"
-        personathree="/Yellow-And-Light-Yellow-Modern-User-Persona-Graph-2.png"
+        persona="/funnel/YellowAndLightYellowModernUserPersonaGraph.png"
+        personatwo="/funnel/YellowAndLightYellowModernUserPersonaGraph1.png"
+        personathree="/funnel/YellowAndLightYellowModernUserPersonaGraph2.png"
       />
 
       <div className="tw-bg-yellow tw-mt-28 tw-py-20">
@@ -267,6 +267,15 @@ function Music() {
               I still need to fully test the cross-device confirmation case:
               user submits an email on one device, then opens the confirmation
               email and confirms on a different device/browser.
+            </li>
+            <li>
+              Had to implement a bfcache helper to get around the fact that the
+              session is updated in the background when the user is on the email
+              confirmation step. If user tries to refresh or navigate back while
+              waiting for confirmation, they could end up with a stale session
+              and get stuck. The helper listens for page show events and forces
+              a reload if the page was loaded from bfcache, ensuring users
+              always have the most up-to-date session state.
             </li>
           </div>
         </ImprovementSection>

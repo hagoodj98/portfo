@@ -245,6 +245,10 @@ const BookBlog = () => {
             (Note: Since I am the only user, some of these improvements are for
             completeness and best practices rather than necessity.)
           </li>
+          <li>
+            Did not yet fix the bfcache bug to prevent stale data when user uses
+            the back and forward nav buttons.
+          </li>
         </div>
       </ImprovementSection>
       <Responsive repsonsive="/book notes.png" width={800} height={600} />
