@@ -52,7 +52,7 @@ function Music() {
             <div>
               <p className="md:tw-text-base lg:tw-text-xl xl:tw-text-3xl tw-text-black ">
                 The Music Funnel application is built with a modern full-stack
-                approach using Next.js 15 and React for the frontend and
+                approach using Next.js 16 and React for the frontend and
                 backend. It leverages Next.js API routes for all server-side
                 logic, eliminating the need for a separate backend server.
                 Subscriber quality is protected with layered email legitimacy
