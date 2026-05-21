@@ -69,9 +69,9 @@ export default function Home() {
             </h2>
           </div>
           <ProjectThumbnail
-            projectUrl="/bookblog-code-shots/booknotesmockup.svg"
-            projectName="BookBlog Project"
-            link="/work/bookblog"
+            projectUrl="/funnel/VinylRecordMockup.jpg"
+            projectName="Music Project"
+            link="/work/fanfunnel"
           />
 
           <ProjectThumbnail
@@ -81,19 +81,14 @@ export default function Home() {
           />
 
           <ProjectThumbnail
-            projectUrl="/pos/Mockup.png"
-            projectName="Scheduler Project"
-            link="/work/scheduler"
-          />
-          <ProjectThumbnail
             projectUrl="/l4d/Mockup.png"
             projectName="GameSite Project"
             link="/work/l4d"
           />
           <ProjectThumbnail
-            projectUrl="/flippo/flippo.svg"
-            projectName="Animate Project"
-            link="/work/flippo"
+            projectUrl="/pos/Mockup.png"
+            projectName="Scheduler Project"
+            link="/work/scheduler"
           />
           <ProjectThumbnail
             projectUrl="/sonicdna/soundapi.png"
@@ -101,9 +96,14 @@ export default function Home() {
             link="/work/sonicdna"
           />
           <ProjectThumbnail
-            projectUrl="/funnel/VinylRecordMockup.jpg"
-            projectName="Music Project"
-            link="/music"
+            projectUrl="/bookblog-code-shots/booknotesmockup.svg"
+            projectName="BookBlog Project"
+            link="/work/bookblog"
+          />
+          <ProjectThumbnail
+            projectUrl="/flippo/flippo.svg"
+            projectName="Animate Project"
+            link="/work/flippo"
           />
 
           <div></div>
