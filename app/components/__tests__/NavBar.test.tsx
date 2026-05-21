@@ -50,8 +50,10 @@ describe("NavBar routing", () => {
   it("maps navbar hrefs to real app router pages", () => {
     allNavHrefs.forEach((href) => {
       const pagePath = pageFileForRoute(href);
-      expect(existsSync(pagePath), `Missing page for route ${href}: ${pagePath}`)
-        .toBe(true);
+      expect(
+        existsSync(pagePath),
+        `Missing page for route ${href}: ${pagePath}`,
+      ).toBe(true);
     });
   });
 
