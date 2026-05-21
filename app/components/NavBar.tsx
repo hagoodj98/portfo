@@ -49,25 +49,30 @@ const NavBar = () => {
                   Home
                 </Nav.Link>
               </Nav.Item>
-              <NavDropdown title="Work" id="basic-nav-dropdown">
-                <NavDropdown.Item href="/work/bookblog">
-                  Book Blog
+              <NavDropdown
+                title="Work"
+                id="basic-nav-dropdown"
+                align="end"
+                className="dropdown-menu-end site-dropdown-menu"
+              >
+                <NavDropdown.Item href="/work/fanfunnel">
+                  Fan Funnel
+                </NavDropdown.Item>
+                <NavDropdown.Item href="/work/omni">
+                  Omnias' Workflows
                 </NavDropdown.Item>
                 <NavDropdown.Item href="/work/l4d">GameSite</NavDropdown.Item>
-                <NavDropdown.Item href="/work/omni">
-                  Omnia Workspace
-                </NavDropdown.Item>
-                <NavDropdown.Item href="/work/flippo">Flippo</NavDropdown.Item>
                 <NavDropdown.Item href="/work/scheduler">
                   Scheduler
                 </NavDropdown.Item>
                 <NavDropdown.Item href="/work/sonicdna">
                   SonicDNA
                 </NavDropdown.Item>
+                <NavDropdown.Item href="/work/bookblog">
+                  Book Blog
+                </NavDropdown.Item>
+                <NavDropdown.Item href="/work/flippo">Flippo</NavDropdown.Item>
               </NavDropdown>
-              <Nav.Item>
-                <Nav.Link href="/music">Fan Funnel</Nav.Link>
-              </Nav.Item>
             </Nav>
           </Offcanvas.Body>
         </Navbar.Offcanvas>
