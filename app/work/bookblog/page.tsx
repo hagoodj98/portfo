@@ -246,8 +246,9 @@ const BookBlog = () => {
             completeness and best practices rather than necessity.)
           </li>
           <li>
-            Did not yet fix the bfcache bug to prevent stale data when user uses
-            the back and forward nav buttons.
+            Identified browser bfcache behavior causing stale navigation state
+            and began implementing refresh synchronization strategies for
+            consistent client data.
           </li>
         </div>
       </ImprovementSection>

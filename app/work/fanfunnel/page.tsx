@@ -1,21 +1,21 @@
 import React from "react";
 
-import repsonsive from "../../public/funnel/Untitleddesign.png";
-import Personas from "../components/Personas";
+import repsonsive from "../../../public/funnel/Untitleddesign.png";
+import Personas from "../../components/Personas";
 import Responsive from "@/app/components/Responsive";
-import { infoData } from "../components/datai";
-import ProjectIntro from "../components/ProjectIntro";
-import Card from "../components/Card";
-import ProjectLink from "../components/ProjectLink";
+import { infoData } from "../../components/datai";
+import ProjectIntro from "../../components/ProjectIntro";
+import Card from "../../components/Card";
+import ProjectLink from "../../components/ProjectLink";
 import APIEndpoints from "./components/APIEndpoints";
 import SecurityMeasure from "./components/SecurityMeasure";
-import PERNSection from "../components/PERNSection";
+import PERNSection from "../../components/PERNSection";
 import CI from "./components/CI";
-import DesignTimeLine from "../components/DesignTimeLine";
-import Video from "../components/Video";
-import ImprovementSection from "../components/ImprovementSection";
-import WireframeSlide from "../components/WireframeSlide";
-import Diagram from "../components/Diagram";
+import DesignTimeLine from "../../components/DesignTimeLine";
+import Video from "../../components/Video";
+import ImprovementSection from "../../components/ImprovementSection";
+import WireframeSlide from "../../components/WireframeSlide";
+import Diagram from "../../components/Diagram";
 import FileArch from "./components/FileArch";
 export const metadata = {
   title: "Music Funnel",

@@ -1,5 +1,5 @@
 import React from "react";
-import CarouselControlled from "../../components/Carousel";
+import CarouselControlled from "../../../components/Carousel";
 
 const ciSlides = [
   {

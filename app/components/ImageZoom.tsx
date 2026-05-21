@@ -46,6 +46,7 @@ const ImageZoom = (props: ImageZoomProps) => {
         style={{
           transition: "transform 0.3s ease",
           display: "block",
+          height: "auto",
           transformOrigin: origin,
         }}
         className="group-hover:tw-scale-125 tw-transition-transform tw-duration-300"
