@@ -252,11 +252,28 @@ const BookBlog = () => {
           </li>
         </div>
       </ImprovementSection>
-      <Responsive repsonsive="/book notes.png" width={800} height={600} />
+      <Responsive
+        repsonsive="/bookblog-code-shots/book notes.png"
+        width={800}
+        height={600}
+      />
       <VideoSection
         srclink="../bookblog-code-shots/bookblogdemo-small.mp4"
         githubLink="https://github.com/hagoodj98/bookblog"
       />
+      <div className="tw-container tw-mx-auto tw-my-10 tw-p-5">
+        <h3 className="tw-text-2xl md:tw-text-3xl tw-text-bluegreen tw-font-boldonse">
+          Addressed Improvements
+        </h3>
+        <div className="tw-w-64">
+          <hr className="tw-h-2 tw-bg-bluegreen" />
+        </div>
+        <div className="tw-mt-5 tw-rounded-lg tw-border tw-border-bluegreen/30 tw-bg-white tw-p-5 tw-shadow-sm">
+          <p className="tw-text-sm tw-text-gray-500">
+            No addressed improvements logged yet for this project.
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
