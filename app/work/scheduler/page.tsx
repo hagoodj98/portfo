@@ -322,6 +322,21 @@ const scheduler = () => {
               manage jobs.
             </li>
             <li>
+              <span className="tw-line-through tw-decoration-2">
+                Enhance scheduling so users cannot schedule jobs in the past or
+                with invalid time ranges, improving data integrity and user
+                experience.
+              </span>{" "}
+              <span className="tw-inline-flex tw-items-center tw-rounded-full tw-bg-bluegreen tw-text-white tw-text-xs tw-px-2 tw-py-1">
+                Addressed
+              </span>
+            </li>
+            <li>
+              Enhance the UI to provide clearer feedback on scheduling
+              conflicts, such as highlighting overlapping time slots and
+              providing suggestions for available times.
+            </li>
+            <li>
               Continuing to better understand when to use react hooks such as
               UseCallback and UseMemo to optimize performance and prevent
               unnecessary re-renders, especially as the app scales. Still
@@ -344,6 +359,59 @@ const scheduler = () => {
           srclink="/pos/demo-small.mp4"
           githubLink="https://github.com/hagoodj98/production_scheduler"
         />
+        <div className="tw-container tw-mx-auto tw-my-10 tw-p-5">
+          <h3 className="tw-text-2xl md:tw-text-3xl tw-text-bluegreen tw-font-boldonse">
+            Addressed Improvements
+          </h3>
+          <div className="tw-w-64">
+            <hr className="tw-h-2 tw-bg-bluegreen" />
+          </div>
+          <div className="tw-mt-5 tw-rounded-lg tw-border tw-border-bluegreen/30 tw-bg-white tw-p-5 tw-shadow-sm">
+            <div className="tw-flex tw-items-center tw-gap-2 tw-mb-3">
+              <span className="tw-inline-flex tw-items-center tw-rounded-full tw-bg-bluegreen tw-text-white tw-text-xs tw-px-2 tw-py-1">
+                Addressed
+              </span>
+              <span className="tw-text-xs tw-text-gray-500">Validation improvement</span>
+            </div>
+            <h4 className="tw-text-lg tw-font-bold tw-text-black tw-mb-2">
+              Scheduling guardrails for past dates and invalid ranges
+            </h4>
+            <p className="tw-text-sm tw-text-black tw-mb-2">
+              <strong>Problem:</strong> Users could submit schedules in the past or with an end
+              time before the start time.
+            </p>
+            <p className="tw-text-sm tw-text-black tw-mb-2">
+              <strong>Solution:</strong> Added validator logic that throws controlled errors when
+              time constraints are invalid.
+            </p>
+            <p className="tw-text-sm tw-text-black tw-mb-3">
+              <strong>Evidence:</strong> The app now returns clear messages and blocks invalid
+              schedule creation before persistence.
+            </p>
+            <div className="tw-grid tw-grid-cols-1 md:tw-grid-cols-2 tw-gap-4 tw-items-start">
+              <div>
+                <video
+                  className="tw-w-full tw-rounded tw-border tw-border-bluegreen/20"
+                  controls
+                  playsInline
+                  preload="metadata"
+                >
+                  <source src="/pos/productionissue1-small.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <pre className="tw-bg-[#181f2a] tw-text-[#e0e0e0] tw-rounded tw-p-4 tw-text-xs tw-overflow-x-auto">{`if (startDateTime.isBefore(now)) {
+  throw new CustomError('Start time must be in the future', 400);
+}
+if (endDateTime.isBefore(startDateTime)) {
+  throw new CustomError('End time must be after start time', 400);
+}`}</pre>
+            </div>
+            <p className="tw-text-xs tw-text-gray-500 tw-mt-3">
+              Source: production-scheduler/app/validation/timeScheduleValidator.ts
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
