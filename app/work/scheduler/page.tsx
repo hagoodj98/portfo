@@ -371,22 +371,24 @@ const scheduler = () => {
               <span className="tw-inline-flex tw-items-center tw-rounded-full tw-bg-bluegreen tw-text-white tw-text-xs tw-px-2 tw-py-1">
                 Addressed
               </span>
-              <span className="tw-text-xs tw-text-gray-500">Validation improvement</span>
+              <span className="tw-text-xs tw-text-gray-500">
+                Validation improvement
+              </span>
             </div>
             <h4 className="tw-text-lg tw-font-bold tw-text-black tw-mb-2">
               Scheduling guardrails for past dates and invalid ranges
             </h4>
             <p className="tw-text-sm tw-text-black tw-mb-2">
-              <strong>Problem:</strong> Users could submit schedules in the past or with an end
-              time before the start time.
+              <strong>Problem:</strong> Users could submit schedules in the past
+              or with an end time before the start time.
             </p>
             <p className="tw-text-sm tw-text-black tw-mb-2">
-              <strong>Solution:</strong> Added validator logic that throws controlled errors when
-              time constraints are invalid.
+              <strong>Solution:</strong> Added validator logic that throws
+              controlled errors when time constraints are invalid.
             </p>
             <p className="tw-text-sm tw-text-black tw-mb-3">
-              <strong>Evidence:</strong> The app now returns clear messages and blocks invalid
-              schedule creation before persistence.
+              <strong>Evidence:</strong> The app now returns clear messages and
+              blocks invalid schedule creation before persistence.
             </p>
             <div className="tw-grid tw-grid-cols-1 md:tw-grid-cols-2 tw-gap-4 tw-items-start">
               <div>
@@ -396,7 +398,10 @@ const scheduler = () => {
                   playsInline
                   preload="metadata"
                 >
-                  <source src="/pos/productionissue1-small.mp4" type="video/mp4" />
+                  <source
+                    src="/pos/productionissue1-small.mp4"
+                    type="video/mp4"
+                  />
                   Your browser does not support the video tag.
                 </video>
               </div>
@@ -408,7 +413,8 @@ if (endDateTime.isBefore(startDateTime)) {
 }`}</pre>
             </div>
             <p className="tw-text-xs tw-text-gray-500 tw-mt-3">
-              Source: production-scheduler/app/validation/timeScheduleValidator.ts
+              Source:
+              production-scheduler/app/validation/timeScheduleValidator.ts
             </p>
           </div>
         </div>
