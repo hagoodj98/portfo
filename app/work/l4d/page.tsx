@@ -223,11 +223,26 @@ function Left4Dead() {
               the project in the future.
             </li>
             <li>
-              Will implement AJAX in the future to make the site more dynamic
-              and interactive. This would allow users to like a post without
-              refreshing the page.
+              <span className="tw-line-through tw-decoration-2">
+                Will implement AJAX in the future to make the site more dynamic
+                and interactive. This would allow users to like a post without
+                refreshing the page.
+              </span>{" "}
+              <span className="tw-inline-flex tw-items-center tw-rounded-full tw-bg-bluegreen tw-text-white tw-text-xs tw-px-2 tw-py-1">
+                Addressed
+              </span>
             </li>
-            <li>Will improve readability on the forum </li>
+            <li className="tw-line-through tw-decoration-2">
+              <span>Will improve readability on the forum</span> {""}
+              <span className="tw-inline-flex tw-items-center tw-rounded-full tw-bg-bluegreen tw-text-white tw-text-xs tw-px-2 tw-py-1">
+                Addressed(AJAX implementation)
+              </span>
+            </li>
+            <li>
+              Will incorporate more reply features, including responding to a
+              specific reply in a thread and notifying the target user through
+              the notification icon when they receive a response.
+            </li>
           </ul>
         </div>
       </ImprovementSection>
@@ -244,8 +259,64 @@ function Left4Dead() {
           <hr className="tw-h-2 tw-bg-bluegreen" />
         </div>
         <div className="tw-mt-5 tw-rounded-lg tw-border tw-border-bluegreen/30 tw-bg-white tw-p-5 tw-shadow-sm">
-          <p className="tw-text-sm tw-text-gray-500">
-            No addressed improvements logged yet for this project.
+          <div className="tw-flex tw-items-center tw-gap-2 tw-mb-3">
+            <span className="tw-inline-flex tw-items-center tw-rounded-full tw-bg-bluegreen tw-text-white tw-text-xs tw-px-2 tw-py-1">
+              Addressed
+            </span>
+            <span className="tw-text-xs tw-text-gray-500">
+              AJAX forum interactions and readability
+            </span>
+          </div>
+          <h4 className="tw-text-lg tw-font-bold tw-text-black tw-mb-2">
+            Implemented live forum updates without page refresh
+          </h4>
+          <p className="tw-text-sm tw-text-black tw-mb-2">
+            <strong>Problem:</strong> Forum actions required full page reloads,
+            which made posting, replying, and sorting feel slow and less
+            interactive.
+          </p>
+          <p className="tw-text-sm tw-text-black tw-mb-2">
+            <strong>Solution:</strong> Converted post and reply submission to
+            JSON-based AJAX flows and updated the UI in-place, including
+            immediate prepend behavior and visual feedback for new posts.
+          </p>
+          <p className="tw-text-sm tw-text-black tw-mb-3">
+            <strong>Evidence:</strong> New posts now appear instantly, replies
+            can be added inline, and forum sorting/pagination updates content
+            dynamically.
+          </p>
+          <div className="tw-grid tw-grid-cols-1 lg:tw-grid-cols-2 tw-gap-4 tw-items-start">
+            <div className="tw-max-w-md">
+              <video
+                className="tw-w-full tw-rounded tw-border tw-border-bluegreen/20"
+                controls
+                playsInline
+                preload="metadata"
+              >
+                <source src="/l4d/shortl4ddemo2-small.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <pre className="tw-bg-[#181f2a] tw-text-[#e0e0e0] tw-rounded tw-p-4 tw-text-xs tw-overflow-x-auto">{`// Client-side (views/partials/forum-scripts.ejs)
+const response = await fetch("http://localhost:3000/add-post", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ newPost: postContent }),
+});
+const data = await response.json();
+if (data.success) {
+  postsContainer.insertAdjacentHTML("afterbegin", newHTML);
+  requestAnimationFrame(() => insertedPost.classList.add("fade-bg"));
+}
+
+// Server-side (index.js)
+app.post("/add-post", async (req, res, next) => {
+  const result = await createPost(req.body.newPost, req.user.id);
+  return res.json({ success: true, post: result });
+});`}</pre>
+          </div>
+          <p className="tw-text-xs tw-text-gray-500 tw-mt-3">
+            Source: L4D/views/partials/forum-scripts.ejs and L4D/index.js
           </p>
         </div>
       </div>
