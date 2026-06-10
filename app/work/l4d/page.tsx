@@ -293,7 +293,7 @@ function Left4Dead() {
                 playsInline
                 preload="metadata"
               >
-                <source src="/l4d/shortl4ddemo2-small.mp4" type="video/mp4" />
+                <source src="/l4d/lastajaxdemo-small.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
