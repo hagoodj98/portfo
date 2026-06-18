@@ -39,6 +39,18 @@ const l4dPostgresSlides = [
   created_at TIMESTAMP`,
   },
   {
+    id: "final-replies-table",
+    title: "replies_final_tier Table",
+    summary:
+      "Stores nested replies made in response to another reply in the forum thread.",
+    description: `replies_final_tier:
+  id SERIAL PRIMARY KEY
+  comment_post TEXT
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE
+  reply_id INTEGER REFERENCES replies(id) ON DELETE CASCADE
+  created_at TIMESTAMP`,
+  },
+  {
     id: "posts-reactions-table",
     title: "posts_reactions Table",
     summary:
@@ -62,6 +74,18 @@ const l4dPostgresSlides = [
   reaction_type TEXT -- 'like' | 'dislike'
   UNIQUE (user_id, comment_id)`,
   },
+  {
+    id: "reactions-final-reply-table",
+    title: "reactions_to_finalreply Table",
+    summary:
+      "Tracks user reactions (like/dislike) on nested replies. Unique per user/final reply.",
+    description: `reactions_to_finalreply:
+  id SERIAL PRIMARY KEY
+  final_reply_id INTEGER REFERENCES replies_final_tier(id) ON DELETE CASCADE
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE
+  reaction_type TEXT -- 'like' | 'dislike'
+  UNIQUE (user_id, final_reply_id)`,
+  },
 ];
 
 const TablesSlides = () => {
@@ -78,13 +102,14 @@ const TablesSlides = () => {
           <div>
             <p>
               The database schema is designed to support a forum-like
-              application with users, posts, replies, and reactions. The users
-              table accommodates both local and OAuth identities while enforcing
-              unique email constraints. Posts and replies are linked to their
-              authors, and reactions are tracked in separate tables to allow for
-              efficient querying of likes/dislikes on both posts and comments.
-              This structure ensures data integrity and supports the core
-              functionalities of the application.
+              application with users, posts, replies, nested replies, and
+              reactions. The users table accommodates both local and OAuth
+              identities while enforcing unique email constraints. Posts and
+              replies are linked to their authors, and reactions are tracked in
+              separate tables to allow for efficient querying of likes/dislikes
+              on posts, replies, and final-tier replies. This structure ensures
+              data integrity and supports the core functionalities of the
+              application.
             </p>
           </div>
         </div>

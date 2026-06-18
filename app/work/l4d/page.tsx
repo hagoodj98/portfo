@@ -18,8 +18,9 @@ import DesignTimeLine from "@/app/components/DesignTimeLine";
 import Diagram from "@/app/components/Diagram";
 import PERNSection from "@/app/components/PERNSection";
 import FileArch from "./components/FileArchitecture";
+import ImageZoom from "@/app/components/ImageZoom";
 export const metadata = {
-  title: "Gaming Site",
+  title: "Forum Gaming Site",
 };
 
 function Left4Dead() {
@@ -32,8 +33,8 @@ function Left4Dead() {
   return (
     <div className="tw-py-20">
       <ProjectIntro
-        projectname="GamingSite"
-        description="For this project, I chose to redesign a website alot of gamers know, the Left 4 Dead. A game I truly enjoy playing. The objective was to create my own verison of the original site. I figured the original site (https://www.l4d.com/l4d/home.php) had potential but needed a modern update in terms of usability, good visual, and better user experience. My objective was to reimagine the site by integrating contemporary design principles."
+        projectname="Forum Gaming Site"
+        description="For this project, I redesigned the Left 4 Dead website to showcase a modern gaming hub with an integrated forum feature. The original site (https://www.l4d.com/l4d/home.php) had potential but lacked contemporary usability and visual design. I rebuilt it with a focus on user experience, featuring a fully functional forum system that allows players to post, reply, react, and engage in threaded discussions. The objective was to create a platform where gamers can discuss the game, share experiences, and build community through interactive forum features."
         srcname="/l4d/Mockup.png"
       />
 
@@ -64,14 +65,21 @@ function Left4Dead() {
               authentication, forum content, and user actions.
             </li>
             <li>
-              Database: PostgreSQL stores user data, forum posts, and reactions.
+              Database: PostgreSQL stores user data, forum posts, threaded
+              replies, and reaction records across multiple layers.
             </li>
             <li>
               Authentication: Secure login and registration using JWT and
               bcrypt.
             </li>
-            <li>Forum: CRUD operations for posts and comments.</li>
-            <li>Reactions: Users can like or dislike posts and comments.</li>
+            <li>
+              Forum: CRUD operations for posts, replies, reply-to-reply
+              threading, and live pagination.
+            </li>
+            <li>
+              Reactions: Users can like or dislike posts, replies, and
+              final-tier replies.
+            </li>
           </ul>
         </div>
       </PERNSection>
@@ -87,6 +95,23 @@ function Left4Dead() {
       </Diagram>
       <FileArch />
       <TablesSlides />
+      <div className="tw-container tw-mx-auto tw-my-10 tw-p-5">
+        <h3 className="tw-text-2xl md:tw-text-3xl tw-text-bluegreen tw-font-boldonse">
+          Table Schemas and their relationships
+        </h3>
+        <div className="tw-w-64">
+          <hr className="tw-h-2 tw-bg-bluegreen" />
+        </div>
+        <div className="tw-mt-6">
+          <ImageZoom
+            src="/l4d/overviewtables.png"
+            width={1200}
+            height={800}
+            alt="Forum interface showing table schemas and their relationships"
+            className="tw-w-full tw-rounded-lg tw-border tw-border-bluegreen/20 tw-shadow-sm"
+          />
+        </div>
+      </div>
       <ProjectLayers />
       <div className="tw-container tw-mx-auto tw-my-8 tw-p-5">
         <div className="tw-space-y-8 tw-mt-6">
@@ -223,6 +248,28 @@ function Left4Dead() {
               the project in the future.
             </li>
             <li>
+              Improve better naming conventions for the database tables and
+              columns. This would enhance readability and maintainability of the
+              database schema, making it easier for developers to understand the
+              purpose of each table and column at a glance.
+            </li>
+            <li>
+              Implement notifications for user interactions such as new posts,
+              replies, and reactions. This would enhance user engagement and
+              keep users informed about activity on their posts and threads they
+              are following.
+            </li>
+            <li>
+              <span className="tw-line-through tw-decoration-2">
+                Add additional features like reply-to-reply interactions and
+                reactions on the final tier of replies to enhance user
+                engagement and support deeper discussions in the forum.
+              </span>{" "}
+              <span className="tw-inline-flex tw-items-center tw-rounded-full tw-bg-bluegreen tw-text-white tw-text-xs tw-px-2 tw-py-1">
+                Addressed
+              </span>
+            </li>
+            <li>
               <span className="tw-line-through tw-decoration-2">
                 Will implement AJAX in the future to make the site more dynamic
                 and interactive. This would allow users to like a post without
@@ -238,15 +285,11 @@ function Left4Dead() {
                 Addressed(AJAX implementation)
               </span>
             </li>
-            <li>
-              Will incorporate more reply features, including responding to a
-              specific reply in a thread and notifying the target user through
-              the notification icon when they receive a response.
-            </li>
           </ul>
         </div>
       </ImprovementSection>
       <Responsive repsonsive={responsive} />
+
       <Video
         githubLink="https://github.com/hagoodj98/L4D"
         srclink="../l4d/demo-small.mp4"
@@ -317,6 +360,79 @@ app.post("/add-post", async (req, res, next) => {
           </div>
           <p className="tw-text-xs tw-text-gray-500 tw-mt-3">
             Source: L4D/views/partials/forum-scripts.ejs and L4D/index.js
+          </p>
+        </div>
+        <div className="tw-mt-5 tw-rounded-lg tw-border tw-border-bluegreen/30 tw-bg-white tw-p-5 tw-shadow-sm">
+          <div className="tw-flex tw-items-center tw-gap-2 tw-mb-3">
+            <span className="tw-inline-flex tw-items-center tw-rounded-full tw-bg-bluegreen tw-text-white tw-text-xs tw-px-2 tw-py-1">
+              Addressed
+            </span>
+            <span className="tw-text-xs tw-text-gray-500">
+              Threaded replies and final-tier reactions
+            </span>
+          </div>
+          <h4 className="tw-text-lg tw-font-bold tw-text-black tw-mb-2">
+            Added reply-to-reply interactions and final-tier reaction support
+          </h4>
+          <p className="tw-text-sm tw-text-black tw-mb-2">
+            <strong>Problem:</strong> Replies stopped at one level, so longer
+            discussions and reactions on deeper thread levels were missing from
+            the forum.
+          </p>
+          <p className="tw-text-sm tw-text-black tw-mb-2">
+            <strong>Solution:</strong> Extended the forum data model to support
+            nested replies, added separate reaction handling for the final tier,
+            and updated the client UI to render the deeper thread structure.
+          </p>
+          <p className="tw-text-sm tw-text-black tw-mb-3">
+            <strong>Evidence:</strong> The forum now supports reply-to-reply
+            creation, nested reaction toggles, and updated counts at the deepest
+            thread level.
+          </p>
+          <div className="tw-grid tw-grid-cols-1 lg:tw-grid-cols-2 tw-gap-4 tw-items-start">
+            <div className="tw-bg-white tw-rounded-xl tw-border tw-border-bluegreen/30 tw-p-4 tw-shadow-sm">
+              <h5 className="tw-text-base tw-font-bold tw-text-black tw-mb-2">
+                Reply-to-reply creation
+              </h5>
+              <p className="tw-text-sm tw-text-black tw-mb-3">
+                Demonstrates how a reply opens a second-tier input and creates a
+                nested thread in place.
+              </p>
+              <video
+                className="tw-w-full tw-rounded tw-border tw-border-bluegreen/20"
+                controls
+                playsInline
+                preload="metadata"
+              >
+                <source src="/l4d/subreplieyfeature.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div className="tw-bg-white tw-rounded-xl tw-border tw-border-bluegreen/30 tw-p-4 tw-shadow-sm">
+              <h5 className="tw-text-base tw-font-bold tw-text-black tw-mb-2">
+                Final-tier reply reactions activity (in addition)
+              </h5>
+              <p className="tw-text-sm tw-text-black tw-mb-3">
+                Shows like/dislike handling and count updates on the deepest
+                reply layer.
+              </p>
+              <video
+                className="tw-w-full tw-rounded tw-border tw-border-bluegreen/20"
+                controls
+                playsInline
+                preload="metadata"
+              >
+                <source
+                  src="/l4d/additionvideotosubreply.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+          <p className="tw-text-xs tw-text-gray-500 tw-mt-3">
+            Source: L4D/views/partials/forum-scripts.ejs, L4D/index.js, and the
+            nested reply database tables
           </p>
         </div>
       </div>
