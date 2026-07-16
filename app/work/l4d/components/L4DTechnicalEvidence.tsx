@@ -18,23 +18,23 @@ const ProjectLayers = () => (
           <p className="tw-text-white tw-text-sm tw-mb-3">
             Handles all PostgreSQL connections, schema setup, and data access.
             Repositories encapsulate all SQL queries for users, posts, replies,
-            and reactions.
+            comments, notifications, and reactions.
           </p>
           <ul className="tw-list-disc tw-ml-5 tw-text-[#e0e0e0] tw-text-xs">
             <li>
-              <strong>database/databaseConnection.ts</strong>: Centralized DB
+              <strong>database/databaseConnection.js</strong>: Centralized DB
               connection logic.
             </li>
             <li>
               <strong>database/repositories/</strong>: All table-specific query
-              logic (users, posts, replies, posts_reactions,
-              reactions_comments).
+              logic (users, forumcontent, comments, replies, user_notifications,
+              posts_reactions, comments_reactions, replies_reactions).
             </li>
             <li>
               <strong>db/init.sql</strong>: Schema and seed data (if present).
             </li>
             <li>
-              <strong>scripts/db-init.ts</strong>: Script for initializing the
+              <strong>scripts/db-init.js</strong>: Script for initializing the
               database.
             </li>
           </ul>
@@ -50,14 +50,14 @@ const ProjectLayers = () => (
           </p>
           <ul className="tw-list-disc tw-ml-5 tw-text-[#e0e0e0] tw-text-xs">
             <li>
-              <strong>passport/passport.ts</strong>: All Passport strategies and
+              <strong>passport/passport.js</strong>: All Passport strategies and
               session logic.
             </li>
             <li>
-              <strong>utils/error.ts</strong>: Centralized error handling.
+              <strong>utils/error.js</strong>: Centralized error handling.
             </li>
             <li>
-              <strong>utils/zodSchemas.ts</strong>: Zod schemas for input
+              <strong>utils/zodSchemas.js</strong>: Zod schemas for input
               validation.
             </li>
             <li>
@@ -79,22 +79,23 @@ const ProjectLayers = () => (
           </p>
           <ul className="tw-list-disc tw-ml-5 tw-text-[#e0e0e0] tw-text-xs">
             <li>
-              <strong>users.ts</strong>: User creation, lookup, and provider
+              <strong>users.js</strong>: User creation, lookup, and provider
               linking.
             </li>
             <li>
-              <strong>posts.ts</strong>: Forum post CRUD and listing.
+              <strong>forumcontent.js</strong>: Forum post listing, counts, and
+              aggregate thread data.
             </li>
             <li>
-              <strong>replies.ts</strong>: Reply creation and association with
-              posts.
+              <strong>comments.js / replies.js</strong>: First-tier and
+              reply-to-comment creation flows.
             </li>
             <li>
-              <strong>posts_reactions.ts</strong>: Like/dislike logic for posts.
+              <strong>posts_reactions.js</strong>: Like/dislike logic for posts.
             </li>
             <li>
-              <strong>reactions_comments.ts</strong>: Like/dislike logic for
-              replies.
+              <strong>comments_reactions.js / replies_reactions.js</strong>:
+              Like/dislike logic for comments and replies.
             </li>
           </ul>
         </div>

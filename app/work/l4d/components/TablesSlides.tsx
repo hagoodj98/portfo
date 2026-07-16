@@ -14,6 +14,7 @@ const l4dPostgresSlides = [
   google_id VARCHAR(255) UNIQUE (nullable)
   twitch_id VARCHAR(255) UNIQUE (nullable)
   discord_id VARCHAR(255) UNIQUE (nullable)
+  notification_state JSONB DEFAULT '{"notifications": []}'::jsonb
   provider VARCHAR(20) DEFAULT 'local'`,
   },
   {
@@ -28,10 +29,10 @@ const l4dPostgresSlides = [
   updated_at TIMESTAMP`,
   },
   {
-    id: "replies-table",
-    title: "replies Table",
-    summary: "Replies to posts, each linked to a user and a post.",
-    description: `replies:
+    id: "comments-table",
+    title: "comments Table",
+    summary: "First-tier comments linked to a post and author.",
+    description: `comments:
   id SERIAL PRIMARY KEY
   comment_post TEXT
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE
@@ -39,15 +40,15 @@ const l4dPostgresSlides = [
   created_at TIMESTAMP`,
   },
   {
-    id: "final-replies-table",
-    title: "replies_final_tier Table",
+    id: "replies-table",
+    title: "replies Table",
     summary:
-      "Stores nested replies made in response to another reply in the forum thread.",
-    description: `replies_final_tier:
+      "Stores reply-to-comment records and supports deeper thread interactions.",
+    description: `replies:
   id SERIAL PRIMARY KEY
-  comment_post TEXT
+  reply_post TEXT
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE
-  reply_id INTEGER REFERENCES replies(id) ON DELETE CASCADE
+  comment_id INTEGER REFERENCES comments(id) ON DELETE CASCADE
   created_at TIMESTAMP`,
   },
   {
@@ -63,28 +64,28 @@ const l4dPostgresSlides = [
   UNIQUE (user_id, post_id)`,
   },
   {
-    id: "reactions-comments-table",
-    title: "reactions_comments Table",
+    id: "comments-reactions-table",
+    title: "comments_reactions Table",
     summary:
-      "Tracks user reactions (like/dislike) to replies. Unique per user/comment.",
-    description: `reactions_comments:
+      "Tracks user reactions (like/dislike) on comments. Unique per user/comment.",
+    description: `comments_reactions:
   id SERIAL PRIMARY KEY
-  comment_id INTEGER REFERENCES replies(id) ON DELETE CASCADE
+  comment_id INTEGER REFERENCES comments(id) ON DELETE CASCADE
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE
   reaction_type TEXT -- 'like' | 'dislike'
   UNIQUE (user_id, comment_id)`,
   },
   {
-    id: "reactions-final-reply-table",
-    title: "reactions_to_finalreply Table",
+    id: "replies-reactions-table",
+    title: "replies_reactions Table",
     summary:
-      "Tracks user reactions (like/dislike) on nested replies. Unique per user/final reply.",
-    description: `reactions_to_finalreply:
+      "Tracks user reactions (like/dislike) on replies. Unique per user/reply.",
+    description: `replies_reactions:
   id SERIAL PRIMARY KEY
-  final_reply_id INTEGER REFERENCES replies_final_tier(id) ON DELETE CASCADE
+  reply_id INTEGER REFERENCES replies(id) ON DELETE CASCADE
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE
   reaction_type TEXT -- 'like' | 'dislike'
-  UNIQUE (user_id, final_reply_id)`,
+  UNIQUE (user_id, reply_id)`,
   },
 ];
 
@@ -105,11 +106,11 @@ const TablesSlides = () => {
               application with users, posts, replies, nested replies, and
               reactions. The users table accommodates both local and OAuth
               identities while enforcing unique email constraints. Posts and
-              replies are linked to their authors, and reactions are tracked in
-              separate tables to allow for efficient querying of likes/dislikes
-              on posts, replies, and final-tier replies. This structure ensures
-              data integrity and supports the core functionalities of the
-              application.
+              comments/replies are linked to their authors. Reactions are
+              tracked in separate tables for posts, comments, and replies,
+              enabling efficient querying for like/dislike counts and per-user
+              reaction state. This structure supports threaded discussion,
+              notification sourcing, and durable engagement metrics.
             </p>
           </div>
         </div>
