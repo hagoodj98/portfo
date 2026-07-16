@@ -18,6 +18,8 @@ import DesignTimeLine from "@/app/components/DesignTimeLine";
 import Diagram from "@/app/components/Diagram";
 import PERNSection from "@/app/components/PERNSection";
 import FileArch from "./components/FileArchitecture";
+import NotificationQuerySlides from "./components/NotificationQuerySlides";
+import NotificationEndpointSlides from "./components/NotificationEndpointSlides";
 import ImageZoom from "@/app/components/ImageZoom";
 export const metadata = {
   title: "Forum Gaming Site",
@@ -69,8 +71,8 @@ function Left4Dead() {
               replies, and reaction records across multiple layers.
             </li>
             <li>
-              Authentication: Secure login and registration using JWT and
-              bcrypt.
+              Authentication: Secure local and OAuth login with Passport,
+              express-session, and bcrypt.
             </li>
             <li>
               Forum: CRUD operations for posts, replies, reply-to-reply
@@ -104,7 +106,7 @@ function Left4Dead() {
         </div>
         <div className="tw-mt-6">
           <ImageZoom
-            src="/l4d/overviewtables.png"
+            src="/l4d/Screenshot 2026-07-16 at 12.11.27 PM.png"
             width={1200}
             height={800}
             alt="Forum interface showing table schemas and their relationships"
@@ -433,6 +435,129 @@ app.post("/add-post", async (req, res, next) => {
           <p className="tw-text-xs tw-text-gray-500 tw-mt-3">
             Source: L4D/views/partials/forum-scripts.ejs, L4D/index.js, and the
             nested reply database tables
+          </p>
+        </div>
+
+        <div className="tw-mt-5 tw-rounded-lg tw-border tw-border-bluegreen/30 tw-bg-white tw-p-5 tw-shadow-sm">
+          <div className="tw-flex tw-items-center tw-gap-2 tw-mb-3">
+            <span className="tw-inline-flex tw-items-center tw-rounded-full tw-bg-bluegreen tw-text-white tw-text-xs tw-px-2 tw-py-1">
+              Addressed
+            </span>
+            <span className="tw-text-xs tw-text-gray-500">
+              Multi-source notifications with caching and read-state persistence
+            </span>
+          </div>
+          <h4 className="tw-text-lg tw-font-bold tw-text-black tw-mb-2">
+            Built a unified notification system across post, comment, and reply
+            layers
+          </h4>
+          <p className="tw-text-sm tw-text-black tw-mb-2">
+            <strong>Problem:</strong> Notifications were originally fragmented
+            across interaction types. Post reactions/comments, comment
+            reactions/replies, and reply reactions each required different query
+            paths. Without a merge strategy and cache layer, this caused
+            duplicate entries, inconsistent read state, and unnecessary repeated
+            DB reads.
+          </p>
+          <p className="tw-text-sm tw-text-black tw-mb-2">
+            <strong>Solution:</strong> I implemented a three-query notification
+            pipeline in PostgreSQL, then merged the sourced results on the
+            server before sending to the client.
+          </p>
+          <ul className="tw-list-disc tw-ml-5 tw-text-black tw-text-sm tw-mb-3">
+            <li>
+              <strong>postsCommentsNotifications:</strong> captures reactions
+              and comments on a user&apos;s posts.
+            </li>
+            <li>
+              <strong>commentsRepliesNotifications:</strong> captures reactions
+              and replies on a user&apos;s comments.
+            </li>
+            <li>
+              <strong>repliesNotifications:</strong> captures reactions on a
+              user&apos;s replies.
+            </li>
+            <li>
+              Added a server-side cache keyed by user id to reduce repetitive
+              reads and stabilize notification identity in SSE updates.
+            </li>
+            <li>
+              Persisted read/unread status in the users table via
+              notification_state JSONB, so bell state survives refresh and
+              session changes.
+            </li>
+          </ul>
+          <p className="tw-text-sm tw-text-black tw-mb-3">
+            <strong>Evidence:</strong> The system now supports real-time
+            updates, accurate unread counts, no duplicate panel items after
+            merge, and durable read state after refresh. End-to-end coverage was
+            added for all notification paths: post reaction/comment, comment
+            reaction/reply, and reply reaction.
+          </p>
+          <div className="tw-mb-4 tw-max-w-3xl">
+            <h5 className="tw-text-base tw-font-bold tw-text-black tw-mb-2">
+              Notification feed demo
+            </h5>
+            <h6>Here’s what I accomplished:</h6>
+            <ul>
+              <li>Set up SSE to stream notification updates in real time.</li>
+              <li>
+                I tested this with two users in parallel using Chrome in
+                Incognito mode.
+              </li>
+              <li>
+                In the demo scenario, user97 liked one of user1’s posts, and
+                user1’s notification bell updated with a new notification from
+                user97.
+              </li>
+            </ul>
+            <video
+              className="tw-w-full tw-rounded tw-border tw-border-bluegreen/20"
+              controls
+              playsInline
+              preload="metadata"
+            >
+              <source src="/l4d/notification-feed-small.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div className="tw-grid tw-grid-cols-1 lg:tw-grid-cols-2 tw-gap-4 tw-items-start">
+            <pre className="tw-bg-[#181f2a] tw-text-[#e0e0e0] tw-rounded tw-p-4 tw-text-xs tw-overflow-x-auto">{`// Repository fan-out (database/repositories/user_notifications.js)
+              export const fetchAllNotifications = async (userId) => {
+                const postsNotificationsSource = await postsCommentsNotifications(userId);
+                const commentsNotificationSource = await commentsRepliesNotifications(userId);
+                const repliesNotificationsSource = await repliesNotifications(userId);
+                return {
+                  postsNotificationsSource,
+                  commentsNotificationSource,
+                  repliesNotificationsSource,
+                };
+              };`}</pre>
+            <pre className="tw-bg-[#181f2a] tw-text-[#e0e0e0] tw-rounded tw-p-4 tw-text-xs tw-overflow-x-auto">
+              {`// Server merge + cache + SSE persistence (index.js)
+              const cachedUserNotificationState = new Map();
+
+              const {
+                postsNotificationsSource,
+                commentsNotificationSource,
+                repliesNotificationsSource,
+              } = await fetchAllNotifications(userId);
+
+              const merged = await mergeAllSourcedNotifications([
+                ...postsNotificationsSource,
+                ...commentsNotificationSource,
+                ...repliesNotificationsSource,
+              ]);
+
+              await saveNotificationState(userId, merged);
+              cachedUserNotificationState.set(userId, merged);`}
+            </pre>
+          </div>
+          <NotificationQuerySlides />
+          <NotificationEndpointSlides />
+          <p className="tw-text-xs tw-text-gray-500 tw-mt-3">
+            Source: L4D/database/repositories/user_notifications.js,
+            L4D/utils/notificationHelper.js, L4D/index.js
           </p>
         </div>
       </div>

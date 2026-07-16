@@ -6,7 +6,7 @@ const RepositoriesLayerSlides = [
     title: "Users Repository",
     summary:
       "Encapsulates user creation and lookup queries for local and OAuth accounts.",
-    description: `// database/repositories/users.ts
+    description: `// database/repositories/users.js
 import pool from '../databaseConnection';
 
 export const createUser = async (userData) => {
@@ -19,32 +19,44 @@ export const createUser = async (userData) => {
 };`,
   },
   {
-    id: "posts-repository",
-    title: "Posts Repository",
+    id: "forumcontent-repository",
+    title: "Forum Content Repository",
     summary:
-      "Handles forum post creation and listing with reaction and reply counts.",
-    description: `// database/repositories/posts.ts
+      "Handles forum post creation and aggregated listing with reaction and nested reply counts.",
+    description: `// database/repositories/forumcontent.js
 import db from "../databaseConnection.js";
 
 export const createPost = async (postContent, userId) => {
-  await db.query(
-    "INSERT INTO posts (post, user_id, created_at) VALUES ($1, $2, $3)",
+  const result = await db.query(
+    "INSERT INTO posts (post, user_id, created_at) VALUES ($1, $2, $3) RETURNING *",
     [postContent, userId, new Date()],
   );
+  return result.rows[0];
+};
+
+export const getAllForumData = async (userId, sortDirection, limit, offset) => {
+  // returns posts with nested comments/replies and reaction aggregates
 };`,
   },
   {
-    id: "replies-repository",
-    title: "Replies Repository",
+    id: "comments-and-replies-repository",
+    title: "Comments and Replies Repositories",
     summary:
-      "Stores first-tier replies linked to a post and the user who wrote them.",
-    description: `// database/repositories/replies.ts
+      "Supports both first-tier comments and reply-to-comment creation in separate repository files.",
+    description: `// database/repositories/comments.js + replies.js
 import db from "../databaseConnection.js";
 
-export const createReply = async (comment_post, user_id, post_id) => {
-  await db.query(
-    "INSERT INTO replies (comment_post, user_id, post_id, created_at) VALUES ($1, $2, $3, $4)",
-    [comment_post, user_id, post_id, new Date()],
+export const createComment = async (comment_post, user_id, post_id) => {
+  return db.query(
+    "INSERT INTO comments (comment_post, user_id, post_id, created_at) VALUES ($1, $2, $3, $4) RETURNING *",
+    [comment_post, user_id, post_id, new Date()]
+  );
+};
+
+export const createReply = async (reply_post, user_id, comment_id) => {
+  return db.query(
+    "INSERT INTO replies (reply_post, user_id, comment_id, created_at) VALUES ($1, $2, $3, $4) RETURNING *",
+    [reply_post, user_id, comment_id, new Date()]
   );
 };`,
   },
@@ -53,7 +65,7 @@ export const createReply = async (comment_post, user_id, post_id) => {
     title: "Posts Reactions Repository",
     summary:
       "Tracks like and dislike reactions on posts with one reaction per user per post.",
-    description: `// database/repositories/posts_reactions.ts
+    description: `// database/repositories/posts_reactions.js
 import db from "../databaseConnection.js";
 
 export const addReaction = async (postId, userId, reactionType) => {
@@ -64,15 +76,16 @@ export const addReaction = async (postId, userId, reactionType) => {
 };`,
   },
   {
-    id: "reactions-comments-repository",
-    title: "Reactions Comments Repository",
-    summary: "Tracks like and dislike reactions on forum comments and replies.",
-    description: `// database/repositories/reactions_comments.ts
+    id: "comments-reactions-repository",
+    title: "Comments/Replies Reactions Repositories",
+    summary:
+      "Tracks like/dislike reactions on comments and replies using dedicated tables and upsert logic.",
+    description: `// database/repositories/comments_reactions.js + replies_reactions.js
 import db from "../databaseConnection.js";
 
-export const addReaction = async (commentId, userId, reactionType) => {
+export const addCommentReaction = async (commentId, userId, reactionType) => {
   await db.query(
-    "INSERT INTO reactions_comments (comment_id, user_id, reaction_type) VALUES ($1, $2, $3)",
+    "INSERT INTO comments_reactions (comment_id, user_id, reaction_type) VALUES ($1, $2, $3)",
     [commentId, userId, reactionType],
   );
 };`,
