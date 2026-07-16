@@ -250,16 +250,28 @@ function Left4Dead() {
               the project in the future.
             </li>
             <li>
+              Implement routing through the notification messages to land on
+              that specific post or thread.
+            </li>
+            <li>Implement TypeScript. This project is getting complicated!</li>
+            <li className="tw-line-through tw-decoration-2">
               Improve better naming conventions for the database tables and
               columns. This would enhance readability and maintainability of the
               database schema, making it easier for developers to understand the
               purpose of each table and column at a glance.
+              <span className="tw-inline-flex tw-items-center tw-rounded-full tw-bg-bluegreen tw-text-white tw-text-xs tw-px-2 tw-py-1">
+                Addressed
+              </span>
             </li>
             <li>
-              Implement notifications for user interactions such as new posts,
-              replies, and reactions. This would enhance user engagement and
-              keep users informed about activity on their posts and threads they
-              are following.
+              <span className="tw-line-through tw-decoration-2">
+                Implement notifications for user interactions such as new posts,
+                replies, and reactions. This would enhance user engagement and
+                keep users informed about activity on their posts and threads.
+              </span>{" "}
+              <span className="tw-inline-flex tw-items-center tw-rounded-full tw-bg-bluegreen tw-text-white tw-text-xs tw-px-2 tw-py-1">
+                Addressed
+              </span>
             </li>
             <li>
               <span className="tw-line-through tw-decoration-2">
