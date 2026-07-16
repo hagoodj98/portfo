@@ -13,7 +13,7 @@ const notificationEndpointSlides = [
 Route behavior:
   - Requires authenticated session
   - Reads user notification state from cache/database
-  - Returns JSON used by forum-scripts.ejs to render list` ,
+  - Returns JSON used by forum-scripts.ejs to render list`,
   },
   {
     id: "sse-updates",
@@ -28,7 +28,7 @@ Route behavior:
   - Requires authenticated session
   - Refreshes notification sources on interval
   - Merges sources + cache identity
-  - Emits: { payload: { count, notifications } }` ,
+  - Emits: { payload: { count, notifications } }`,
   },
   {
     id: "mark-read",
@@ -43,7 +43,7 @@ Route behavior:
   - Requires authenticated session
   - Maps unread -> read for user notifications
   - Saves updated state to users.notification_state
-  - Updates in-memory cache and returns 200` ,
+  - Updates in-memory cache and returns 200`,
   },
   {
     id: "event-sources",
@@ -57,7 +57,7 @@ Route behavior:
 Why this matters:
   - User actions create rows used by notification queries
   - Notification routes then aggregate those rows by ownership scope
-  - UI receives one merged timeline instead of source-specific payloads` ,
+  - UI receives one merged timeline instead of source-specific payloads`,
   },
 ];
 

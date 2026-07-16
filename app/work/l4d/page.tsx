@@ -494,42 +494,70 @@ app.post("/add-post", async (req, res, next) => {
             added for all notification paths: post reaction/comment, comment
             reaction/reply, and reply reaction.
           </p>
+          <div className="tw-mb-4 tw-max-w-3xl">
+            <h5 className="tw-text-base tw-font-bold tw-text-black tw-mb-2">
+              Notification feed demo
+            </h5>
+            <h6>Here’s what I accomplished:</h6>
+            <ul>
+              <li>Set up SSE to stream notification updates in real time.</li>
+              <li>
+                I tested this with two users in parallel using Chrome in
+                Incognito mode.
+              </li>
+              <li>
+                In the demo scenario, user97 liked one of user1’s posts, and
+                user1’s notification bell updated with a new notification from
+                user97.
+              </li>
+            </ul>
+            <video
+              className="tw-w-full tw-rounded tw-border tw-border-bluegreen/20"
+              controls
+              playsInline
+              preload="metadata"
+            >
+              <source src="/l4d/notification-feed-small.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
           <div className="tw-grid tw-grid-cols-1 lg:tw-grid-cols-2 tw-gap-4 tw-items-start">
             <pre className="tw-bg-[#181f2a] tw-text-[#e0e0e0] tw-rounded tw-p-4 tw-text-xs tw-overflow-x-auto">{`// Repository fan-out (database/repositories/user_notifications.js)
-export const fetchAllNotifications = async (userId) => {
-  const postsNotificationsSource = await postsCommentsNotifications(userId);
-  const commentsNotificationSource = await commentsRepliesNotifications(userId);
-  const repliesNotificationsSource = await repliesNotifications(userId);
-  return {
-    postsNotificationsSource,
-    commentsNotificationSource,
-    repliesNotificationsSource,
-  };
-};`}</pre>
-            <pre className="tw-bg-[#181f2a] tw-text-[#e0e0e0] tw-rounded tw-p-4 tw-text-xs tw-overflow-x-auto">{`// Server merge + cache + SSE persistence (index.js)
-const cachedUserNotificationState = new Map();
+              export const fetchAllNotifications = async (userId) => {
+                const postsNotificationsSource = await postsCommentsNotifications(userId);
+                const commentsNotificationSource = await commentsRepliesNotifications(userId);
+                const repliesNotificationsSource = await repliesNotifications(userId);
+                return {
+                  postsNotificationsSource,
+                  commentsNotificationSource,
+                  repliesNotificationsSource,
+                };
+              };`}</pre>
+            <pre className="tw-bg-[#181f2a] tw-text-[#e0e0e0] tw-rounded tw-p-4 tw-text-xs tw-overflow-x-auto">
+              {`// Server merge + cache + SSE persistence (index.js)
+              const cachedUserNotificationState = new Map();
 
-const {
-  postsNotificationsSource,
-  commentsNotificationSource,
-  repliesNotificationsSource,
-} = await fetchAllNotifications(userId);
+              const {
+                postsNotificationsSource,
+                commentsNotificationSource,
+                repliesNotificationsSource,
+              } = await fetchAllNotifications(userId);
 
-const merged = await mergeAllSourcedNotifications([
-  ...postsNotificationsSource,
-  ...commentsNotificationSource,
-  ...repliesNotificationsSource,
-]);
+              const merged = await mergeAllSourcedNotifications([
+                ...postsNotificationsSource,
+                ...commentsNotificationSource,
+                ...repliesNotificationsSource,
+              ]);
 
-await saveNotificationState(userId, merged);
-cachedUserNotificationState.set(userId, merged);`}</pre>
+              await saveNotificationState(userId, merged);
+              cachedUserNotificationState.set(userId, merged);`}
+            </pre>
           </div>
           <NotificationQuerySlides />
           <NotificationEndpointSlides />
           <p className="tw-text-xs tw-text-gray-500 tw-mt-3">
             Source: L4D/database/repositories/user_notifications.js,
-            L4D/utils/notificationHelper.js, L4D/index.js, and
-            L4D/e2e/notifications.spec.js
+            L4D/utils/notificationHelper.js, L4D/index.js
           </p>
         </div>
       </div>
