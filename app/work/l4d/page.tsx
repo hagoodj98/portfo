@@ -249,11 +249,19 @@ function Left4Dead() {
               simplifying the setup process for other developers who may work on
               the project in the future.
             </li>
-            <li>
+            <li className="tw-line-through tw-decoration-2">
               Implement routing through the notification messages to land on
               that specific post or thread.
+              <span className="tw-inline-flex tw-items-center tw-rounded-full tw-bg-bluegreen tw-text-white tw-text-xs tw-px-2 tw-py-1">
+                Addressed
+              </span>
             </li>
-            <li>Implement TypeScript. This project is getting complicated!</li>
+            <li className="tw-line-through tw-decoration-2">
+              Implement TypeScript. This project is getting complicated!
+              <span className="tw-inline-flex tw-items-center tw-rounded-full tw-bg-bluegreen tw-text-white tw-text-xs tw-px-2 tw-py-1">
+                Addressed
+              </span>
+            </li>
             <li className="tw-line-through tw-decoration-2">
               Improve better naming conventions for the database tables and
               columns. This would enhance readability and maintainability of the
@@ -532,6 +540,33 @@ app.post("/add-post", async (req, res, next) => {
               <source src="/l4d/notification-feed-small.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
+          </div>
+          <div className="tw-mb-4 tw-max-w-3xl">
+            <h5 className="tw-text-base tw-font-bold tw-text-black tw-mb-2">
+              Notification routing to exact thread location
+            </h5>
+            <p className="tw-text-sm tw-text-black tw-mb-3">
+              Added click-through routing from notification items directly to
+              the relevant forum location (post, comment, or reply), then
+              applied a temporary highlight so users can immediately identify
+              the destination context.
+            </p>
+            <video
+              className="tw-w-full tw-rounded tw-border tw-border-bluegreen/20"
+              controls
+              playsInline
+              preload="metadata"
+            >
+              <source
+                src="/l4d/notification-routing-small.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+            <p className="tw-text-xs tw-text-gray-500 tw-mt-2">
+              Video optimized for delivery: compressed MP4 asset for faster page
+              load.
+            </p>
           </div>
           <div className="tw-grid tw-grid-cols-1 lg:tw-grid-cols-2 tw-gap-4 tw-items-start">
             <pre className="tw-bg-[#181f2a] tw-text-[#e0e0e0] tw-rounded tw-p-4 tw-text-xs tw-overflow-x-auto">{`// Repository fan-out (database/repositories/user_notifications.js)
