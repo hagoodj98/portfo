@@ -6,7 +6,7 @@ const SecurityLayerSlides = [
     summary:
       "Passport local strategy validates credentials and compares bcrypt hashes before issuing an authenticated session.",
     description: `Flow:\nPOST /login\n-> loginSchema.safeParse(...)\n-> passport.authenticate('local')\n-> bcrypt.compare(input, storedHash)\n-> req.logIn(user)
-    // passport/passport.js\nimport passport from 'passport';\nimport { Strategy as LocalStrategy } from 'passport-local';\npassport.use(
+    // passport/passport.ts\nimport passport from 'passport';\nimport { Strategy as LocalStrategy } from 'passport-local';\npassport.use(
       "local",
       new Strategy(async function verify(username, password, cb) {
         try {
@@ -108,7 +108,7 @@ const Security = () => {
   return (
     <div className="tw-bg-[#17213a] tw-rounded-2xl tw-border tw-border-[#38bdf8]/30 tw-p-5 tw-shadow-md tw-w-full">
       <h4 className="tw-text-[#38bdf8] tw-font-semibold tw-mb-3 tw-text-lg">
-        Passport Layer (passport/passport.js)
+        Passport Layer (passport/passport.ts)
       </h4>
       <CarouselControlled
         wireframeslides={SecurityLayerSlides}
