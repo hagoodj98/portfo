@@ -6,7 +6,7 @@ const RepositoriesLayerSlides = [
     title: "Users Repository",
     summary:
       "Encapsulates user creation and lookup queries for local and OAuth accounts.",
-    description: `// database/repositories/users.js
+    description: `// database/repositories/users.ts
 import pool from '../databaseConnection';
 
 export const createUser = async (userData) => {
@@ -23,8 +23,8 @@ export const createUser = async (userData) => {
     title: "Forum Content Repository",
     summary:
       "Handles forum post creation and aggregated listing with reaction and nested reply counts.",
-    description: `// database/repositories/forumcontent.js
-import db from "../databaseConnection.js";
+    description: `// database/repositories/forumcontent.ts
+  import db from "../databaseConnection.ts";
 
 export const createPost = async (postContent, userId) => {
   const result = await db.query(
@@ -43,8 +43,8 @@ export const getAllForumData = async (userId, sortDirection, limit, offset) => {
     title: "Comments and Replies Repositories",
     summary:
       "Supports both first-tier comments and reply-to-comment creation in separate repository files.",
-    description: `// database/repositories/comments.js + replies.js
-import db from "../databaseConnection.js";
+    description: `// database/repositories/comments.ts + replies.ts
+  import db from "../databaseConnection.ts";
 
 export const createComment = async (comment_post, user_id, post_id) => {
   return db.query(
@@ -65,8 +65,8 @@ export const createReply = async (reply_post, user_id, comment_id) => {
     title: "Posts Reactions Repository",
     summary:
       "Tracks like and dislike reactions on posts with one reaction per user per post.",
-    description: `// database/repositories/posts_reactions.js
-import db from "../databaseConnection.js";
+    description: `// database/repositories/posts_reactions.ts
+  import db from "../databaseConnection.ts";
 
 export const addReaction = async (postId, userId, reactionType) => {
   await db.query(
@@ -80,8 +80,8 @@ export const addReaction = async (postId, userId, reactionType) => {
     title: "Comments/Replies Reactions Repositories",
     summary:
       "Tracks like/dislike reactions on comments and replies using dedicated tables and upsert logic.",
-    description: `// database/repositories/comments_reactions.js + replies_reactions.js
-import db from "../databaseConnection.js";
+    description: `// database/repositories/comments_reactions.ts + replies_reactions.ts
+  import db from "../databaseConnection.ts";
 
 export const addCommentReaction = async (commentId, userId, reactionType) => {
   await db.query(

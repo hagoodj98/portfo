@@ -26,7 +26,7 @@ jobs:
         run: npm ci
 
       - name: Syntax check
-        run: node --check index.js
+        run: node --check index.ts
 
       - name: Run lint
         run: npm run lint

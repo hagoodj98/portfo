@@ -2,34 +2,34 @@ import React from "react";
 
 const l4dFileArchitecture = `L4D/
 ── database/
-  databaseConnection.js
+  databaseConnection.ts
     repositories/
-    users.js
-    forumcontent.js
-    comments.js
-    replies.js
-    user_notifications.js
-    posts_reactions.js
-    comments_reactions.js
-    replies_reactions.js
+    users.ts
+    forumcontent.ts
+    comments.ts
+    replies.ts
+    user_notifications.ts
+    posts_reactions.ts
+    comments_reactions.ts
+    replies_reactions.ts
 ── db/
     init.sql
 ── passport/
-  passport.js
+  passport.ts
 ── public/
     css/
      styles.css
     images/
 ── tests/
-  app.test.js
-  auth-errors.test.js
-  auth.test.js
-  error-handler.test.js
+  app.test.ts
+  auth-errors.test.ts
+  auth.test.ts
+  error-handler.test.ts
     ....
 ── utils/
-  error.js
-  notificationHelper.js
-  zodSchemas.js
+  error.ts
+  notificationHelper.ts
+  zodSchemas.ts
 ── views/
     community.ejs
     forum.ejs
@@ -42,9 +42,9 @@ const l4dFileArchitecture = `L4D/
     partials/
         footer.ejs
         header.ejs
-       index.js
+       index.ts
  package.json
-       providercredentials.js`;
+       providercredentials.ts`;
 
 const FileArchitecture = () => {
   return (

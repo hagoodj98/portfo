@@ -374,14 +374,14 @@ if (data.success) {
   requestAnimationFrame(() => insertedPost.classList.add("fade-bg"));
 }
 
-// Server-side (index.js)
+// Server-side (index.ts)
 app.post("/add-post", async (req, res, next) => {
   const result = await createPost(req.body.newPost, req.user.id);
   return res.json({ success: true, post: result });
 });`}</pre>
           </div>
           <p className="tw-text-xs tw-text-gray-500 tw-mt-3">
-            Source: L4D/views/partials/forum-scripts.ejs and L4D/index.js
+            Source: L4D/views/partials/forum-scripts.ejs and L4D/index.ts
           </p>
         </div>
         <div className="tw-mt-5 tw-rounded-lg tw-border tw-border-bluegreen/30 tw-bg-white tw-p-5 tw-shadow-sm">
@@ -453,7 +453,7 @@ app.post("/add-post", async (req, res, next) => {
             </div>
           </div>
           <p className="tw-text-xs tw-text-gray-500 tw-mt-3">
-            Source: L4D/views/partials/forum-scripts.ejs, L4D/index.js, and the
+            Source: L4D/views/partials/forum-scripts.ejs, L4D/index.ts, and the
             nested reply database tables
           </p>
         </div>
@@ -541,35 +541,8 @@ app.post("/add-post", async (req, res, next) => {
               Your browser does not support the video tag.
             </video>
           </div>
-          <div className="tw-mb-4 tw-max-w-3xl">
-            <h5 className="tw-text-base tw-font-bold tw-text-black tw-mb-2">
-              Notification routing to exact thread location
-            </h5>
-            <p className="tw-text-sm tw-text-black tw-mb-3">
-              Added click-through routing from notification items directly to
-              the relevant forum location (post, comment, or reply), then
-              applied a temporary highlight so users can immediately identify
-              the destination context.
-            </p>
-            <video
-              className="tw-w-full tw-rounded tw-border tw-border-bluegreen/20"
-              controls
-              playsInline
-              preload="metadata"
-            >
-              <source
-                src="/l4d/notification-routing-small.mp4"
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
-            <p className="tw-text-xs tw-text-gray-500 tw-mt-2">
-              Video optimized for delivery: compressed MP4 asset for faster page
-              load.
-            </p>
-          </div>
           <div className="tw-grid tw-grid-cols-1 lg:tw-grid-cols-2 tw-gap-4 tw-items-start">
-            <pre className="tw-bg-[#181f2a] tw-text-[#e0e0e0] tw-rounded tw-p-4 tw-text-xs tw-overflow-x-auto">{`// Repository fan-out (database/repositories/user_notifications.js)
+            <pre className="tw-bg-[#181f2a] tw-text-[#e0e0e0] tw-rounded tw-p-4 tw-text-xs tw-overflow-x-auto">{`// Repository fan-out (database/repositories/user_notifications.ts)
               export const fetchAllNotifications = async (userId) => {
                 const postsNotificationsSource = await postsCommentsNotifications(userId);
                 const commentsNotificationSource = await commentsRepliesNotifications(userId);
@@ -581,7 +554,7 @@ app.post("/add-post", async (req, res, next) => {
                 };
               };`}</pre>
             <pre className="tw-bg-[#181f2a] tw-text-[#e0e0e0] tw-rounded tw-p-4 tw-text-xs tw-overflow-x-auto">
-              {`// Server merge + cache + SSE persistence (index.js)
+              {`// Server merge + cache + SSE persistence (index.ts)
               const cachedUserNotificationState = new Map();
 
               const {
@@ -603,8 +576,104 @@ app.post("/add-post", async (req, res, next) => {
           <NotificationQuerySlides />
           <NotificationEndpointSlides />
           <p className="tw-text-xs tw-text-gray-500 tw-mt-3">
-            Source: L4D/database/repositories/user_notifications.js,
-            L4D/utils/notificationHelper.js, L4D/index.js
+            Source: L4D/database/repositories/user_notifications.ts,
+            L4D/utils/notificationHelper.ts, L4D/index.ts
+          </p>
+        </div>
+        <div className="tw-mt-5 tw-rounded-lg tw-border tw-border-bluegreen/30 tw-bg-white tw-p-5 tw-shadow-sm">
+          <div className="tw-flex tw-items-center tw-gap-2 tw-mb-3">
+            <span className="tw-inline-flex tw-items-center tw-rounded-full tw-bg-bluegreen tw-text-white tw-text-xs tw-px-2 tw-py-1">
+              Addressed
+            </span>
+            <span className="tw-text-xs tw-text-gray-500">
+              Notification routing with page-aware thread targeting and
+              contextual highlighting
+            </span>
+          </div>
+          <h4 className="tw-text-lg tw-font-bold tw-text-black tw-mb-2">
+            Routed notification clicks to the exact post, comment, or reply
+          </h4>
+          <p className="tw-text-sm tw-text-black tw-mb-2">
+            <strong>Problem:</strong> Users could see unread activity, but it
+            was not obvious where that interaction happened in the thread.
+          </p>
+          <p className="tw-text-sm tw-text-black tw-mb-2">
+            <strong>Solution:</strong> Implemented click-through notification
+            routing that navigates to the correct forum page, expands the
+            relevant thread depth, and temporarily highlights the destination
+            block.
+          </p>
+          <p className="tw-text-sm tw-text-black tw-mb-2">
+            <strong>How I implemented it:</strong>
+          </p>
+          <ul className="tw-list-disc tw-ml-5 tw-text-sm tw-text-black tw-mb-3">
+            <li>
+              Added page-aware notification queries in user_notifications.ts
+              using a page_lookup subquery with ROW_NUMBER() over forum sort
+              order.
+            </li>
+            <li>
+              Computed the destination page with: ((ROW_NUMBER() - 1) /
+              pageSize) + 1, then attached that as on_page in each notification
+              payload.
+            </li>
+            <li>
+              Included post_id, comment_id, and reply_id in the notification
+              JSON so the client can route to the exact thread level.
+            </li>
+            <li>
+              Built route strings in the form page/postID/commentID/replyID,
+              then parsed those segments client-side to paginate, expand the
+              correct thread depth, scroll, and highlight the destination node.
+            </li>
+          </ul>
+          <pre className="tw-bg-[#181f2a] tw-text-[#e0e0e0] tw-rounded tw-p-4 tw-text-xs tw-overflow-x-auto tw-mb-3">{`// Notification route payload shape (example)
+{
+  on_page: "3/42/88/109",
+  post_id: 42,
+  comment_id: 88,
+  reply_id: 109
+}
+
+// page number strategy in query layer
+((ROW_NUMBER() OVER (ORDER BY created_at DESC) - 1) / pageSize) + 1 AS page_number`}</pre>
+          <p className="tw-text-sm tw-text-black tw-mb-3">
+            <strong>Evidence:</strong> Notification interactions now guide the
+            user directly to the exact context with visual focus feedback for
+            faster orientation.
+          </p>
+          <div className="tw-mb-3 tw-rounded-lg tw-border tw-border-bluegreen/20 tw-bg-bluegreen/5 tw-p-3">
+            <p className="tw-text-xs tw-font-semibold tw-text-bluegreen tw-mb-1">
+              L4D project context (implementation paths)
+            </p>
+            <ul className="tw-list-disc tw-ml-5 tw-text-xs tw-text-black">
+              <li>
+                Client routing + highlight behavior:
+                L4D/views/partials/forum-scripts.ejs
+              </li>
+              <li>Notification API and state wiring: L4D/index.ts</li>
+              <li>
+                Notification source queries:
+                L4D/database/repositories/user_notifications.ts
+              </li>
+            </ul>
+          </div>
+          <div className="tw-mb-2 tw-max-w-3xl">
+            <video
+              className="tw-w-full tw-rounded tw-border tw-border-bluegreen/20"
+              controls
+              playsInline
+              preload="metadata"
+            >
+              <source
+                src="/l4d/notification-routing-small.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p className="tw-text-xs tw-text-gray-500 tw-mt-2">
+            Source: L4D/views/partials/forum-scripts.ejs and L4D/index.ts
           </p>
         </div>
       </div>

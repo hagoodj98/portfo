@@ -22,7 +22,7 @@ const ProjectLayers = () => (
           </p>
           <ul className="tw-list-disc tw-ml-5 tw-text-[#e0e0e0] tw-text-xs">
             <li>
-              <strong>database/databaseConnection.js</strong>: Centralized DB
+              <strong>database/databaseConnection.ts</strong>: Centralized DB
               connection logic.
             </li>
             <li>
@@ -34,7 +34,7 @@ const ProjectLayers = () => (
               <strong>db/init.sql</strong>: Schema and seed data (if present).
             </li>
             <li>
-              <strong>scripts/db-init.js</strong>: Script for initializing the
+              <strong>scripts/db-init.ts</strong>: Script for initializing the
               database.
             </li>
           </ul>
@@ -50,14 +50,14 @@ const ProjectLayers = () => (
           </p>
           <ul className="tw-list-disc tw-ml-5 tw-text-[#e0e0e0] tw-text-xs">
             <li>
-              <strong>passport/passport.js</strong>: All Passport strategies and
+              <strong>passport/passport.ts</strong>: All Passport strategies and
               session logic.
             </li>
             <li>
-              <strong>utils/error.js</strong>: Centralized error handling.
+              <strong>utils/error.ts</strong>: Centralized error handling.
             </li>
             <li>
-              <strong>utils/zodSchemas.js</strong>: Zod schemas for input
+              <strong>utils/zodSchemas.ts</strong>: Zod schemas for input
               validation.
             </li>
             <li>
@@ -79,22 +79,22 @@ const ProjectLayers = () => (
           </p>
           <ul className="tw-list-disc tw-ml-5 tw-text-[#e0e0e0] tw-text-xs">
             <li>
-              <strong>users.js</strong>: User creation, lookup, and provider
+              <strong>users.ts</strong>: User creation, lookup, and provider
               linking.
             </li>
             <li>
-              <strong>forumcontent.js</strong>: Forum post listing, counts, and
+              <strong>forumcontent.ts</strong>: Forum post listing, counts, and
               aggregate thread data.
             </li>
             <li>
-              <strong>comments.js / replies.js</strong>: First-tier and
+              <strong>comments.ts / replies.ts</strong>: First-tier and
               reply-to-comment creation flows.
             </li>
             <li>
-              <strong>posts_reactions.js</strong>: Like/dislike logic for posts.
+              <strong>posts_reactions.ts</strong>: Like/dislike logic for posts.
             </li>
             <li>
-              <strong>comments_reactions.js / replies_reactions.js</strong>:
+              <strong>comments_reactions.ts / replies_reactions.ts</strong>:
               Like/dislike logic for comments and replies.
             </li>
           </ul>
