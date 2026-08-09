@@ -45,9 +45,9 @@ export default function Home() {
             </h2>
             <p className="tw-text-center lg:tw-text-left tw-text-white ">
               I am from Greenville, South Carolina and I graduated from Carolina
-              High School in 2016 and have an associate's degree from Greenville
-              Technical College from 2018. I am a digital information design
-              graduate from Winthrop University in 2021. I enjoy coding,
+              High School in 2016 and have an associate&apos;s degree from
+              Greenville Technical College from 2018. I am a digital information
+              design graduate from Winthrop University in 2021. I enjoy coding,
               producing music, and fishing.
             </p>
           </div>
