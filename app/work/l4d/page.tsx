@@ -87,7 +87,7 @@ function Left4Dead() {
       </PERNSection>
 
       {/* API Endpoints Overview */}
-      <Diagram image="/l4d/l4d diagram.png" alt="diagram of endpoints">
+      <Diagram image="/l4d/l4d-diagram-v2.png" alt="diagram of endpoints">
         <p className="md:tw-w-2/3 tw-mt-3">
           The following diagram provides a visual overview of the main REST API
           endpoints for authentication, forum content, and reactions. It
@@ -362,8 +362,8 @@ function Left4Dead() {
                 Your browser does not support the video tag.
               </video>
             </div>
-            <pre className="tw-bg-[#181f2a] tw-text-[#e0e0e0] tw-rounded tw-p-4 tw-text-xs tw-overflow-x-auto">{`// Client-side (views/partials/forum-scripts.ejs)
-const response = await fetch("http://localhost:3000/add-post", {
+            <pre className="tw-bg-[#181f2a] tw-text-[#e0e0e0] tw-rounded tw-p-4 tw-text-xs tw-overflow-x-auto">{`// Client-side (views/partials/forum.ejs)
+const response = await fetch("http://localhost:3000/forum/response-body/add-post", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({ newPost: postContent }),
@@ -374,14 +374,15 @@ if (data.success) {
   requestAnimationFrame(() => insertedPost.classList.add("fade-bg"));
 }
 
-// Server-side (index.ts)
-app.post("/add-post", async (req, res, next) => {
+// Server-side (src/routes/post_type_response_body.ts)
+router.post("/add-post", async (req, res, next) => {
   const result = await createPost(req.body.newPost, req.user.id);
   return res.json({ success: true, post: result });
 });`}</pre>
           </div>
           <p className="tw-text-xs tw-text-gray-500 tw-mt-3">
-            Source: L4D/views/partials/forum-scripts.ejs and L4D/index.ts
+            Source: L4D/views/partials/forum.ejs and
+            L4D/src/routes/post_type_response_body.ts
           </p>
         </div>
         <div className="tw-mt-5 tw-rounded-lg tw-border tw-border-bluegreen/30 tw-bg-white tw-p-5 tw-shadow-sm">
@@ -432,11 +433,11 @@ app.post("/add-post", async (req, res, next) => {
             </div>
             <div className="tw-bg-white tw-rounded-xl tw-border tw-border-bluegreen/30 tw-p-4 tw-shadow-sm">
               <h5 className="tw-text-base tw-font-bold tw-text-black tw-mb-2">
-                Final-tier reply reactions activity (in addition)
+                Final-tier reply reaction activity
               </h5>
               <p className="tw-text-sm tw-text-black tw-mb-3">
-                Shows like/dislike handling and count updates on the deepest
-                reply layer.
+                Demonstrates like/dislike handling and count updates on the
+                deepest reply layer.
               </p>
               <video
                 className="tw-w-full tw-rounded tw-border tw-border-bluegreen/20"
@@ -453,8 +454,9 @@ app.post("/add-post", async (req, res, next) => {
             </div>
           </div>
           <p className="tw-text-xs tw-text-gray-500 tw-mt-3">
-            Source: L4D/views/partials/forum-scripts.ejs, L4D/index.ts, and the
-            nested reply database tables
+            Source: L4D/views/partials/forum.ejs,
+            L4D/src/routes/post_type_response_body.ts,
+            L4D/src/routes/post_type_reactions.ts, and nested reply tables
           </p>
         </div>
 
@@ -518,17 +520,19 @@ app.post("/add-post", async (req, res, next) => {
             <h5 className="tw-text-base tw-font-bold tw-text-black tw-mb-2">
               Notification feed demo
             </h5>
-            <h6>Here’s what I accomplished:</h6>
+            <h6>Demo highlights:</h6>
             <ul>
-              <li>Set up SSE to stream notification updates in real time.</li>
               <li>
-                I tested this with two users in parallel using Chrome in
-                Incognito mode.
+                Configured SSE to stream notification updates in real time.
               </li>
               <li>
-                In the demo scenario, user97 liked one of user1’s posts, and
-                user1’s notification bell updated with a new notification from
-                user97.
+                Tested with two users in parallel using Chrome in Incognito
+                mode.
+              </li>
+              <li>
+                In the demo scenario, user97 liked one of user1&apos;s posts,
+                and user1&apos;s notification bell updated with a new
+                notification from user97.
               </li>
             </ul>
             <video
@@ -554,7 +558,7 @@ app.post("/add-post", async (req, res, next) => {
                 };
               };`}</pre>
             <pre className="tw-bg-[#181f2a] tw-text-[#e0e0e0] tw-rounded tw-p-4 tw-text-xs tw-overflow-x-auto">
-              {`// Server merge + cache + SSE persistence (index.ts)
+              {`// Server merge + cache + SSE updates (src/routes/notifications.ts)
               const cachedUserNotificationState = new Map();
 
               const {
@@ -569,7 +573,6 @@ app.post("/add-post", async (req, res, next) => {
                 ...repliesNotificationsSource,
               ]);
 
-              await saveNotificationState(userId, merged);
               cachedUserNotificationState.set(userId, merged);`}
             </pre>
           </div>
@@ -577,7 +580,7 @@ app.post("/add-post", async (req, res, next) => {
           <NotificationEndpointSlides />
           <p className="tw-text-xs tw-text-gray-500 tw-mt-3">
             Source: L4D/database/repositories/user_notifications.ts,
-            L4D/utils/notificationHelper.ts, L4D/index.ts
+            L4D/utils/notification_helpers.ts, L4D/src/routes/notifications.ts
           </p>
         </div>
         <div className="tw-mt-5 tw-rounded-lg tw-border tw-border-bluegreen/30 tw-bg-white tw-p-5 tw-shadow-sm">
@@ -649,9 +652,13 @@ app.post("/add-post", async (req, res, next) => {
             <ul className="tw-list-disc tw-ml-5 tw-text-xs tw-text-black">
               <li>
                 Client routing + highlight behavior:
-                L4D/views/partials/forum-scripts.ejs
+                L4D/views/partials/forum.ejs and
+                L4D/views/partials/notification-scripts.ejs
               </li>
-              <li>Notification API and state wiring: L4D/index.ts</li>
+              <li>
+                Notification API and state wiring:
+                L4D/src/routes/notifications.ts
+              </li>
               <li>
                 Notification source queries:
                 L4D/database/repositories/user_notifications.ts
@@ -673,7 +680,9 @@ app.post("/add-post", async (req, res, next) => {
             </video>
           </div>
           <p className="tw-text-xs tw-text-gray-500 tw-mt-2">
-            Source: L4D/views/partials/forum-scripts.ejs and L4D/index.ts
+            Source: L4D/views/partials/forum.ejs,
+            L4D/views/partials/notification-scripts.ejs,
+            L4D/src/routes/notifications.ts
           </p>
         </div>
       </div>

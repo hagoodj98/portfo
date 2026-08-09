@@ -1,0 +1,45 @@
+flowchart LR
+  classDef client fill:#dbeafe,stroke:#1e3a8a,color:#0f172a,stroke-width:1px
+  classDef route fill:#dcfce7,stroke:#166534,color:#14532d,stroke-width:1px
+  classDef data fill:#fef3c7,stroke:#92400e,color:#78350f,stroke-width:1px
+  classDef middleware fill:#e9d5ff,stroke:#6d28d9,color:#3b0764,stroke-width:1px
+
+  Browser[Browser / EJS UI]:::client
+
+  subgraph Middleware[Middleware Layer]
+    Session["express-session"]:::middleware
+    PassportGuard["passport auth checks"]:::middleware
+    NotifyMiddleware["middleware/notification.ts"]:::middleware
+  end
+
+  subgraph Express[Express App]
+    Auth["/auth/*"]:::route
+    ForumBody["/forum/response-body/*"]:::route
+    Reactions["/post-type-reaction/*"]:::route
+    Notifications["/notifications/*"]:::route
+    ForumPage["/forum"]:::route
+  end
+
+  subgraph Repos[Repository Layer]
+    Users[users.ts]:::data
+    ForumRepo[forumcontent.ts]:::data
+    CommentsRepo[comments.ts + replies.ts]:::data
+    ReactionsRepo[posts_reactions.ts\ncomments_reactions.ts\nreplies_reactions.ts]:::data
+    NotifyRepo[user_notifications.ts]:::data
+  end
+
+  DB[(PostgreSQL)]:::data
+
+  Browser --> Session --> PassportGuard
+  PassportGuard --> Auth
+  PassportGuard --> ForumBody
+  PassportGuard --> Reactions
+  PassportGuard --> Notifications
+  PassportGuard --> ForumPage
+
+  Auth --> Users --> DB
+  ForumBody --> ForumRepo --> DB
+  ForumBody --> CommentsRepo --> DB
+  Reactions --> ReactionsRepo --> DB
+  Notifications --> NotifyMiddleware --> NotifyRepo --> DB
+  ForumPage --> ForumRepo

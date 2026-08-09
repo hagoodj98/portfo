@@ -3,7 +3,7 @@ import CarouselControlled from "../../../components/Carousel";
 const EndpointsLayerSlides = [
   {
     id: "api-endpoints",
-    title: "POST /login",
+    title: "POST /auth/login",
     summary:
       "Express routes are protected with authentication checks and input validation using Zod schemas.",
     description: `What it does:
@@ -18,7 +18,7 @@ Responses:
   },
   {
     id: "register-endpoint",
-    title: "POST /register",
+    title: "POST /auth/register",
     summary:
       "Registration route validates input and creates a new user with hashed password before redirecting to login.",
     description: `What it does:
@@ -46,21 +46,21 @@ What it does:
     id: "protected-routes",
     title: "Protected Routes with Authentication Checks",
     summary:
-      "Middleware guards forum and content creation routes to ensure only authenticated users can access them. For example, the POST /add-post route checks authentication and validates input before allowing post creation.",
+      "Middleware guards forum and content creation routes to ensure only authenticated users can access them. For example, the POST /forum/response-body/add-post route checks authentication and validates input before allowing post creation.",
     description: `What it does:
   - Requires authenticated session for protected routes
   - Validates payload before persistence
   - Rejects unauthorized requests early
 
 Example protected action:
-  POST /add-post`,
+  POST /forum/response-body/add-post`,
   },
   {
     id: "logout-endpoint",
     title: "Logout Endpoint",
     summary:
-      "GET /logout route terminates the user session and redirects to login. Passport's req.logout is used to clear the session and ensure the user is logged out securely. Sessions were created using express-session with secure cookie settings to protect against common vulnerabilities.",
-    description: `GET /logout
+      "GET /auth/logout route terminates the user session and redirects to login. Passport's req.logout is used to clear the session and ensure the user is logged out securely. Sessions were created using express-session with secure cookie settings to protect against common vulnerabilities.",
+    description: `GET /auth/logout
 
 What it does:
   - Calls Passport logout

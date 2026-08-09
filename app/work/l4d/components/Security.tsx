@@ -5,7 +5,7 @@ const SecurityLayerSlides = [
     title: "Local Login and Password Verification",
     summary:
       "Passport local strategy validates credentials and compares bcrypt hashes before issuing an authenticated session.",
-    description: `Flow:\nPOST /login\n-> loginSchema.safeParse(...)\n-> passport.authenticate('local')\n-> bcrypt.compare(input, storedHash)\n-> req.logIn(user)
+    description: `Flow:\nPOST /auth/login\n-> loginSchema.safeParse(...)\n-> passport.authenticate('local')\n-> bcrypt.compare(input, storedHash)\n-> req.logIn(user)
     // passport/passport.ts\nimport passport from 'passport';\nimport { Strategy as LocalStrategy } from 'passport-local';\npassport.use(
       "local",
       new Strategy(async function verify(username, password, cb) {
