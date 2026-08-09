@@ -7,7 +7,7 @@ import NavBar from "../NavBar";
 
 const expectedRoutes = [
   { label: "Fan Funnel", href: "/work/fanfunnel" },
-  { label: "Omnias' Workflows", href: "/work/omni" },
+  { label: "Omnia Workflows", href: "/work/omni" },
   { label: "GameSite", href: "/work/l4d" },
   { label: "Scheduler", href: "/work/scheduler" },
   { label: "SonicDNA", href: "/work/sonicdna" },
