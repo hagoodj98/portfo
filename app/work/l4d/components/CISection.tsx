@@ -26,7 +26,15 @@ jobs:
         run: npm ci
 
       - name: Syntax check
-        run: node --check index.ts
+        run: |
+          if [ -f index.js ]; then
+            node --check index.js
+          else
+            echo "Skipping node --check because index.js is not present (TypeScript entrypoint detected)."
+          fi
+
+      - name: Type check
+        run: npm run typecheck
 
       - name: Run lint
         run: npm run lint

@@ -2,8 +2,8 @@ import CarouselControlled from "../../../components/Carousel";
 
 const notificationEndpointSlides = [
   {
-    id: "check-reloaded",
-    title: "GET /check-notifications-reloaded",
+    id: "load-notifications",
+    title: "GET /notifications/load-notifications",
     summary:
       "Hydrates the notification panel on page load with the latest cached/persisted notification state.",
     description: `Purpose:
@@ -12,12 +12,12 @@ const notificationEndpointSlides = [
 
 Route behavior:
   - Requires authenticated session
-  - Reads user notification state from cache/database
-  - Returns JSON used by forum-scripts.ejs to render list`,
+  - Reads user notification state from in-memory cache
+  - Returns JSON used by notification-scripts.ejs to render list`,
   },
   {
     id: "sse-updates",
-    title: "GET /update-notifications (SSE)",
+    title: "GET /notifications/update-notifications (SSE)",
     summary:
       "Streams real-time notification payload updates to the browser without requiring full-page polling refreshes.",
     description: `Purpose:
@@ -32,7 +32,7 @@ Route behavior:
   },
   {
     id: "mark-read",
-    title: "POST /read-notifications",
+    title: "POST /notifications/read-notifications",
     summary:
       "Marks unread notifications as read and persists state so UI remains consistent across refresh and future sessions.",
     description: `Purpose:
@@ -51,8 +51,11 @@ Route behavior:
     summary:
       "These existing write endpoints generate activity that later appears in notification feeds.",
     description: `Key producers:
-  - POST /post-reaction
-  - POST /add-reply
+  - POST /post-type-reaction/post-reaction
+  - POST /post-type-reaction/comment-reaction
+  - POST /post-type-reaction/reply-reaction
+  - POST /forum/response-body/add-comment
+  - POST /forum/response-body/add-reply
 
 Why this matters:
   - User actions create rows used by notification queries

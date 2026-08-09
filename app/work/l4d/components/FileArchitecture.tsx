@@ -1,50 +1,59 @@
 import React from "react";
 
 const l4dFileArchitecture = `L4D/
-── database/
-  databaseConnection.ts
-    repositories/
-    users.ts
-    forumcontent.ts
-    comments.ts
-    replies.ts
-    user_notifications.ts
-    posts_reactions.ts
-    comments_reactions.ts
-    replies_reactions.ts
-── db/
-    init.sql
-── passport/
-  passport.ts
-── public/
-    css/
-     styles.css
-    images/
-── tests/
-  app.test.ts
-  auth-errors.test.ts
-  auth.test.ts
-  error-handler.test.ts
-    ....
-── utils/
-  error.ts
-  notificationHelper.ts
-  zodSchemas.ts
-── views/
-    community.ejs
-    forum.ejs
-    homelogin.ejs
-    index.ejs
-    login.ejs
-    register.ejs
-    specialinfected.ejs
-    survivors.ejs
-    partials/
-        footer.ejs
-        header.ejs
-       index.ts
- package.json
-       providercredentials.ts`;
++-- index.ts
++-- middleware/
+|   +-- notification.ts
++-- notification-cache.ts
++-- src/
+|   +-- routes/
+|       +-- auth.ts
+|       +-- forum.ts
+|       +-- notifications.ts
+|       +-- post_type_reactions.ts
+|       +-- post_type_response_body.ts
++-- database/
+|   +-- databaseConnection.ts
+|   +-- repositories/
+|       +-- users.ts
+|       +-- forumcontent.ts
+|       +-- comments.ts
+|       +-- replies.ts
+|       +-- user_notifications.ts
+|       +-- posts_reactions.ts
+|       +-- comments_reactions.ts
+|       +-- replies_reactions.ts
++-- utils/
+|   +-- error.ts
+|   +-- zodSchemas.ts
+|   +-- notification_helpers.ts/
+|       +-- buildnotificationstate.ts
+|       +-- find-matching.ts
++-- views/
+|   +-- forum.ejs
+|   +-- login.ejs
+|   +-- register.ejs
+|   +-- partials/
+|       +-- header.ejs
+|       +-- footer.ejs
+|       +-- forum.ejs
+|       +-- notification-scripts.ejs
+|       +-- sse-notification-feed.ejs
++-- tests/
+|   +-- auth.test.js
+|   +-- forum-content.test.js
+|   +-- notifications.test.js
+|   +-- helpers/
++-- e2e/
+|   +-- auth.spec.js
+|   +-- forum.spec.js
+|   +-- notifications.spec.js
++-- db/
+|   +-- init.sql
++-- public/
+|   +-- css/styles.css
+|   +-- images/
++-- package.json`;
 
 const FileArchitecture = () => {
   return (

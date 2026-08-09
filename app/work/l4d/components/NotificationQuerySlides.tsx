@@ -101,17 +101,17 @@ const payload = {
   },
   {
     id: "cache-read-state",
-    title: "Reliability: Cache plus read-state persistence",
+    title: "Reliability: Cache-first SSE + read-state persistence",
     summary:
-      "Caching stabilizes identity during SSE refresh cycles, while persisted read state keeps bell counts and panel state consistent after reload.",
+      "Caching stabilizes identity during SSE refresh cycles, while explicit read actions persist read-state durability for future sessions.",
     description: `// cache by user
 const cachedUserNotificationState = new Map();
 
-// save merged state
-await saveNotificationState(userId, mergedNotifications);
+// merge incoming notifications with cache identity
+const mergedNotifications = findMatchingNotification(cached, sourced);
 cachedUserNotificationState.set(userId, mergedNotifications);
 
-// mark as read
+// persist only when user marks notifications as read
 const readNotifications = cached.map((n) => ({
   ...n,
   wasRead: true,

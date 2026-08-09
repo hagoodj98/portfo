@@ -58,10 +58,11 @@ const NavBar = () => {
                 <NavDropdown.Item href="/work/fanfunnel">
                   Fan Funnel
                 </NavDropdown.Item>
-                <NavDropdown.Item href="/work/omni">
-                  Omnias' Workflows
-                </NavDropdown.Item>
+
                 <NavDropdown.Item href="/work/l4d">GameSite</NavDropdown.Item>
+                <NavDropdown.Item href="/work/omni">
+                  Omnia Workflows
+                </NavDropdown.Item>
                 <NavDropdown.Item href="/work/scheduler">
                   Scheduler
                 </NavDropdown.Item>
