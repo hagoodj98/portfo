@@ -20,12 +20,16 @@ Responses:
     id: "register-endpoint",
     title: "POST /auth/register",
     summary:
-      "Registration route validates input and creates a new user with hashed password before redirecting to login.",
+      "Registration route validates input, creates a new user with a hashed password, starts a session, and redirects to forum.",
     description: `What it does:
   - Validates username/email/password
   - Checks duplicates before create
   - Hashes password and stores user
-  - Creates authenticated session`,
+  - Creates authenticated session
+
+Responses:
+  302 redirect to /forum on success
+  400 validation or duplicate user`,
   },
   {
     id: "passport-auth-endpoints",

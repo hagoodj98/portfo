@@ -10,6 +10,7 @@ const VideoSection = (props: {
   joke?: boolean;
   children?: React.ReactNode;
   hideGithubLink?: boolean;
+  liveLink?: string;
 }) => {
   const srcLower = props.srclink.toLowerCase();
   const videoType = srcLower.endsWith(".webm")
@@ -44,15 +45,25 @@ const VideoSection = (props: {
         {props.children ? (
           <div>{props.children}</div>
         ) : (
-          !props.hideGithubLink && (
-            <Link
-              href={props.githubLink || "#"}
-              className="tw-text-bluegreen tw-text-center tw-underline tw-mt-2 tw-block"
-            >
-              {" "}
-              Project on Github
-            </Link>
-          )
+          <>
+            {!props.hideGithubLink && (
+              <Link
+                href={props.githubLink || "#"}
+                className="tw-text-bluegreen tw-text-center tw-underline tw-mt-2 tw-block"
+              >
+                {" "}
+                Project on Github
+              </Link>
+            )}
+            {props.liveLink && (
+              <Link
+                href={props.liveLink}
+                className="tw-text-bluegreen tw-text-center tw-underline tw-mt-2 tw-block"
+              >
+                Live Demo
+              </Link>
+            )}
+          </>
         )}
         {props.joke && (
           <div className="tw-mt-5 tw-p-3 tw-bg-gray-100 tw-rounded">
