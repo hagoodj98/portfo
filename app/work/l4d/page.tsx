@@ -315,7 +315,9 @@ function Left4Dead() {
       <Video
         githubLink="https://github.com/hagoodj98/L4D"
         srclink="../l4d/demo-small.mp4"
+        liveLink="https://l4dgame.com/"
       />
+
       <div className="tw-container tw-mx-auto tw-my-10 tw-p-5">
         <h3 className="tw-text-2xl md:tw-text-3xl tw-text-bluegreen tw-font-boldonse">
           Addressed Improvements
@@ -363,21 +365,28 @@ function Left4Dead() {
               </video>
             </div>
             <pre className="tw-bg-[#181f2a] tw-text-[#e0e0e0] tw-rounded tw-p-4 tw-text-xs tw-overflow-x-auto">{`// Client-side (views/partials/forum.ejs)
-const response = await fetch("http://localhost:3000/forum/response-body/add-post", {
+const response = await fetch("/forum/response-body/add-post", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({ newPost: postContent }),
+  body: JSON.stringify({ newPost: postContent, current_page: "1" }),
 });
 const data = await response.json();
 if (data.success) {
+  const newPost = data.postMetaData;
   postsContainer.insertAdjacentHTML("afterbegin", newHTML);
   requestAnimationFrame(() => insertedPost.classList.add("fade-bg"));
 }
 
 // Server-side (src/routes/post_type_response_body.ts)
 router.post("/add-post", async (req, res, next) => {
-  const result = await createPost(req.body.newPost, req.user.id);
-  return res.json({ success: true, post: result });
+  const createdAt = new Date().toISOString();
+  const result = await createPost(
+    req.body.newPost,
+    req.user.id,
+    createdAt,
+    String(req.body.current_page),
+  );
+  return res.json({ success: true, postMetaData: { type: "post", ...result } });
 });`}</pre>
           </div>
           <p className="tw-text-xs tw-text-gray-500 tw-mt-3">
