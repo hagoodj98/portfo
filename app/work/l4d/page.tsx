@@ -307,6 +307,13 @@ function Left4Dead() {
                 Addressed(AJAX implementation)
               </span>
             </li>
+            <li className="tw-line-through tw-decoration-2">
+              Improve browser back/forward restoration so pagination and
+              notification routes do not leave stale forum content or controls.
+              <span className="tw-inline-flex tw-items-center tw-rounded-full tw-bg-bluegreen tw-text-white tw-text-xs tw-px-2 tw-py-1">
+                Addressed
+              </span>
+            </li>
           </ul>
         </div>
       </ImprovementSection>
@@ -379,11 +386,10 @@ if (data.success) {
 
 // Server-side (src/routes/post_type_response_body.ts)
 router.post("/add-post", async (req, res, next) => {
-  const createdAt = new Date().toISOString();
   const result = await createPost(
     req.body.newPost,
     req.user.id,
-    createdAt,
+    new Date().toISOString(),
     String(req.body.current_page),
   );
   return res.json({ success: true, postMetaData: { type: "post", ...result } });
@@ -394,6 +400,80 @@ router.post("/add-post", async (req, res, next) => {
             L4D/src/routes/post_type_response_body.ts
           </p>
         </div>
+
+        <div className="tw-mt-5 tw-rounded-lg tw-border tw-border-bluegreen/30 tw-bg-white tw-p-5 tw-shadow-sm">
+          <div className="tw-flex tw-items-center tw-gap-2 tw-mb-3">
+            <span className="tw-inline-flex tw-items-center tw-rounded-full tw-bg-bluegreen tw-text-white tw-text-xs tw-px-2 tw-py-1">
+              Addressed
+            </span>
+            <span className="tw-text-xs tw-text-gray-500">
+              Back/forward restoration and notification route consistency
+            </span>
+          </div>
+          <h4 className="tw-text-lg tw-font-bold tw-text-black tw-mb-2">
+            Synchronized pagination state after browser history navigation
+          </h4>
+          <p className="tw-text-sm tw-text-black tw-mb-2">
+            <strong>Problem:</strong> Browser back and forward navigation could
+            restore a forum URL while leaving older posts, selected page
+            controls, or collapsed thread state visible. Notification routes
+            could also inherit pagination state from a previous destination.
+          </p>
+          <p className="tw-text-sm tw-text-black tw-mb-2">
+            <strong>Solution:</strong> I treat the URL as the routing source of
+            truth, rebuild the visible page from its query parameters, and
+            realign the pagination window before loading a notification target.
+            This keeps the rendered forum content, selected controls, expanded
+            thread, and URL in agreement.
+          </p>
+          <p className="tw-text-sm tw-text-black tw-mb-3">
+            <strong>Evidence:</strong> Back/forward navigation and routing
+            between notifications now restore the intended page and thread
+            context instead of showing stale UI.
+          </p>
+          <div className="tw-grid tw-grid-cols-1 lg:tw-grid-cols-2 tw-gap-4 tw-items-start">
+            <video
+              className="tw-w-full tw-rounded tw-border tw-border-bluegreen/20"
+              controls
+              playsInline
+              preload="metadata"
+            >
+              <source src="/l4d/bfcache-demo-small.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <pre className="tw-bg-[#181f2a] tw-text-[#e0e0e0] tw-rounded tw-p-4 tw-text-xs tw-overflow-x-auto">{`// views/partials/footer.ejs
+window.addEventListener("popstate", async () => {
+  const url = new URL(window.location.href);
+  const routeParts = [
+    url.searchParams.get("page"),
+    url.searchParams.get("postID"),
+    url.searchParams.get("commentID"),
+    url.searchParams.get("replyID"),
+  ];
+
+  const totalPages = await handlePagination(
+    currentPage,
+    true,
+    routeParts,
+  );
+  handlePaginationIncrements(totalPages, direction, true);
+});
+
+// Notification routing resets the page window before loading its target.
+handlePaginationIncrements(
+  paginationNumber,
+  "decrease",
+  false,
+  true,
+  Number(pageNumber),
+);`}</pre>
+          </div>
+          <p className="tw-text-xs tw-text-gray-500 tw-mt-3">
+            Source: L4D/views/partials/footer.ejs, L4D/views/partials/forum.ejs,
+            and L4D/views/partials/notification-scripts.ejs
+          </p>
+        </div>
+
         <div className="tw-mt-5 tw-rounded-lg tw-border tw-border-bluegreen/30 tw-bg-white tw-p-5 tw-shadow-sm">
           <div className="tw-flex tw-items-center tw-gap-2 tw-mb-3">
             <span className="tw-inline-flex tw-items-center tw-rounded-full tw-bg-bluegreen tw-text-white tw-text-xs tw-px-2 tw-py-1">
