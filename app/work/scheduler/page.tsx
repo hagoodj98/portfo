@@ -356,7 +356,7 @@ const scheduler = () => {
           </div>
         </ImprovementSection>
         <VideoSection
-          srclink="/pos/demo-small.mp4"
+          srclink="/pos/productionvideo-compressed.mp4"
           githubLink="https://github.com/hagoodj98/production_scheduler"
         />
         <div className="tw-container tw-mx-auto tw-my-10 tw-p-5">
