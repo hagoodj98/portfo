@@ -1,18 +1,28 @@
+import React from "react";
+
 const posFileArchitecture = `
 production-scheduler/
   app/
-    api/                # REST API endpoints (add, check, create, delete, load, mark, search)
-    components/         # Shared UI components (forms, calendar, sidebar, charts)
-    ...                # Pages, context, validation, generated
+    actions/              # Sign-in and session actions
+    api/
+      auth/               # Session status and permission checks
+      order/              # Load, schedule, reschedule, delete
+      order-log/          # Activity history
+      resource/           # Load, search, and add resources
+    assign-order/         # Order scheduling workflow
+    components/           # Calendar, forms, charts, tables, shared UI
+    context/              # Shared authenticated-user state
+    validation/           # Zod schemas and schedule conflict checks
   lib/
-    repositories/       # Data access for production orders & resources
-  node_cron/           # Automated job scheduling logic (cron.mjs)
+    repositories/         # Prisma data-access modules
+  node_cron/              # Background status-update process
   prisma/
-    schema.prisma      # Database schema (ProductionOrder, SelectedResource, Resource)
+    schema.prisma         # Orders, resources, users, permissions, logs
+    migrations/
   task/
-    schedulerTask.ts   # Core scheduling logic
-  tests/               # (api, components, e2e, task, zod)
-  utils/               # Custom error handling`;
+    schedulerTask.ts      # Time-based order status transitions
+  tests/                  # API, component, E2E, task, and schema tests
+  utils/                  # Auth, status, and error helpers`;
 
 const FileStructure = () => {
   return (
@@ -20,20 +30,17 @@ const FileStructure = () => {
       <div className="lg:tw-w-4/12 tw-flex tw-flex-col tw-justify-center tw-p-5">
         <div className="tw-py-10">
           <h3 className="tw-text-xl md:tw-text-2xl tw-text-bluegreen tw-font-boldonse">
-            File Architecture
+            Current Project Structure
           </h3>
           <div className="tw-w-28">
             <hr className="tw-h-2 tw-bg-bluegreen" />
           </div>
           <p className="md:tw-text-base tw-text-black">
-            The project is organized into a clear and modular file structure,
-            with API routes handling all server-side logic and a dedicated utils
-            folder for shared functions. The lib folder contains essential
-            services like database access, while the node_cron directory houses
-            the automated job scheduling logic. The prisma folder defines the
-            database schema, and the task directory contains the core scheduling
-            algorithm. This architecture promotes maintainability, scalability,
-            and separation of concerns across the application.
+            The application groups route handlers, UI workflows, validation,
+            and persistence by responsibility. Repositories isolate Prisma
+            access, while a separate cron process runs the status-transition
+            task. Tests cover API routes, components, end-to-end flows, task
+            logic, and input validation.
           </p>
         </div>
       </div>

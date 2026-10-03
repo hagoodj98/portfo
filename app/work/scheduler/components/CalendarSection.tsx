@@ -3,26 +3,27 @@ import CarouselControlled from "../../../components/Carousel";
 const calendarSlides = [
   {
     id: "use-swr-for-real-time-updates",
-    title: "useSWR for Real-Time Updates",
+    title: "Refreshing Schedule Data with SWR",
     summary:
-      "The useSWR hook is utilized to fetch and cache data from the API endpoint that loads jobs into the chart. It is configured with a refresh interval to enable real-time updates of job statuses and scheduling information on the front-end.",
-    description: `  const fetcher = async (url: string) => {
-        const res = await fetch(url);
-        if (!res.ok) throw new Error(API ${"${url} failed: ${res.status}"});)
-        return await res.json();
-      };
-       const { data: fetchedData } = useSWR<{
-        ResourceProductionOrders: OrderProps[];
-      }>("/api/load-jobs-to-chart", fetcher, {
-        refreshInterval: 5000, // poll every 5 seconds
-      });`,
+      "The calendar fetches persisted orders from the current order-loading route and polls for status changes.",
+    description: `const { data: fetchedData } = useSWR(
+  API_ENDPOINTS.LOAD_ORDERS, // /api/order/load
+  fetcher,
+  { refreshInterval: 5000 },
+);`,
   },
   {
     id: "calendar-color-codes",
     title: "Calendar: Color-Coded Status",
     summary:
-      "The calendar visualizes all jobs, color-coded by status. Status colors are consistent across the calendar, legend, and pie chart.",
-    description: `// app/components/Calendar.tsx\nconst handleBackgroundColor = useCallback(() => {\n  return (event) => {\n    if (event.resourceStatus === 'Busy') return { style: { backgroundColor: '#ff4d4d' } };\n    if (event.resourceStatus === 'Scheduled') return { style: { backgroundColor: '#007bff' } };\n    if (event.resourceStatus === 'Completed') return { style: { backgroundColor: '#2ecc71' } };\n    if (event.resourceStatus === 'Pending') return { style: { backgroundColor: '#f39c12' } };\n    return { style: { backgroundColor: '#cccccc' } };\n  };\n}, [selectedStatus]);`,
+      "The calendar visualizes production orders with consistent lifecycle colors across the calendar, legend, and chart.",
+    description: `Order statuses:
+  Pending -> awaiting schedule assignment
+  Processing -> submitted for scheduling
+  Scheduled -> waiting for its start time
+  Busy -> currently in progress
+  Completed -> finished
+  Deleted -> soft-deleted and excluded from active schedule views`,
   },
 ];
 
@@ -39,15 +40,10 @@ const CalendarSection = () => {
           </div>
           <div>
             <p>
-              The calendar visualizes all jobs, color-coded by status. Status
-              colors are consistent across the calendar, legend, and pie chart.
-              This design choice allows users to quickly identify the status of
-              each job at a glance, improving usability and efficiency when
-              managing production schedules. By maintaining consistent color
-              coding across different components of the application, users can
-              easily correlate information between the calendar, legend, and pie
-              chart, enhancing their overall experience and understanding of the
-              scheduling data.
+              The calendar visualizes production orders with consistent
+              lifecycle colors across the calendar, legend, and chart. It
+              refreshes order data every five seconds so users can see changes
+              made by the background status processor.
             </p>
           </div>
         </div>

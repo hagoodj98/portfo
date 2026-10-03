@@ -3,10 +3,15 @@ import CarouselControlled from "../../../components/Carousel";
 const searchSlides = [
   {
     id: "realtime-search",
-    title: "Real-Time Resource Search",
+    title: "Resource Search and Duplicate Checks",
     summary:
-      "The Add Resource UI provides instant feedback as you type, searching the database in real time for matching resources.",
-    description: `// app/components/AddResource.tsx\nuseEffect(() => {\n  if (!resourceName) return;\n  const searchResources = async () => {\n    const response = await fetch(\n      '/api/search-resources?name=' + encodeURIComponent(resourceName)\n    );\n    const data = await response.json();\n    setAllPossibleResources(data.resources);\n  };\n  searchResources();\n}, [resourceName]);`,
+      "The resource form checks for matching names as a user types, then submits new resources through a separate validated API route.",
+    description: `// app/components/SearchResource.tsx
+GET  /api/resource/search?name=<encoded resource name>
+POST /api/resource/add
+
+The search endpoint returns matching resources. The form validates a new
+resource name and displays feedback when the resource is added.`,
   },
 ];
 
@@ -16,21 +21,17 @@ const SearchFeature = () => {
       <div className=" lg:tw-w-4/12 tw-flex tw-flex-col tw-justify-center tw-p-5">
         <div className="tw-py-10">
           <h3 className="tw-text-xl md:tw-text-2xl tw-text-bluegreen tw-font-boldonse">
-            Real-Time Resource Search
+            Resource Search and Duplicate Checks
           </h3>
           <div className="tw-w-28">
             <hr className="tw-h-2 tw-bg-bluegreen" />{" "}
           </div>
           <div>
             <p>
-              The Add Resource UI provides instant feedback as you type,
-              searching the database in real time for matching resources. This
-              feature enhances user experience by allowing users to quickly find
-              and select resources without needing to submit a form or refresh
-              the page. The implementation uses the useEffect hook to trigger a
-              search function whenever the resourceName state changes, making an
-              API call to fetch matching resources and updating the UI
-              accordingly.
+              The resource-management page searches existing names as the user
+              types and shows matching resources before submission. Adding a
+              resource is a separate POST request with server-side schema and
+              permission checks, helping prevent duplicate or invalid entries.
             </p>
           </div>
         </div>

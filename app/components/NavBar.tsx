@@ -58,21 +58,13 @@ const NavBar = () => {
                 <NavDropdown.Item href="/work/fanfunnel">
                   Fan Funnel
                 </NavDropdown.Item>
-
                 <NavDropdown.Item href="/work/l4d">GameSite</NavDropdown.Item>
-                <NavDropdown.Item href="/work/omni">
-                  Omnia Workflows
-                </NavDropdown.Item>
                 <NavDropdown.Item href="/work/scheduler">
                   Scheduler
                 </NavDropdown.Item>
                 <NavDropdown.Item href="/work/sonicdna">
                   SonicDNA
                 </NavDropdown.Item>
-                <NavDropdown.Item href="/work/bookblog">
-                  Book Blog
-                </NavDropdown.Item>
-                <NavDropdown.Item href="/work/flippo">Flippo</NavDropdown.Item>
               </NavDropdown>
             </Nav>
           </Offcanvas.Body>

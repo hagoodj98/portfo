@@ -2,114 +2,72 @@ import CarouselControlled from "../../../components/Carousel";
 
 const apiEndpointSlides = [
   {
-    id: "scheduler-api-summary",
-    title: "Scheduler API Summary",
+    id: "authentication-endpoints",
+    title: "Session and Permission Checks",
     summary:
-      "Covers resource management, production order lifecycle, status checks, search, and chart-loading endpoints.",
-    description: `Endpoint groups:
-  POST /api/add-resource
-  GET  /api/check-production-order
-  POST /api/create-production-order
-  DELETE /api/delete-production-order
-  POST /api/mark-pending
-  GET  /api/search-resources?name=
-  GET  /api/load-jobs-to-chart
+      "Session status and permission-check routes support the application's protected workflows.",
+    description: `GET /api/auth/status
+GET /api/auth/permission-check?path=...
 
-Design goal:
-  Keep workflow state transitions explicit and traceable for scheduler UI flows.`,
+The permission check validates the current session and requested action before
+allowing protected order or resource operations.`,
   },
   {
-    id: "add-endpoint",
-    title: "Add Production Order Endpoint",
+    id: "resource-endpoints",
+    title: "Resource Management",
     summary:
-      "This endpoint allows users to create new production orders by submitting relevant data such as day, time, and resource details. It validates the input and adds the order to the database.",
-    description: `POST /api/add-resource
+      "Resource routes load existing resources, search matching names, and add validated resources.",
+    description: `GET  /api/resource/load
+GET  /api/resource/search?name=
+POST /api/resource/add
 
-Input:
-  resource_name
-
-What it does:
-  - Validates payload
-  - Creates resource record
-  - Returns success/failure response`,
+The resource form searches existing names and submits new resources through a
+validated, permission-protected route.`,
   },
   {
-    id: "check-endpoint",
-    title: "Check Production Order Endpoint",
+    id: "pending-order-endpoint",
+    title: "Create a Pending Order",
     summary:
-      "This endpoint allows users to check the status of existing production orders. It retrieves order details based on provided criteria such as date or resource.",
-    description: `GET /api/check-production-order
+      "The order workflow can save an in-progress request as Pending before it is assigned to a production slot.",
+    description: `POST /api/order/mark-pending
 
-What it does:
-  - Loads orders pending status verification
-  - Runs status update logic against scheduler rules
-  - Returns updated order statuses`,
+Validates the pending-order payload and records a pending production order for
+the scheduling workflow.`,
   },
   {
-    id: "create-endpoint",
-    title: "Create Production Order Endpoint",
+    id: "schedule-order-endpoint",
+    title: "Schedule an Order",
     summary:
-      "This endpoint allows users to create new production orders by submitting relevant data such as day, time, and resource details. It validates the input and adds the order to the database.",
-    description: `POST /api/create-production-order
+      "Scheduling validates dates, time ranges, resource assignment, and employee assignment before saving the order.",
+    description: `POST /api/order/schedule
 
-Input:
-  productionOrder payload
-
-What it does:
-  - Validates date/time/resource constraints
-  - Creates new order or updates pending order
-  - Sets order status to Processing`,
+Input validation: Zod production-order schema
+Schedule validation: future start time and valid end time
+Conflict validation: existing orders for the same resource and employee
+Result: update the order and record the scheduling action`,
   },
   {
-    id: "delete-endpoint",
-    title: "Delete Production Order Endpoint",
+    id: "reschedule-delete-endpoints",
+    title: "Reschedule and Delete Orders",
     summary:
-      "This endpoint allows users to delete existing production orders by specifying the order ID. It ensures that the order is removed from the database and any associated resources are freed up.",
-    description: `DELETE /api/delete-production-order
+      "Permission checks protect order changes; deletion is soft so order history remains available.",
+    description: `PATCH  /api/order/reschedule
+DELETE /api/order/delete?orderId=
 
-Input:
-  orderId
-
-What it does:
-  - Validates target order
-  - Removes order from persistence
-  - Returns 404 when no matching order exists`,
+Reschedule checks the new schedule before updating it. Delete sets deletedAt
+and records the action in the order log rather than removing the row.`,
   },
   {
-    id: "mark-pending-endpoint",
-    title: "Mark Pending Endpoint",
+    id: "order-data-endpoints",
+    title: "Calendar, Employees, and Activity",
     summary:
-      "This endpoint allows users to mark a production order as pending. It updates the order's status in the database, indicating that it is awaiting scheduling.",
-    description: `POST /api/mark-pending
+      "Read routes supply calendar and chart data, employee choices, and the production activity log.",
+    description: `GET /api/order/load
+GET /api/order/load-employee
+GET /api/order-log/load
 
-What it does:
-  - Creates or updates an order in Pending state
-  - Preserves scheduling intent before final processing
-  - Returns the pending order id`,
-  },
-  {
-    id: "search-resources-endpoint",
-    title: "Search Resources Endpoint",
-    summary:
-      "This endpoint allows users to search for available resources based on specific criteria. It helps in finding the right resources for scheduling production orders.",
-    description: `GET /api/search-resources?name=
-
-What it does:
-  - Performs case-insensitive prefix search
-  - Returns matching resources for scheduler forms
-  - Supports fast typeahead in UI`,
-  },
-  {
-    id: "load-jobs-to-chart-endpoint",
-    title: "Load Jobs to Chart Endpoint",
-    summary:
-      "This endpoint loads the scheduled jobs into the chart for visualization. It helps in tracking the status and timing of each job in the production schedule.",
-    description: `GET /api/load-jobs-to-chart
-
-What it does:
-  - Loads resources with assigned orders
-  - Returns chart-ready scheduling data
-  - Powers timeline/board visualizations`,
+These endpoints provide current order/resource data, employee assignment
+options, and an activity history for the scheduler UI.`,
   },
 ];
 
