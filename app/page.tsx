@@ -33,6 +33,14 @@ export default function Home() {
                 Hello! My name is Jaiquez Hagood and I am a web developer. I
                 hope you enjoy exploring my recent work!😁
               </p>
+              <a
+                href="/Jaiquez_Hagood_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="tw-mt-5 tw-inline-block tw-rounded tw-bg-bluegreen tw-text-white tw-px-6 tw-py-3 tw-font-boldonse tw-text-sm hover:tw-opacity-90"
+              >
+                View Resume (PDF)
+              </a>
             </div>
           </div>
         </div>
@@ -48,7 +56,11 @@ export default function Home() {
               High School in 2016 and have an associate&apos;s degree from
               Greenville Technical College from 2018. I am a digital information
               design graduate from Winthrop University in 2021. I enjoy coding,
-              producing music, and fishing.
+              producing music, and fishing. I also work with Adobe tools; see my{" "}
+              <a href="/work/flippo" className="tw-text-orange tw-underline">
+                short animated film
+              </a>
+              .
             </p>
           </div>
           <div className=" tw-relative tw-w-64  lg:tw-w-fit tw-mx-auto">
@@ -70,43 +82,68 @@ export default function Home() {
           </div>
           <ProjectThumbnail
             projectUrl="/funnel/VinylRecordMockup.jpg"
-            projectName="Music Project"
+            projectName="Fan Funnel"
             link="/work/fanfunnel"
           />
-
-          <ProjectThumbnail
-            projectUrl="/omni-code-shots/Mockup.png"
-            projectName="Omnia Workspace Project"
-            link="/work/omni"
-          />
-
           <ProjectThumbnail
             projectUrl="/l4d/Mockup.png"
-            projectName="GameSite Project"
+            projectName="GameSite Forum "
             link="/work/l4d"
           />
           <ProjectThumbnail
-            projectUrl="/pos/Mockup.png"
-            projectName="Scheduler Project"
+            projectUrl="/pos/productiondisplay.png"
+            projectName="Production Scheduler "
             link="/work/scheduler"
           />
           <ProjectThumbnail
             projectUrl="/sonicdna/soundapi.png"
-            projectName="SonicDNA Project"
+            projectName="SonicDNA "
             link="/work/sonicdna"
-          />
-          <ProjectThumbnail
-            projectUrl="/bookblog-code-shots/booknotesmockup.svg"
-            projectName="BookBlog Project"
-            link="/work/bookblog"
-          />
-          <ProjectThumbnail
-            projectUrl="/flippo/flippo.svg"
-            projectName="Animate Project"
-            link="/work/flippo"
           />
 
           <div></div>
+        </div>
+      </div>
+      <div className="tw-container tw-mx-auto tw-my-20 tw-p-5">
+        <h2 className="tw-text-xl md:tw-text-3xl tw-text-bluegreen tw-font-boldonse">
+          Experience
+        </h2>
+        <div className="tw-w-28">
+          <hr className="tw-h-2 tw-bg-bluegreen" />
+        </div>
+        <div className="tw-mt-5 tw-rounded-lg tw-border tw-border-bluegreen/30 tw-bg-white tw-p-5 tw-shadow-sm md:tw-w-2/3">
+          <h3 className="tw-text-lg tw-font-bold tw-text-black">
+            Software Engineer Intern, Omnia WorkSpace
+          </h3>
+          <p className="tw-text-sm tw-text-gray-500">11/2025 – 02/2026</p>
+          <ul className="tw-list-disc tw-ml-6 tw-text-black tw-mt-2">
+            <li>
+              Built an interactive workflow canvas for a desktop app using
+              Electron, React, TypeScript, and React Flow.
+            </li>
+            <li>
+              Implemented workspace persistence with Prisma and PostgreSQL,
+              restoring nodes, edges, and viewport state across sessions.
+            </li>
+            <li>
+              Shipped a Tasks module end-to-end across Fastify routes, Prisma
+              models, and React UI.
+            </li>
+            <li>
+              Integrated Electron IPC/WebContentsView for navigation, reload,
+              zoom, and visibility controls on embedded apps.
+            </li>
+            <li>
+              Fixed React Flow and Electron state and coordinate bugs, and
+              maintained Vitest and Playwright tests in Azure DevOps.
+            </li>
+          </ul>
+          <a
+            href="/work/omni"
+            className="tw-text-bluegreen tw-underline tw-mt-3 tw-inline-block"
+          >
+            Read more
+          </a>
         </div>
       </div>
       <div className="tw-w-1/2  tw-ml-auto tw--mt-96 tw-h-96 tw-bg-gradient-to-b tw-from-moreblue tw-to-bluegreen"></div>

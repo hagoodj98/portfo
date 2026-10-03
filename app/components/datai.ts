@@ -321,67 +321,7 @@ var finalSoundDNA: DataItem[] = [
   },
 ];
 
-var initalScheduler: DataItem[] = [
-  {
-    id: 1,
-    subtitle: "calendar view ",
-    caption: "this is the caption",
-    image: "/pos/schedulei1.png",
-  },
-  {
-    id: 2,
-    subtitle: "findresource ",
-    caption: "findresource design",
-    image: "/pos/schedulei2.png",
-  },
-  {
-    id: 3,
-    subtitle: "scheduler board ",
-    caption: "scheduler board design",
-    image: "/pos/schedulei3.png",
-  },
-];
-var middleScheduler: DataItem[] = [
-  {
-    id: 1,
-    subtitle: "middle calendar view ",
-    caption: "middle calendar view design",
-    image: "/pos/schedulem1.png",
-  },
-  {
-    id: 2,
-    subtitle: "middle findresource ",
-    caption: "middle findresource design",
-    image: "/pos/schedulem2.png",
-  },
-  {
-    id: 3,
-    subtitle: "middle scheduler board ",
-    caption: "middle scheduler board design",
-    image: "/pos/schedulem3.png",
-  },
-];
-var finalScheduler: DataItem[] = [
-  {
-    id: 1,
-    subtitle: "final calendar view ",
-    caption: "final calendar view design",
-    image: "/pos/schedulef1.png",
-  },
-  {
-    id: 2,
-    subtitle: "final findresource ",
-    caption: "final findresource design",
-    image: "/pos/schedulef2.png",
-  },
-  {
-    id: 3,
-    subtitle: "final scheduler board ",
-    caption: "final scheduler board design",
-    image: "/pos/schedulef3.png",
-  },
-];
-var initialScheduler2: DataItem[] = [
+var initialScheduler: DataItem[] = [
   {
     id: 1,
     subtitle: "initial calendar view ",
@@ -401,44 +341,56 @@ var initialScheduler2: DataItem[] = [
     image: "/pos/2nditerationschedulerinitialthree.png",
   },
 ];
-var middleScheduler2: DataItem[] = [
+var middleScheduler: DataItem[] = [
   {
     id: 1,
-    subtitle: "middle calendar view ",
-    caption: "middle calendar view design",
-    image: "/pos/2nditerationschedulermiddle1.png",
+    subtitle: "Dashboard ",
+    caption: "Dashboard design",
+    image: "/pos/schdashm1.png",
   },
   {
     id: 2,
-    subtitle: "middle findresource ",
-    caption: "middle findresource design",
-    image: "/pos/2nditerationschedulermiddle2.png",
+    subtitle: "Find Resource ",
+    caption: "Find Resource design",
+    image: "/pos/schsearchm2.png",
   },
   {
     id: 3,
-    subtitle: "middle scheduler board ",
-    caption: "middle scheduler board design",
-    image: "/pos/2nditerationschedulermiddlethree.png",
+    subtitle: "Create Order ",
+    caption: "Create Order design",
+    image: "/pos/schaddm3.png",
+  },
+  {
+    id: 4,
+    subtitle: "Order Log ",
+    caption: "Order Log design",
+    image: "/pos/schtablem4.png",
   },
 ];
-var finalScheduler2: DataItem[] = [
+var finalScheduler: DataItem[] = [
   {
     id: 1,
-    subtitle: "final calendar view ",
-    caption: "final calendar view design",
-    image: "/pos/2nditerationschedulerfinal1.png",
+    subtitle: "Dashboard ",
+    caption: "Dashboard design",
+    image: "/pos/schdashf1.png",
   },
   {
     id: 2,
-    subtitle: "final findresource ",
-    caption: "final findresource design",
-    image: "/pos/2nditerationschedulerfinaltwo.png",
+    subtitle: "Find Resource ",
+    caption: "Find Resource design",
+    image: "/pos/schsearchf2.png",
   },
   {
     id: 3,
-    subtitle: "final scheduler board ",
-    caption: "final scheduler board design",
-    image: "/pos/2nditerationschedulerfinalthree.png",
+    subtitle: "Create Order ",
+    caption: "Create Order design",
+    image: "/pos/schaddf3.png",
+  },
+  {
+    id: 4,
+    subtitle: "Order Log ",
+    caption: "Order Log design",
+    image: "/pos/schtablef4.png",
   },
 ];
 
@@ -456,10 +408,7 @@ export const infoData = {
   initialFunnel,
   refinedFunnel,
   finalFunnel,
-  initalScheduler,
+  initialScheduler,
   middleScheduler,
   finalScheduler,
-  initialScheduler2,
-  middleScheduler2,
-  finalScheduler2,
 };

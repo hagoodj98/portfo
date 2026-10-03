@@ -7,12 +7,9 @@ import NavBar from "../NavBar";
 
 const expectedRoutes = [
   { label: "Fan Funnel", href: "/work/fanfunnel" },
-  { label: "Omnia Workflows", href: "/work/omni" },
   { label: "GameSite", href: "/work/l4d" },
   { label: "Scheduler", href: "/work/scheduler" },
   { label: "SonicDNA", href: "/work/sonicdna" },
-  { label: "Book Blog", href: "/work/bookblog" },
-  { label: "Flippo", href: "/work/flippo" },
 ];
 
 const allNavHrefs = ["/", ...expectedRoutes.map((route) => route.href)];

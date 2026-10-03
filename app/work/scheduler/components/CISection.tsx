@@ -5,8 +5,8 @@ const ciSlides = [
     id: "ci-pipeline",
     title: "CI Pipeline",
     summary:
-      "The CI pipeline is set up to automate the testing and deployment process for the production scheduling system. It includes stages for code linting, unit testing, integration testing, and deployment to a staging environment. This ensures that any changes to the codebase are thoroughly tested before being released to production.",
-    description: `The CI pipeline is configured using GitHub Actions. It triggers on every push to the main branch and includes the following steps:
+      "GitHub Actions runs database-backed checks for pull requests and pushes to main: generation, type checking, linting, tests, and a production build.",
+    description: `The workflow is configured using GitHub Actions. It runs on pushes and pull requests to main and includes:
 jobs:
   verify:
     name: Lint, Type Check, Unit + E2E, Build
@@ -51,11 +51,11 @@ jobs:
   `,
   },
   {
-    id: "docker",
-    title: "Dockerization",
+    id: "docker-postgres",
+    title: "Dockerized PostgreSQL for Local Development",
     summary:
-      "The production scheduling system is containerized using Docker, allowing for consistent deployment across different environments. The Dockerfile defines the application environment, including the Node.js runtime and necessary dependencies. This setup simplifies the deployment process and ensures that the application runs reliably in production.",
-    description: `The Dockerfile for the production scheduling system is structured as follows:
+      "Docker Compose provides a local PostgreSQL 16 database with a health check and persistent storage.",
+    description: `The docker-compose.yml database service:
   services:
   db:
     image: postgres:16
@@ -85,37 +85,36 @@ const CISection = () => {
       <div className="tw-container tw-mx-auto tw-p-5 tw-text-white">
         <div className="md:tw-w-2/3">
           <h3 className="tw-leading-10 tw-text-2xl md:tw-text-4xl tw-font-boldonse md:tw-leading-[1.5]">
-            CI/CD and Dockerized Development
+            Continuous Integration and Dockerized Development
           </h3>
           <div className="tw-w-36">
             <hr className="tw-h-2 tw-bg-yellow" />{" "}
           </div>
           <p className="md:tw-text-base lg:tw-text-lg">
-            The project includes a GitHub Actions CI pipeline that runs on
-            pushes and pull requests to main. It spins up a PostgreSQL service,
-            applies the schema, and verifies the app with type-checking,
-            linting, unit tests, production build, and Playwright end-to-end
-            tests.
+            GitHub Actions runs on pushes and pull requests to main. It starts
+            PostgreSQL, generates the Prisma client, type-checks and lints the
+            app, runs unit and Playwright end-to-end tests, applies migrations,
+            seeds test data, and builds the app.
           </p>
           <p className="md:tw-text-base lg:tw-text-lg">
-            For local development, Docker Compose runs a postgres:16 container,
-            mounts schema.sql for initialization, and uses a persistent volume
-            so database state survives container restarts.
+            For local development, Docker Compose runs PostgreSQL 16 with a
+            health check and persistent volume. Database migrations and seed
+            data are managed with the project&apos;s Prisma and seed commands.
           </p>
         </div>
         <div className="tw-grid md:tw-grid-cols-2 tw-gap-3 tw-my-6">
           <div className="tw-bg-[#113058] tw-rounded-lg tw-p-4">
             <h4 className="tw-font-semibold tw-mb-2">CI Pipeline Checks</h4>
             <p className="tw-text-sm tw-mb-0">
-              Setup DB schema, run type-check, lint, unit tests, build, and E2E
-              validation before merge.
+              Provision PostgreSQL, generate Prisma, run type-check and lint,
+              unit and E2E tests, apply migrations, seed, and build.
             </p>
           </div>
           <div className="tw-bg-[#113058] tw-rounded-lg tw-p-4">
             <h4 className="tw-font-semibold tw-mb-2">Docker Workflow</h4>
             <p className="tw-text-sm tw-mb-0">
-              docker compose up starts local PostgreSQL with seeded schema and
-              persistent storage for repeatable dev environments.
+              docker compose up starts the local PostgreSQL service with a
+              health check and persistent storage.
             </p>
           </div>
         </div>
