@@ -33,6 +33,14 @@ export default function Home() {
                 Hello! My name is Jaiquez Hagood and I am a web developer. I
                 hope you enjoy exploring my recent work!😁
               </p>
+              <a
+                href="/Jaiquez_Hagood_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="tw-mt-5 tw-inline-block tw-rounded tw-bg-bluegreen tw-text-white tw-px-6 tw-py-3 tw-font-boldonse tw-text-sm hover:tw-opacity-90"
+              >
+                View Resume (PDF)
+              </a>
             </div>
           </div>
         </div>
