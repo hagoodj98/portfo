@@ -5,7 +5,6 @@ import Card from "../../components/Card";
 import ProjectIntro from "../../components/ProjectIntro";
 import Personas from "@/app/components/Personas";
 import PERNSection from "@/app/components/PERNSection";
-import ImprovementSection from "@/app/components/ImprovementSection";
 import APIEndpoints from "./components/APIEndpoints";
 import CISection from "./components/CISection";
 import ReposSlides from "./components/Repos";
