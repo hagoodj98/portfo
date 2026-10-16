@@ -10,6 +10,7 @@ const expectedRoutes = [
   { label: "GameSite", href: "/work/l4d" },
   { label: "Scheduler", href: "/work/scheduler" },
   { label: "SonicDNA", href: "/work/sonicdna" },
+  { label: "Carbon-Theme", href: "/work/carbon-footprint" },
 ];
 
 const allNavHrefs = ["/", ...expectedRoutes.map((route) => route.href)];

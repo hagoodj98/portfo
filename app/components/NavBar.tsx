@@ -65,6 +65,9 @@ const NavBar = () => {
                 <NavDropdown.Item href="/work/sonicdna">
                   SonicDNA
                 </NavDropdown.Item>
+                <NavDropdown.Item href="/work/carbon-footprint">
+                  Carbon-Theme
+                </NavDropdown.Item>
               </NavDropdown>
             </Nav>
           </Offcanvas.Body>
