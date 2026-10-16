@@ -100,8 +100,11 @@ export default function Home() {
             projectName="SonicDNA "
             link="/work/sonicdna"
           />
-
-          <div></div>
+          <ProjectThumbnail
+            projectUrl="/carbon-footprint/carbon-footprint.jpg"
+            projectName="Houston Carbon Footprint"
+            link="/work/carbon-footprint"
+          />
         </div>
       </div>
       <div className="tw-container tw-mx-auto tw-my-20 tw-p-5">
