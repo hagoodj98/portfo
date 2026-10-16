@@ -101,7 +101,7 @@ export default function Home() {
             link="/work/sonicdna"
           />
           <ProjectThumbnail
-            projectUrl="/carbon-footprint/carbon-footprint.jpg"
+            projectUrl="/carbon-footprint/carbonmock.png"
             projectName="Houston Carbon Footprint"
             link="/work/carbon-footprint"
           />

@@ -1,7 +1,10 @@
+import Link from "next/link";
 import Diagram from "@/app/components/Diagram";
 import ProjectIntro from "@/app/components/ProjectIntro";
 import Video from "@/app/components/Video";
+import Responsive from "@/app/components/Responsive";
 import FileArch from "./components/FileArch";
+import repsonsive from "../../../public/carbon-footprint/carbonmobile.png";
 
 export const metadata = {
   title: "Houston Carbon Footprint Project",
@@ -13,8 +16,13 @@ export default function CarbonFootprintPage() {
       <ProjectIntro
         projectname="Houston Carbon Footprint"
         description="I built a WordPress experience that helps people explore the sources of Houston's carbon emissions and estimate their own annual footprint. The project combines a custom theme and calculator plugin with a separate Node.js API, connecting an accessible form to a live estimate and visual result."
-        srcname="/carbon-footprint/carbon-footprint.jpg"
+        srcname="/carbon-footprint/carbonmock.png"
       />
+      <div className="tw-relative tw-z-10 tw-container tw-mx-auto tw-px-5 tw-mt-10">
+        <span className="tw-inline-flex tw-items-center tw-rounded-full tw-bg-bluegreen tw-text-white tw-text-xs tw-px-3 tw-py-1 tw-uppercase tw-tracking-wide">
+          WordPress Theme &amp; Plugin · Node.js API
+        </span>
+      </div>
       <section className="tw-bg-yellow tw-mt-28 tw-py-20">
         <div className="tw-container tw-mx-auto tw-flex tw-flex-col tw-justify-center tw-p-5">
           <div className="md:tw-w-2/3">
@@ -83,8 +91,8 @@ export default function CarbonFootprintPage() {
             Rendering child page sections in page.php
           </h3>
           <p className="tw-mt-2 tw-text-sm">
-            Each editor block is matched to its template part, then passed in
-            as child-page content.
+            Each editor block is matched to its template part, then passed in as
+            child-page content.
           </p>
           <pre className="tw-mt-4 tw-overflow-x-auto tw-rounded tw-bg-[#1a2332] tw-p-4 tw-text-sm tw-text-[#e0e0e0]">
             <code>{`$templateOrderOutput = get_template_order($postID);
@@ -135,9 +143,7 @@ household-size=2`}</code>
             </pre>
           </div>
           <div className="tw-bg-[#0E1424] tw-rounded-xl tw-p-5 tw-text-white">
-            <h3 className="tw-text-xl tw-font-boldonse">
-              Validated response
-            </h3>
+            <h3 className="tw-text-xl tw-font-boldonse">Validated response</h3>
             <p className="tw-mt-2 tw-text-sm">
               Express parses the request, Zod checks field types and allowed
               values, and the server returns the estimate as JSON.
@@ -182,12 +188,30 @@ if (Number.isFinite(Number(data.data.footprint))) {
           </pre>
         </div>
       </section>
+      <Responsive repsonsive={repsonsive} />
       <div className="tw-container tw-mx-auto tw-my-16">
-        <Video
-          srclink="/carbon-footprint/carbondemo-small.mp4"
-          muted={true}
-          hideGithubLink={true}
-        />
+        <Video srclink="/carbon-footprint/carbondemo-small.mp4" muted={true}>
+          <div className="tw-flex tw-flex-col tw-items-center tw-gap-1 tw-mt-2">
+            <Link
+              href="https://github.com/hagoodj98/carbon-theme"
+              className="tw-text-bluegreen tw-text-center tw-underline"
+            >
+              Theme &amp; Plugin on GitHub
+            </Link>
+            <Link
+              href="https://github.com/hagoodj98/calcpaymenttool"
+              className="tw-text-bluegreen tw-text-center tw-underline"
+            >
+              Node API on GitHub
+            </Link>
+            <Link
+              href="https://jaiquez-carbon-theme.dreamhosters.com/"
+              className="tw-text-bluegreen tw-text-center tw-underline"
+            >
+              Live Demo
+            </Link>
+          </div>
+        </Video>
       </div>
     </div>
   );
